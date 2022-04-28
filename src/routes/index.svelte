@@ -8,5 +8,4 @@
 
 <div>
 	<Button>hi</Button>
-	ddd
 </div>
