@@ -20,7 +20,6 @@
     "pre-commit": "lint-staged"
   },
   "devDependencies": {
-    "@commitlint/cli": "^16.2.4",
     "@commitlint/config-conventional": "^16.2.4",
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/adapter-static": "^1.0.0-next.29",
