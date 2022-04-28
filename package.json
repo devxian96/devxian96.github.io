@@ -14,7 +14,8 @@
     "lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
     "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. .",
     "predeploy": "yarn build",
-    "deploy": "gh-pages -d build -t true"
+    "deploy": "gh-pages -d build -t true",
+    "pre-commit": "lint-staged"
   },
   "devDependencies": {
     "@playwright/test": "^1.21.0",

@@ -1,5 +1,4 @@
-node_modules
-.svelte-kit/*
-.vscode/*
-build/*
-.husky/*
+.svelte-kit/**
+build/**
+node_modules/**
+.yarn/**
