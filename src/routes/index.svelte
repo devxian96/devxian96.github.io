@@ -7,5 +7,5 @@
 </svelte:head>
 
 <div>
-	<Button>hi</Button>
+	<Button>hidd</Button>
 </div>
