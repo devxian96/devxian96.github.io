@@ -44,6 +44,6 @@
   },
   "type": "module",
   "dependencies": {
-    "emotion": "^11.0.0"
+    "@emotion/css": "^11.9.0"
   }
 }
