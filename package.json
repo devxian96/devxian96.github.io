@@ -48,8 +48,9 @@
   },
   "lint-staged": {
     "*.{ts,svelte}": [
-      "yarn lint",
-      "yarn format"
+      "eslint --fix",
+      "prettier --write",
+      "git add"
     ]
   }
 }
