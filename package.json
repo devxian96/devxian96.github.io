@@ -20,6 +20,8 @@
     "pre-commit": "lint-staged"
   },
   "devDependencies": {
+    "@commitlint/cli": "^16.2.4",
+    "@commitlint/config-conventional": "^16.2.4",
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/adapter-static": "^1.0.0-next.29",
     "@sveltejs/kit": "next",
@@ -30,6 +32,7 @@
     "eslint-plugin-svelte3": "^3.2.1",
     "gh-pages": "^3.2.3",
     "husky": "^7.0.0",
+    "jest": "^28.0.2",
     "lint-staged": "^12.4.1",
     "prettier": "^2.5.1",
     "prettier-plugin-svelte": "^2.5.0",
