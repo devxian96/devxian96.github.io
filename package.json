@@ -15,6 +15,7 @@
     "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. .",
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build -t true",
+    "husky": "husky install",
     "pre-commit": "lint-staged"
   },
   "devDependencies": {
