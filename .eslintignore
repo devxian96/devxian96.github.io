@@ -1,0 +1,4 @@
+.svelte-kit/
+.vscode/
+build/
+.husky/
