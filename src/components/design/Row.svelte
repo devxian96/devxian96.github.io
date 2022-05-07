@@ -4,11 +4,12 @@
 	const rowStyle = css`
 		display: flex;
 		flex-wrap: wrap;
-		gap: 1em;
+		gap: 3rem;
 		width: 100%;
+		padding-bottom: 3rem;
 	`;
 </script>
 
-<div class={rowStyle}>
+<div class="{rowStyle}">
 	<slot />
 </div>

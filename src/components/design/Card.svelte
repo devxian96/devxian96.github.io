@@ -1,23 +1,32 @@
 <script type="ts">
+	import { fade } from 'svelte/transition';
 	import { css } from '@emotion/css';
+	import { primary, card } from './config/color';
+
+	export let flat = false;
 
 	const cardStyle = css`
-		border-radius: 15px;
-		background-color: rgb(36, 39, 49);
+		border-radius: 10px;
+		background-color: ${flat ? primary : card};
 		color: white;
+		padding: 0.5rem;
+		box-shadow: ${!flat && '-10px 50px 100px -70px black;'};
 	`;
 
 	const cardTitleStyle = css`
-		padding: 24px 24px 0 24px;
-		font-weight: bold;
+		padding: 2rem;
+		font-weight: normal;
 	`;
 
 	const cardBodyStyle = css`
-		padding: 24px;
+		padding: 2rem;
+		border-radius: 10px;
+		background-color: ${card};
+		font-weight: ;
 	`;
 
 	const cardActionStyle = css`
-		margin-top: 24px;
+		margin-top: 1.5rem;
 	`;
 </script>
 

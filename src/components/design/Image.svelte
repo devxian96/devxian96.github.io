@@ -1,17 +1,53 @@
 <script type="ts">
 	import { css } from '@emotion/css';
+	import { primary } from './config/color';
+	import { Col } from './index';
 
 	export let width = '100%';
 	export let height = 'auto';
 	export let src: string;
-	export let alt: string;
+	export let alt = '';
+	export let lazy = false;
+	export let backgroundColor = primary;
 
 	const imageStyle = css`
-		border-radius: 15px;
+		border-radius: 10px;
+		margin: auto;
+	`;
+
+	const bannerStyle = css`
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+		height: ${height};
+		border-radius: 10px;
+		background-color: ${backgroundColor};
+	`;
+
+	const bannerSummaryStyle = css`
+		padding: 2rem;
+		display: flex;
+		flex-direction: column;
+		height: calc(${height} - 4rem);
+		justify-content: center;
+		color: white;
+		gap: 1rem;
+	`;
+
+	const bannerImageStyle = css`
+		text-align: center;
 	`;
 </script>
 
-<img class={imageStyle} {src} {alt} {width} {height} />
-
-// 레이지 로딩 구현
-// 이미지 구현 이후 점점 증가하는 숫자 타이포 그래픽 에니메이션 만들기
+<div class={bannerStyle}>
+	{#if $$slots.default}
+		<Col width="40%">
+			<div class={bannerSummaryStyle}>
+				<slot />
+			</div>
+		</Col>
+	{/if}
+	<Col className={bannerImageStyle}>
+		<img class={imageStyle} loading={lazy ? 'lazy' : 'auto'} {src} {alt} {width} {height} />
+	</Col>
+</div>

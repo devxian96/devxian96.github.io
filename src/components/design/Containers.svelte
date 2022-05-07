@@ -8,8 +8,13 @@
 	`;
 
 	const mainStyle = css`
+		overflow: auto;
+		max-width: 1400px;
 		width: 100%;
-		padding: 24px;
+		margin: auto;
+		margin-top: 0;
+		margin-bottom: 0;
+		padding: 3rem;
 	`;
 </script>
 
@@ -105,9 +110,10 @@
 		margin: 0;
 		padding: 0;
 		border: 0;
-		font-size: 100%;
-		font: inherit;
 		vertical-align: baseline;
+	}
+	body {
+		font-family: 'Noto Sans KR', sans-serif;
 	}
 	/* HTML5 display-role reset for older browsers */
 	article,

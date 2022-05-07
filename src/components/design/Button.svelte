@@ -6,13 +6,18 @@
 	export let background = main;
 
 	const buttonStyle = css`
+		position: relative;
 		max-width: 100%;
 		width: 100%;
 		padding: 25px;
-		border-radius: 15px;
+		border-radius: 10px;
 		border: none;
 		background-color: ${background};
 		color: ${color};
+		&:hover {
+			opacity: 0.85;
+			cursor: pointer;
+		}
 	`;
 </script>
 
