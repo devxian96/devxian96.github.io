@@ -1,6 +1,6 @@
 <script type="ts">
 	import { css } from '@emotion/css';
-	import { main, primary } from './config/color';
+	import { primary } from './config/color';
 	import Row from './Row.svelte';
 
 	const sidebarStyle = css`
@@ -40,6 +40,10 @@
 		ol > li.active {
 			background-color: ${primary};
 		}
+
+		ol > li > i {
+			padding-right: 10px;
+		}
 	`;
 
 	const sidebarLicense = css`
@@ -60,19 +64,21 @@
 	<div class={sidebarListStyle}>
 		<div>메뉴</div>
 		<ol>
-			<li class="active">홈</li>
-			<li>보유기술</li>
-			<li>대표 프로젝트</li>
-			<li>이력</li>
-			<li>블로그</li>
+			<li class="active">
+				<i class="ri-home-line" />홈
+			</li>
+			<li><i class="ri-code-line" />보유기술</li>
+			<li><i class="ri-star-line" />대표 프로젝트</li>
+			<li><i class="ri-time-line" />이력</li>
+			<li><i class="ri-file-text-line" />블로그</li>
 		</ol>
 	</div>
 
 	<div class={sidebarListStyle}>
 		<div>외부링크</div>
 		<ol>
-			<li>이메일</li>
-			<li>깃허브</li>
+			<li><i class="ri-mail-line" />이메일</li>
+			<li><i class="ri-github-line" />깃허브</li>
 		</ol>
 	</div>
 

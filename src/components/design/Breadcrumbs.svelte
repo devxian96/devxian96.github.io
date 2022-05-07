@@ -1,6 +1,7 @@
 <script type="ts">
 	import { primary } from './config/color';
 	import { css } from '@emotion/css';
+	import Notification from './Notification.svelte';
 
 	const breadcrumbsStyle = css`
 		padding-bottom: 3rem;
@@ -24,6 +25,8 @@
 <div class={breadcrumbsStyle}>
 	<div class={breadcrumbsTitleStyle}>
 		<slot />
+
+		<Notification />
 	</div>
 	{#if $$slots.summary}
 		<div class={breadcrumbsSummaryStyle}>

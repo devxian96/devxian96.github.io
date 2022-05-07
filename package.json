@@ -45,6 +45,7 @@
   "type": "module",
   "dependencies": {
     "@emotion/css": "^11.9.0",
-    "emotion-reset": "^3.0.1"
+    "emotion-reset": "^3.0.1",
+    "remixicon": "^2.5.0"
   }
 }

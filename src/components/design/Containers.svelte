@@ -1,6 +1,7 @@
 <script type="ts">
 	import { css } from '@emotion/css';
 	import SideBar from './SideBar.svelte';
+	import 'remixicon/fonts/remixicon.css'
 
 	const containersStyle = css`
 		display: flex;
