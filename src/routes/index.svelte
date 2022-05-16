@@ -8,9 +8,11 @@
 		Col,
 		Breadcrumbs,
 		Image,
-		Typograpy
+		Typograpy,
+		Carousel
 	} from '../components/design';
-	let i: number = 10;
+
+	let i = 10;
 	const click = () => alert('hi');
 </script>
 
@@ -31,6 +33,38 @@
 			<small>내용</small>
 			<Button on:click={click}>버튼</Button>
 		</Image>
+		<Carousel height="400px">
+			<Image
+				src="/img/phpExpressLogo.webp"
+				width="410px"
+				height="400px"
+				backgroundColor={secondary}
+			>
+				<h1>제목</h1>
+				<small>내용</small>
+				<Button on:click={click}>버튼</Button>
+			</Image>
+			<Image
+				src="/img/phpExpressLogo.webp"
+				width="410px"
+				height="400px"
+				backgroundColor={secondary}
+			>
+				<h1>제목</h1>
+				<small>내용</small>
+				<Button on:click={click}>버튼</Button>
+			</Image>
+			<Image
+				src="/img/phpExpressLogo.webp"
+				width="410px"
+				height="400px"
+				backgroundColor={secondary}
+			>
+				<h1>제목</h1>
+				<small>내용</small>
+				<Button on:click={click}>버튼</Button>
+			</Image>
+		</Carousel>
 	</Row>
 
 	<Row>

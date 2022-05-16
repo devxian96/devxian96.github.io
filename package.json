@@ -25,6 +25,7 @@
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/adapter-static": "^1.0.0-next.29",
     "@sveltejs/kit": "next",
+    "@types/siema": "^1.4.8",
     "@typescript-eslint/eslint-plugin": "^5.10.1",
     "@typescript-eslint/parser": "^5.10.1",
     "eslint": "^7.32.0",
@@ -46,6 +47,7 @@
   "dependencies": {
     "@emotion/css": "^11.9.0",
     "emotion-reset": "^3.0.1",
-    "remixicon": "^2.5.0"
+    "remixicon": "^2.5.0",
+    "siema": "^1.5.1"
   }
 }

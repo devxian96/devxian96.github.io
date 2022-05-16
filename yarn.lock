@@ -1054,6 +1054,11 @@
   dependencies:
     "@types/node" "*"
 
+"@types/siema@^1.4.8":
+  version "1.4.8"
+  resolved "https://registry.yarnpkg.com/@types/siema/-/siema-1.4.8.tgz#aabf631c4ecea0e8800e6b1e97e2b90c70ed5c6e"
+  integrity sha512-mcaZ3Ve0VfX3Vnwqf4bcZsGmEZ+ZGRf+KLrwbd2dSqXSzG0uZykIE7Pk4ouUqmaVLkYhUUFNNHZ9AIR12Heyhg==
+
 "@types/stack-utils@^2.0.0":
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/@types/stack-utils/-/stack-utils-2.0.1.tgz#20f18294f797f2209b5f65c8e3b5c8e8261d127c"
@@ -3819,6 +3824,11 @@ shebang-regex@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/shebang-regex/-/shebang-regex-3.0.0.tgz#ae16f1644d873ecad843b0307b143362d4c42172"
   integrity sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==
+
+siema@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/siema/-/siema-1.5.1.tgz#eff312b77e8340fa4d81d5d053ebbeb9113ff888"
+  integrity sha1-7/MSt36DQPpNgdXQU+u+uRE/+Ig=
 
 signal-exit@^3.0.2, signal-exit@^3.0.3, signal-exit@^3.0.7:
   version "3.0.7"

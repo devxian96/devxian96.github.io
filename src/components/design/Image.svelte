@@ -9,6 +9,7 @@
 	export let alt = '';
 	export let lazy = false;
 	export let backgroundColor = primary;
+	export let className = '';
 
 	const imageStyle = css`
 		border-radius: 10px;
@@ -39,7 +40,7 @@
 	`;
 </script>
 
-<div class={bannerStyle}>
+<div class="{bannerStyle}{' ' + className}">
 	{#if $$slots.default}
 		<Col width="40%">
 			<div class={bannerSummaryStyle}>
