@@ -1,6 +1,7 @@
 <script type="ts">
 	import { card } from './config/color';
 	import { css } from '@emotion/css';
+	import clickOutside from '../../utils/clickOutside';
 
 	let toggle = false;
 
@@ -45,6 +46,8 @@
 	</button>
 
 	{#if toggle}
-		<div class={notificiationListStyle}>Something...</div>
+		<div class={notificiationListStyle} use:clickOutside on:click_outside={toggleHandle}>
+			Something...
+		</div>
 	{/if}
 </div>
