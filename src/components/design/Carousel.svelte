@@ -92,7 +92,7 @@
 	onMount(() => {
 		const interval = setInterval(() => {
 			requestAnimationFrame(nextSlide);
-		}, 8000);
+		}, 12000);
 		return () => clearInterval(interval);
 	});
 </script>

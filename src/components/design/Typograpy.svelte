@@ -1,4 +1,5 @@
 <script type="ts">
+	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 	import { css } from '@emotion/css';
 
@@ -10,6 +11,8 @@
 		color: ${color};
 		font-size: 2rem;
 		font-weight: bold;
+		padding-left: 6px;
+		padding-right: 6px;
 	`;
 
 	onMount(() => {
