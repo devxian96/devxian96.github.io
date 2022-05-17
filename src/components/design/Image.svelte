@@ -33,6 +33,27 @@
 		justify-content: center;
 		color: white;
 		gap: 1rem;
+
+		h1 {
+			font-size: 28px;
+			font-weight: 700;
+			line-height: 1.3;
+			margin-bottom: 30px;
+			color: ${primary};
+		}
+
+		div {
+			font-size: 50px;
+			font-weight: 700;
+			line-height: 1.4;
+		}
+
+		small {
+			font-size: 22px;
+			font-weight: 300;
+			line-height: 1.5;
+			color: smoke;
+		}
 	`;
 
 	const bannerImageStyle = css`

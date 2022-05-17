@@ -1,5 +1,4 @@
 <script type="ts">
-	import { fade } from 'svelte/transition';
 	import { css } from '@emotion/css';
 	import { primary, card } from './config/color';
 
@@ -15,14 +14,19 @@
 
 	const cardTitleStyle = css`
 		padding: 2rem;
-		font-weight: normal;
+		font-size: 20px;
+		font-weight: 600;
+		line-height: 1.4;
 	`;
 
 	const cardBodyStyle = css`
 		padding: 2rem;
 		border-radius: 10px;
+		color: smoke;
 		background-color: ${card};
-		font-weight: ;
+		font-size: 22px;
+		font-weight: 300;
+		line-height: 1.5;
 	`;
 
 	const cardActionStyle = css`

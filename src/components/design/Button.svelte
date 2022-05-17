@@ -14,6 +14,9 @@
 		border: none;
 		background-color: ${background};
 		color: ${color};
+		font-size: 15px;
+		font-weight: 600;
+		line-height: 20px;
 		&:hover {
 			opacity: 0.85;
 			cursor: pointer;

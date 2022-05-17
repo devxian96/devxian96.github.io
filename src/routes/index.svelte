@@ -12,7 +12,6 @@
 		Carousel
 	} from '../components/design';
 
-	let i = 10;
 	const click = () => alert('hi');
 </script>
 
@@ -28,9 +27,10 @@
 	<Row>
 		<Typograpy count={11} />
 		<Typograpy color={primary} count={1} />
-		<Image src="/img/phpExpressLogo.webp" width="410px" height="400px" backgroundColor={secondary}>
-			<h1>제목</h1>
-			<small>내용</small>
+		<Image src="/img/phpExpressLogo.webp" width="550px" height="600px" backgroundColor={'#333'}>
+			<h1>프레임워크</h1>
+			<div>Express를 php에서</div>
+			<small>같은 개발 경험<br />설명이 필요 없는<br />직관적인 코드</small>
 			<Button on:click={click}>버튼</Button>
 		</Image>
 		<Carousel height="400px">
@@ -41,7 +41,7 @@
 				backgroundColor={secondary}
 			>
 				<h1>제목</h1>
-				<small>내용</small>
+				<div>내용</div>
 				<Button on:click={click}>버튼</Button>
 			</Image>
 			<Image
@@ -51,7 +51,7 @@
 				backgroundColor={secondary}
 			>
 				<h1>제목</h1>
-				<small>내용</small>
+				<div>내용</div>
 				<Button on:click={click}>버튼</Button>
 			</Image>
 			<Image
@@ -61,7 +61,7 @@
 				backgroundColor={secondary}
 			>
 				<h1>제목</h1>
-				<small>내용</small>
+				<div>내용</div>
 				<Button on:click={click}>버튼</Button>
 			</Image>
 		</Carousel>
@@ -71,15 +71,15 @@
 		<Col>
 			<Card>
 				<h5 slot="title">제목</h5>
-				안녕{i}
-				<Button slot="action" on:click={click}>hidd</Button>
+				행복한 하루를 보낼려면 어떻게 해야 할까요?
+				<Button slot="action" on:click={click}>네, 좋아요</Button>
 			</Card>
 		</Col>
 		<Col>
 			<Card flat>
 				<h5 slot="title">제목</h5>
-				안녕{i}
-				<Button slot="action" on:click={click}>hidd</Button>
+				행복한 하루를 보낼려면 어떻게 해야 할까요?
+				<Button slot="action" on:click={click}>네, 좋아요</Button>
 			</Card>
 		</Col>
 	</Row>
@@ -88,15 +88,15 @@
 		<Col>
 			<Card>
 				<h5 slot="title">제목</h5>
-				안녕{i}
-				<Button slot="action" on:click={click}>hidd</Button>
+				행복한 하루를 보낼려면 어떻게 해야 할까요?
+				<Button slot="action" on:click={click}>네, 좋아요</Button>
 			</Card>
 		</Col>
 		<Col>
 			<Card>
 				<h5 slot="title">제목</h5>
-				안녕{i}
-				<Button slot="action" background={primary} on:click={click}>hidd</Button>
+				행복한 하루를 보낼려면 어떻게 해야 할까요?
+				<Button slot="action" background={primary} on:click={click}>네, 좋아요</Button>
 			</Card>
 		</Col>
 	</Row>
