@@ -17,6 +17,13 @@
 		font-size: 20px;
 		font-weight: 600;
 		line-height: 1.4;
+		color: ${flat ? '#202020' : 'white'};
+
+		h2 {
+			font-size: 20px;
+			font-weight: 600;
+			line-height: 1.4;
+		}
 	`;
 
 	const cardBodyStyle = css`

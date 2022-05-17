@@ -43,7 +43,7 @@
 
 	<Row>
 		<Carousel height="600px">
-			<Image src="/img/virus.webp" width="550px" height="600px" backgroundColor="#282c34" lazy>
+			<Image src="/img/virus.webp" width="550px" height="600px" backgroundColor="#282c34">
 				<h1>라이브러리</h1>
 				<div>React에서도,<br />글로벌 컴포넌트</div>
 				<small>한번의 선언으로<br />전체 소스코드에서<br />바로사용</small>
@@ -51,7 +51,7 @@
 					><Button>저장소로 이동하기</Button></a
 				>
 			</Image>
-			<Image src="/img/phpExpressLogo.webp" width="550px" height="600px" backgroundColor="#333">
+			<Image src="/img/phpExpressLogo.webp" width="550px" height="600px" backgroundColor="#333" lazy>
 				<h1>프레임워크</h1>
 				<div>Express를 php에서</div>
 				<small>같은 개발 경험<br />설명이 필요 없는<br />직관적인 코드</small>
@@ -73,7 +73,7 @@
 	<Row>
 		<Col>
 			<Card flat>
-				<h5 slot="title">장석현 [Full-Stack]</h5>
+				<h2 slot="title">장석현 [Full-Stack]</h2>
 				<div class={intoStyle}>
 					개발 공부를 시작한지<Typograpy count={new Date().getFullYear() - 2011} />년 되었고,
 				</div>
@@ -91,7 +91,7 @@
 
 		<Col>
 			<Card>
-				<h5 slot="title">목표</h5>
+				<h2 slot="title">목표</h2>
 				<div class={iconStyle}>
 					<i class="ri-pushpin-line" />
 				</div>
@@ -106,7 +106,7 @@
 
 		<Col>
 			<Card>
-				<h5 slot="title">관심사</h5>
+				<h2 slot="title">관심사</h2>
 				<div class={iconStyle}>
 					<i class="ri-heart-2-line" />
 				</div>
@@ -123,16 +123,16 @@
 	<Row>
 		<Col>
 			<Card>
-				<h5 slot="title">보유기술</h5>
+				<h2 slot="title">보유기술</h2>
 				어떤 멋진 기술을 가지고 있는지 소개 할게요.
 				<Button slot="action" on:click={() => goto('/skills')}>자세히 보기</Button>
 			</Card>
 		</Col>
 		<Col>
 			<Card>
-				<h5 slot="title">포트폴리오</h5>
+				<h2 slot="title">포트폴리오</h2>
 				이 사이트를 어떻게 만들었는지 함께 볼까요?
-				<Button slot="action" background={primary} on:click={click}>네, 좋아요</Button>
+				<Button slot="action" color="#202020" background={primary} on:click={click}>네, 좋아요</Button>
 			</Card>
 		</Col>
 	</Row>

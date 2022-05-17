@@ -41,7 +41,7 @@
 </script>
 
 <div class={notificationBoxStyle}>
-	<button class={notificationStyle} on:click={toggleHandle}>
+	<button type="button" class={notificationStyle} on:click={toggleHandle} aria-label="알림">
 		<i class="ri-notification-line" />
 	</button>
 

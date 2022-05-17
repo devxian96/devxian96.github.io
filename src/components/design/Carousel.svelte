@@ -1,4 +1,5 @@
 <script type="ts">
+	import { primary } from './config/color';
 	import { onMount } from 'svelte';
 	import { css } from '@emotion/css';
 	import Row from './Row.svelte';
@@ -24,7 +25,7 @@
 		transform: translate(2%, 0);
 		width: 96%;
 		height: 20px;
-		background-color: tomato;
+		background-color: ${primary};
 	`;
 
 	const carouselStyle = css`
