@@ -34,6 +34,27 @@
 		top: 0;
 	`;
 
+	const navigatorStyle = css`
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		top: 0;
+		right: 0;
+
+		button {
+			width: 12px;
+			height: 12px;
+			background-color: rgba(255, 255, 255, 0.2);
+			border: none;
+			border-radius: 50%;
+			margin: 12px;
+			cursor: pointer;
+		}
+		.active {
+			background-color: white;
+		}
+	`;
+
 	$: style = `left: -${left}%`;
 
 	const nextSlide = async () => {
@@ -52,10 +73,26 @@
 		}, 5);
 	};
 
+	const goto = (go: number) => {
+		if (page !== go) {
+			page = go - 1;
+			nextSlide();
+		}
+	};
+
+	$: active = (index: number) => {
+		if (page === index) {
+			return 'active';
+		} else if (page === 0 && index === max) {
+			return 'active';
+		}
+		return;
+	};
+
 	onMount(() => {
 		const interval = setInterval(() => {
 			requestAnimationFrame(nextSlide);
-		}, 7000);
+		}, 8000);
 		return () => clearInterval(interval);
 	});
 </script>
@@ -63,6 +100,16 @@
 <Row className={rowStyle}>
 	<div class={carouselStyle} {style}>
 		<slot />
+	</div>
+	<div class={navigatorStyle}>
+		{#each new Array(max) as _, index}
+			<button
+				class={active(index + 1)}
+				type="button"
+				aria-label="{index + 1} 슬라이드"
+				on:click={() => goto(index + 1)}
+			/>
+		{/each}
 	</div>
 	<div class={decoStyle} />
 </Row>
