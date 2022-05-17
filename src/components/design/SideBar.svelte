@@ -46,7 +46,17 @@
 		}
 	`;
 
-	const sidebarLicense = css`
+	const sidebarLangStyle = css`
+		width: 100%;
+		font-size: 22px;
+		font-weight: 300;
+		line-height: 1.5;
+		text-align: center;
+		bottom: 5rem;
+		position: absolute;
+	`;
+
+	const sidebarLicenseStyle = css`
 		width: 100%;
 		text-align: center;
 		bottom: 3rem;
@@ -82,5 +92,6 @@
 		</ol>
 	</div>
 
-	<div class={sidebarLicense}>MIT License</div>
+	<div class={sidebarLangStyle}>KOR | ENG</div>
+	<div class={sidebarLicenseStyle}>MIT License</div>
 </aside>
