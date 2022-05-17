@@ -19,6 +19,7 @@
 		font-size: 28px;
 		font-weight: 700;
 		line-height: 1.3;
+		cursor: pointer;
 
 		img {
 			padding-right: 15px;
