@@ -22,6 +22,7 @@
 			min-width: 100%;
 			overflow: auto;
 			display: ${isMenuOn ? 'block' : 'none'};
+			z-index: 100;
 		}
 	`;
 

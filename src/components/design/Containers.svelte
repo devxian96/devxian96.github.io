@@ -16,6 +16,11 @@
 		width: 100%;
 		margin-top: 0;
 		margin-bottom: 0;
+
+		@media (max-width: 500px) {
+			padding-left: 12px;
+			padding-right: 12px;
+		}
 	`;
 
 	const contentsStyle = css`

@@ -50,6 +50,7 @@
 			background-color: rgb(30, 30, 35);
 			position: fixed;
 			top: 0;
+			left: 0;
 			padding-top: 12px;
 			padding-bottom: 12px;
 			z-index: 10;
