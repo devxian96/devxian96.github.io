@@ -1,6 +1,7 @@
 <script type="ts">
 	import { css } from '@emotion/css';
 	import SideBar from './SideBar.svelte';
+	import { primary } from './config/color';
 	import 'remixicon/fonts/remixicon.css';
 
 	const containersStyle = css`
@@ -40,4 +41,8 @@
 
 <style global>
 	@import 'reset-css';
+	html {
+		background-color: #ff3e00;
+		color: white;
+	}
 </style>
