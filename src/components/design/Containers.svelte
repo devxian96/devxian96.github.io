@@ -1,7 +1,7 @@
 <script type="ts">
 	import { css } from '@emotion/css';
 	import SideBar from './SideBar.svelte';
-	import 'remixicon/fonts/remixicon.css'
+	import 'remixicon/fonts/remixicon.css';
 
 	const containersStyle = css`
 		display: flex;
@@ -10,19 +10,25 @@
 
 	const mainStyle = css`
 		overflow: auto;
-		max-width: 1400px;
 		width: 100%;
-		margin: auto;
 		margin-top: 0;
 		margin-bottom: 0;
+	`;
+
+	const contentsStyle = css`
+		max-width: 1400px;
+		width: 100%;
 		padding: 3rem;
+		margin: auto;
 	`;
 </script>
 
 <div class={containersStyle}>
 	<SideBar />
 	<main class={mainStyle}>
-		<slot />
+		<div class={contentsStyle}>
+			<slot />
+		</div>
 	</main>
 </div>
 
