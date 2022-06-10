@@ -10,6 +10,7 @@
 		color: white;
 		padding: 0.5rem;
 		box-shadow: ${!flat && '-10px 50px 100px -70px black;'};
+		height: 100%;
 	`;
 
 	const cardTitleStyle = css`

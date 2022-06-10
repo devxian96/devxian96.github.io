@@ -51,7 +51,13 @@
 					><Button>저장소로 이동하기</Button></a
 				>
 			</Image>
-			<Image src="/img/phpExpressLogo.webp" width="550px" height="600px" backgroundColor="#333" lazy>
+			<Image
+				src="/img/phpExpressLogo.webp"
+				width="550px"
+				height="600px"
+				backgroundColor="#333"
+				lazy
+			>
 				<h1>프레임워크</h1>
 				<div>Express를 php에서</div>
 				<small>같은 개발 경험<br />설명이 필요 없는<br />직관적인 코드</small>
@@ -84,8 +90,8 @@
 
 				<Image src="/img/mypic.webp" width="100%" height="100%" />
 
-				한림대학교 빅데이터학과<br />
-				여주대학교 컴퓨터 정보과
+				<p>한림대학교 빅데이터학과</p>
+				<p>여주대학교 컴퓨터 정보과</p>
 			</Card>
 		</Col>
 
@@ -95,12 +101,11 @@
 				<div class={iconStyle}>
 					<i class="ri-pushpin-line" />
 				</div>
-				React, Vue, Angluar, Svelte, Solidjs<br />
-				같은 Front-End 프레임워크를<br />
-				개발해 보고 싶어요.<br /><br />
-				많은 사람들이 제가 개발한<br />
-				라이브러리나 프레임워크, 제품을<br />
-				사용하여 좋은 경험을 했으면 좋겠어요.
+				<p>React, Vue, Angluar, Svelte, Solidjs 같은 Front-End 프레임워크를 개발해 보고 싶어요.</p>
+				<p>
+					많은 사람들이 제가 개발한 라이브러리나 프레임워크, 제품을 사용하여 좋은 경험을 했으면
+					좋겠어요.
+				</p>
 			</Card>
 		</Col>
 
@@ -110,12 +115,11 @@
 				<div class={iconStyle}>
 					<i class="ri-heart-2-line" />
 				</div>
-				새로운 기술을 학습하는 것을 좋아해요.<br />
-				최근에는 Solidjs에 관심이 있어요.<br /><br />
-				서비스 운영과 이슈 처리를 하며 얻는<br />
-				경험을 공유하고 배우기도 해요.<br />
-				기획자, 디자이너, 마케터와 대화하고<br />
-				새로운 시각을 알아가는 것도 좋아해요.
+				<p>새로운 기술을 학습하는 것을 좋아해요. 최근에는 Solidjs에 관심이 있어요.</p>
+				<p>
+					서비스 운영과 이슈 처리를 하며 얻는 경험을 공유하고 배우기도 해요. 기획자, 디자이너,
+					마케터와 대화하고 새로운 시각을 알아가는 것도 좋아해요.
+				</p>
 			</Card>
 		</Col>
 	</Row>
@@ -132,7 +136,9 @@
 			<Card>
 				<h2 slot="title">포트폴리오</h2>
 				이 사이트를 어떻게 만들었는지 함께 볼까요?
-				<Button slot="action" color="#202020" background={primary} on:click={click}>네, 좋아요</Button>
+				<Button slot="action" color="#202020" background={primary} on:click={click}
+					>네, 좋아요</Button
+				>
 			</Card>
 		</Col>
 	</Row>
