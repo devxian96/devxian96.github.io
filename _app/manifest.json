@@ -1,11 +1,11 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-f56b14f6.js",
+    "file": "start-dd4ff4ec.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
-      "_index-e8f8a4fd.js",
-      "_singletons-d1fb5791.js"
+      "_index-17cd9188.js",
+      "_singletons-45bc575b.js"
     ],
     "dynamicImports": [
       ".svelte-kit/runtime/components/layout.svelte",
@@ -18,92 +18,95 @@
     ]
   },
   ".svelte-kit/runtime/components/layout.svelte": {
-    "file": "layout.svelte-e0c12292.js",
+    "file": "layout.svelte-d7dce600.js",
     "src": ".svelte-kit/runtime/components/layout.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-e8f8a4fd.js"
+      "_index-17cd9188.js"
     ]
   },
   ".svelte-kit/runtime/components/error.svelte": {
-    "file": "error.svelte-b99c7ce4.js",
+    "file": "error.svelte-18f4bb45.js",
     "src": ".svelte-kit/runtime/components/error.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-e8f8a4fd.js"
+      "_index-17cd9188.js"
     ]
   },
   "src/routes/blogs.svelte": {
-    "file": "pages/blogs.svelte-2f2941f2.js",
+    "file": "pages/blogs.svelte-4ec94818.js",
     "src": "src/routes/blogs.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-e8f8a4fd.js",
-      "_Breadcrumbs-c3664a69.js",
-      "_singletons-d1fb5791.js"
+      "_index-17cd9188.js",
+      "_Breadcrumbs-46e70dbd.js",
+      "_singletons-45bc575b.js"
     ]
   },
   "src/routes/history.svelte": {
-    "file": "pages/history.svelte-aec0ccbb.js",
+    "file": "pages/history.svelte-2a9d93bf.js",
     "src": "src/routes/history.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-e8f8a4fd.js",
-      "_Breadcrumbs-c3664a69.js",
-      "_singletons-d1fb5791.js"
+      "_index-17cd9188.js",
+      "_Breadcrumbs-46e70dbd.js",
+      "_singletons-45bc575b.js"
     ]
   },
   "src/routes/index.svelte": {
-    "file": "pages/index.svelte-82ccc92c.js",
+    "file": "pages/index.svelte-d7482468.js",
     "src": "src/routes/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-e8f8a4fd.js",
-      "_Breadcrumbs-c3664a69.js",
-      "_singletons-d1fb5791.js"
+      "_index-17cd9188.js",
+      "_Breadcrumbs-46e70dbd.js",
+      "_singletons-45bc575b.js"
     ]
   },
   "src/routes/projects.svelte": {
-    "file": "pages/projects.svelte-00251dac.js",
+    "file": "pages/projects.svelte-800bd46b.js",
     "src": "src/routes/projects.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-e8f8a4fd.js",
-      "_Breadcrumbs-c3664a69.js",
-      "_singletons-d1fb5791.js"
+      "_index-17cd9188.js",
+      "_Breadcrumbs-46e70dbd.js",
+      "_singletons-45bc575b.js"
     ]
   },
   "src/routes/skills.svelte": {
-    "file": "pages/skills.svelte-b44f83b8.js",
+    "file": "pages/skills.svelte-80074940.js",
     "src": "src/routes/skills.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-e8f8a4fd.js",
-      "_Breadcrumbs-c3664a69.js",
-      "_singletons-d1fb5791.js"
+      "_index-17cd9188.js",
+      "_Breadcrumbs-46e70dbd.js",
+      "_singletons-45bc575b.js"
     ]
   },
-  "_index-e8f8a4fd.js": {
-    "file": "chunks/index-e8f8a4fd.js"
+  "_index-17cd9188.js": {
+    "file": "chunks/index-17cd9188.js"
   },
-  "_singletons-d1fb5791.js": {
-    "file": "chunks/singletons-d1fb5791.js"
-  },
-  "_Breadcrumbs-c3664a69.js": {
-    "file": "chunks/Breadcrumbs-c3664a69.js",
+  "_singletons-45bc575b.js": {
+    "file": "chunks/singletons-45bc575b.js",
     "imports": [
-      "_index-e8f8a4fd.js",
-      "_singletons-d1fb5791.js"
+      "_index-17cd9188.js"
+    ]
+  },
+  "_Breadcrumbs-46e70dbd.js": {
+    "file": "chunks/Breadcrumbs-46e70dbd.js",
+    "imports": [
+      "_index-17cd9188.js",
+      "_singletons-45bc575b.js"
     ],
     "css": [
-      "assets/Breadcrumbs-be360b23.css"
+      "assets/Breadcrumbs-60e08c73.css"
     ],
     "assets": [
       "assets/remixicon-64bb3a0f.eot",
