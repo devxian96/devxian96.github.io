@@ -8,6 +8,10 @@
 		max-width: ${width};
 		flex-grow: 1;
 		flex-basis: 300px;
+
+		@media (max-width: 500px) {
+			max-width: 100%;
+		}
 	`;
 </script>
 

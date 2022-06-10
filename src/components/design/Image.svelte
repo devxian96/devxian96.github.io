@@ -14,6 +14,10 @@
 	const imageStyle = css`
 		border-radius: 10px;
 		margin: auto;
+
+		@media (max-width: 500px) {
+			width: 100%;
+		}
 	`;
 
 	const bannerStyle = css`
@@ -23,6 +27,12 @@
 		height: ${height};
 		border-radius: 10px;
 		background-color: ${backgroundColor};
+
+		@media (max-width: 500px) {
+			flex-direction: column-reverse;
+			flex-wrap: inherit;
+			height: auto;
+		}
 	`;
 
 	const bannerSummaryStyle = css`
@@ -54,6 +64,17 @@
 			line-height: 1.5;
 			color: smoke;
 		}
+
+		@media (max-width: 500px) {
+			height: ${height};
+		}
+	`;
+
+	const bannerMobileStyle = css`
+		@media (max-width: 500px) {
+			transform: translate(0, -100%);
+			background-color: rgba(0, 0, 0, 0.8);
+		}
 	`;
 
 	const bannerImageStyle = css`
@@ -63,7 +84,7 @@
 
 <div class="{bannerStyle}{' ' + className}">
 	{#if $$slots.default}
-		<Col width="40%">
+		<Col className={bannerMobileStyle} width="40%">
 			<div class={bannerSummaryStyle}>
 				<slot />
 			</div>

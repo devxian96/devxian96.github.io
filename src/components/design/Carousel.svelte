@@ -23,9 +23,13 @@
 		bottom: 0px;
 		border-radius: 0 0 10px 10px;
 		transform: translate(2%, 0);
-		width: 96%;
+		width: 100%;
 		height: 20px;
 		background-color: ${primary};
+
+		@media (max-width: 500px) {
+			transform: translate(0, 0);
+		}
 	`;
 
 	const carouselStyle = css`
@@ -58,7 +62,7 @@
 
 	$: style = `left: -${left}%`;
 
-	const nextSlide = async () => {
+	const nextSlide = async (): Promise<void> => {
 		const interval = setInterval(() => {
 			if (left < page * 100) {
 				left += 1;
