@@ -1,4 +1,5 @@
 <script type="ts">
+	import { menu } from './../../stores/menu';
 	import { card } from './config/color';
 	import { css } from '@emotion/css';
 	import clickOutside from '../../utils/clickOutside';
@@ -10,19 +11,49 @@
 		font-size: 100%;
 		width: 45px;
 		height: 45px;
-		background-color: transparent;
 		border: none;
 		padding: 6px;
 		background-color: rgb(40, 40, 45);
 		border-radius: 50%;
 		box-shadow: 1px 3px 12px 1px rgb(28, 28, 35);
 		cursor: pointer;
+		@media (max-width: 500px) {
+			background-color: transparent;
+			box-shadow: none;
+		}
+	`;
+
+	const menuStyle = css`
+		display: none;
+		color: white;
+		font-size: 100%;
+		width: 45px;
+		height: 45px;
+		background-color: transparent;
+		border: none;
+		padding: 6px;
+		cursor: pointer;
+		float: left;
+		@media (max-width: 500px) {
+			display: initial;
+		}
 	`;
 
 	const notificationBoxStyle = css`
 		position: relative;
 		float: right;
 		text-align: right;
+
+		@media (max-width: 500px) {
+			width: 100%;
+			border-bottom: 3px solid rgba(34, 36, 42);
+			background-color: rgb(30, 30, 35);
+			position: fixed;
+			top: 0;
+			padding-top: 12px;
+			padding-bottom: 12px;
+			z-index: 10;
+		}
 	`;
 
 	const notificiationListStyle = css`
@@ -35,12 +66,20 @@
 		box-shadow: -10px 50px 100px -70px black;
 	`;
 
-	const toggleHandle = () => {
+	const toggleHandle = (): void => {
 		toggle = !toggle;
+	};
+
+	const menuOn = (): void => {
+		menu.update(() => true);
 	};
 </script>
 
 <div class={notificationBoxStyle}>
+	<button type="button" class={menuStyle} on:click={menuOn} aria-label="메뉴">
+		<i class="ri-menu-fill" />
+	</button>
+
 	<button type="button" class={notificationStyle} on:click={toggleHandle} aria-label="알림">
 		<i class="ri-notification-line" />
 	</button>

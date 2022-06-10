@@ -1,15 +1,28 @@
 <script type="ts">
+	import { menu } from '../../stores/menu';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import { css } from '@emotion/css';
 	import { primary } from './config/color';
 	import Row from './Row.svelte';
 
-	const sidebarStyle = css`
+	let isMenuOn = false;
+	menu.subscribe((value: boolean): void => {
+		isMenuOn = value;
+	});
+
+	$: sidebarStyle = css`
 		min-width: 250px;
 		border-right: 3px solid rgba(34, 36, 42);
 		color: white;
 		position: relative;
+		background-color: rgb(30, 30, 35);
+
+		@media (max-width: 500px) {
+			min-width: 100%;
+			overflow: auto;
+			display: ${isMenuOn ? 'block' : 'none'};
+		}
 	`;
 
 	const sidebarLogoStyle = css`
@@ -23,6 +36,10 @@
 
 		img {
 			padding-right: 15px;
+		}
+
+		@media (max-width: 500px) {
+			pointer-events: none;
 		}
 	`;
 
@@ -63,6 +80,10 @@
 		text-align: center;
 		bottom: 5rem;
 		position: absolute;
+
+		@media (max-width: 500px) {
+			position: static;
+		}
 	`;
 
 	const sidebarLicenseStyle = css`
@@ -70,17 +91,60 @@
 		text-align: center;
 		bottom: 3rem;
 		position: absolute;
+
+		@media (max-width: 500px) {
+			position: static;
+			margin-bottom: 3rem;
+		}
 	`;
 
-	const active = (path: string) => {
+	const closeButtonStyle = css`
+		display: none;
+		position: fixed;
+		padding: 6px;
+		top: 0;
+		left: 0;
+		color: white;
+		font-size: 100%;
+		width: 38px;
+		height: 38px;
+		background-color: transparent;
+		border: none;
+		padding: 12px 6px 6px 6px;
+		cursor: pointer;
+
+		i {
+			font-size: 38px;
+		}
+
+		@media (max-width: 500px) {
+			display: initial;
+		}
+	`;
+
+	const active = (path: string): string => {
 		if ($page.url.pathname === path) {
 			return 'active';
 		}
-		return;
+		return '';
+	};
+
+	const navigatorGoto = (path: string): void => {
+		goto(path);
+		if (isMenuOn) {
+			menu.update(() => false);
+		}
+	};
+
+	const menuOff = (): void => {
+		menu.update(() => false);
 	};
 </script>
 
 <aside class={sidebarStyle}>
+	<div class={closeButtonStyle} on:click={menuOff}>
+		<i class="ri-close-fill" />
+	</div>
 	<Row>
 		<div class={sidebarLogoStyle} on:click={() => goto('/')}>
 			<img src="/favicon.png" alt="logo" width="32px" height="32px" />Devxian
@@ -90,19 +154,19 @@
 	<div class={sidebarListStyle}>
 		<div>메뉴</div>
 		<ol>
-			<li class={active('/')} on:click={() => goto('/')}>
+			<li class={active('/')} on:click={() => navigatorGoto('/')}>
 				<i class="ri-home-line" />홈
 			</li>
-			<li class={active('/skills')} on:click={() => goto('/skills')}>
+			<li class={active('/skills')} on:click={() => navigatorGoto('/skills')}>
 				<i class="ri-code-line" />보유기술
 			</li>
-			<li class={active('/projects')} on:click={() => goto('/projects')}>
+			<li class={active('/projects')} on:click={() => navigatorGoto('/projects')}>
 				<i class="ri-star-line" />대표 프로젝트
 			</li>
-			<li class={active('/history')} on:click={() => goto('/history')}>
+			<li class={active('/history')} on:click={() => navigatorGoto('/history')}>
 				<i class="ri-time-line" />이력
 			</li>
-			<li class={active('/blogs')} on:click={() => goto('/blogs')}>
+			<li class={active('/blogs')} on:click={() => navigatorGoto('/blogs')}>
 				<i class="ri-file-text-line" />블로그
 			</li>
 		</ol>

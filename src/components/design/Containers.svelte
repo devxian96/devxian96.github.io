@@ -22,6 +22,10 @@
 		width: 100%;
 		padding: 3rem;
 		margin: auto;
+
+		@media (max-width: 500px) {
+			padding: 0;
+		}
 	`;
 </script>
 

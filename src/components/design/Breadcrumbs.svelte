@@ -12,6 +12,10 @@
 		font-size: 28px;
 		font-weight: 700;
 		line-height: 1.3;
+
+		@media (max-width: 500px) {
+			padding-top: 100px;
+		}
 	`;
 
 	const breadcrumbsSummaryStyle = css`
@@ -24,9 +28,9 @@
 
 <div class={breadcrumbsStyle}>
 	<div class={breadcrumbsTitleStyle}>
-		<slot />
-
 		<Notification />
+
+		<slot />
 	</div>
 	{#if $$slots.summary}
 		<div class={breadcrumbsSummaryStyle}>
