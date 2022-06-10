@@ -19,10 +19,14 @@
 		background-color: rgb(30, 30, 35);
 
 		@media (max-width: 500px) {
-			min-width: 100%;
-			overflow: auto;
+			min-width: 100vw;
+			min-height: 900px;
+			overflow-y: auto;
+			overflow-x: hidden;
 			display: ${isMenuOn ? 'block' : 'none'};
 			z-index: 100;
+			position: absolute;
+			height: 100%;
 		}
 	`;
 
@@ -81,10 +85,6 @@
 		text-align: center;
 		bottom: 5rem;
 		position: absolute;
-
-		@media (max-width: 500px) {
-			position: static;
-		}
 	`;
 
 	const sidebarLicenseStyle = css`
@@ -92,16 +92,11 @@
 		text-align: center;
 		bottom: 3rem;
 		position: absolute;
-
-		@media (max-width: 500px) {
-			position: static;
-			margin-bottom: 3rem;
-		}
 	`;
 
 	const closeButtonStyle = css`
 		display: none;
-		position: fixed;
+		position: absolute;
 		padding: 6px;
 		top: 0;
 		left: 0;
