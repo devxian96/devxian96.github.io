@@ -7,5 +7,6 @@ import Breadcrumbs from './Breadcrumbs.svelte'
 import Image from './Image.svelte'
 import Typograpy from './Typograpy.svelte'
 import Carousel from './Carousel.svelte'
+import Notification from './Notification.svelte'
 
-export { Containers, Card, Button, Row, Col, Breadcrumbs, Image, Typograpy, Carousel }
+export { Containers, Card, Button, Row, Col, Breadcrumbs, Image, Typograpy, Carousel, Notification }

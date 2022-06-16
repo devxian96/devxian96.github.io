@@ -9,7 +9,7 @@
 		flex-grow: 1;
 		flex-basis: 300px;
 
-		@media (max-width: 500px) {
+		@media (max-width: 900px) {
 			max-width: 100%;
 		}
 	`;

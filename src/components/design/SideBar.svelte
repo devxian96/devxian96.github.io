@@ -18,7 +18,7 @@
 		position: relative;
 		background-color: rgb(30, 30, 35);
 
-		@media (max-width: 500px) {
+		@media (max-width: 900px) {
 			min-width: 100vw;
 			min-height: 900px;
 			overflow-y: auto;
@@ -26,6 +26,7 @@
 			display: ${isMenuOn ? 'block' : 'none'};
 			z-index: 100;
 			position: absolute;
+			border: none;
 			height: 100%;
 		}
 	`;
@@ -43,7 +44,7 @@
 			padding-right: 15px;
 		}
 
-		@media (max-width: 500px) {
+		@media (max-width: 900px) {
 			pointer-events: none;
 		}
 	`;
@@ -97,23 +98,22 @@
 	const closeButtonStyle = css`
 		display: none;
 		position: absolute;
-		padding: 6px;
 		top: 0;
 		left: 0;
 		color: white;
 		font-size: 100%;
-		width: 38px;
-		height: 38px;
+		width: 28px;
+		height: 28px;
 		background-color: transparent;
 		border: none;
-		padding: 12px 6px 6px 6px;
+		padding: 12px;
 		cursor: pointer;
 
 		i {
-			font-size: 38px;
+			font-size: 28px;
 		}
 
-		@media (max-width: 500px) {
+		@media (max-width: 900px) {
 			display: initial;
 		}
 	`;

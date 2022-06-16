@@ -1,7 +1,7 @@
 <script type="ts">
 	import { css } from '@emotion/css';
 	import SideBar from './SideBar.svelte';
-	import { primary } from './config/color';
+	import Notification from './Notification.svelte';
 	import 'remixicon/fonts/remixicon.css';
 
 	const containersStyle = css`
@@ -17,7 +17,7 @@
 		margin-top: 0;
 		margin-bottom: 0;
 
-		@media (max-width: 500px) {
+		@media (max-width: 900px) {
 			padding-left: 12px;
 			padding-right: 12px;
 		}
@@ -29,7 +29,7 @@
 		padding: 3rem;
 		margin: auto;
 
-		@media (max-width: 500px) {
+		@media (max-width: 900px) {
 			padding: 0;
 		}
 	`;
@@ -39,6 +39,7 @@
 	<SideBar />
 	<main class={mainStyle}>
 		<div class={contentsStyle}>
+			<Notification />
 			<slot />
 		</div>
 	</main>

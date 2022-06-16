@@ -17,13 +17,17 @@
 		border-radius: 50%;
 		box-shadow: 1px 3px 12px 1px rgb(28, 28, 35);
 		cursor: pointer;
-		@media (max-width: 500px) {
+		@media (max-width: 900px) {
 			background-color: transparent;
 			box-shadow: none;
+			width: auto;
+			height: auto;
+			padding: 0;
+			margin: 0;
 		}
 	`;
 
-	const menuStyle = css`
+	const pcMenuStyle = css`
 		display: none;
 		color: white;
 		font-size: 100%;
@@ -31,28 +35,35 @@
 		height: 45px;
 		background-color: transparent;
 		border: none;
-		padding: 6px;
 		cursor: pointer;
 		float: left;
-		@media (max-width: 500px) {
+		@media (max-width: 900px) {
 			display: initial;
+			width: auto;
+			height: auto;
+			padding: 0;
+			margin: 0;
 		}
 	`;
 
+	// pc and mobile hybrid
 	const notificationBoxStyle = css`
 		position: relative;
 		float: right;
 		text-align: right;
+		button > i {
+			font-size: 28px;
+		}
 
-		@media (max-width: 500px) {
+		@media (max-width: 900px) {
 			width: 100%;
 			border-bottom: 3px solid rgba(34, 36, 42);
 			background-color: rgb(30, 30, 35);
-			position: fixed;
+			position: sticky;
 			top: 0;
-			left: 0;
 			padding-top: 12px;
 			padding-bottom: 12px;
+			margin-bottom: 20px;
 			z-index: 10;
 		}
 	`;
@@ -77,7 +88,7 @@
 </script>
 
 <div class={notificationBoxStyle}>
-	<button type="button" class={menuStyle} on:click={menuOn} aria-label="메뉴">
+	<button type="button" class={pcMenuStyle} on:click={menuOn} aria-label="메뉴">
 		<i class="ri-menu-fill" />
 	</button>
 

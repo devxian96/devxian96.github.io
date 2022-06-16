@@ -15,7 +15,7 @@
 		border-radius: 10px;
 		margin: auto;
 
-		@media (max-width: 500px) {
+		@media (max-width: 900px) {
 			width: 100%;
 		}
 	`;
@@ -28,7 +28,7 @@
 		border-radius: 10px;
 		background-color: ${backgroundColor};
 
-		@media (max-width: 500px) {
+		@media (max-width: 900px) {
 			flex-direction: column-reverse;
 			flex-wrap: inherit;
 			height: auto;
@@ -65,13 +65,13 @@
 			color: smoke;
 		}
 
-		@media (max-width: 500px) {
+		@media (max-width: 900px) {
 			height: ${height};
 		}
 	`;
 
 	const bannerMobileStyle = css`
-		@media (max-width: 500px) {
+		@media (max-width: 900px) {
 			transform: translate(0, -100%);
 			background-color: rgba(0, 0, 0, 0.8);
 		}

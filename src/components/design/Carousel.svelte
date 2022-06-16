@@ -27,7 +27,7 @@
 		height: 20px;
 		background-color: ${primary};
 
-		@media (max-width: 500px) {
+		@media (max-width: 900px) {
 			transform: translate(0, 0);
 		}
 	`;
