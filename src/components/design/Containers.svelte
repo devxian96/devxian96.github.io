@@ -9,15 +9,20 @@
 		height: 100vh;
 		background-color: rgb(30, 30, 35);
 		font-family: 'Noto Sans KR', sans-serif;
+
+		@media (max-width: 900px) {
+			height: 100%;
+		}
 	`;
 
 	const mainStyle = css`
-		overflow: auto;
+		overflow-y: auto;
 		width: 100%;
 		margin-top: 0;
 		margin-bottom: 0;
 
 		@media (max-width: 900px) {
+			overflow-y: initial;
 			padding-left: 12px;
 			padding-right: 12px;
 		}
