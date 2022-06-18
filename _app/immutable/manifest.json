@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-92b45834.js",
+    "file": "start-37eeccdd.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -36,57 +36,57 @@
     ]
   },
   "src/routes/blogs.svelte": {
-    "file": "pages/blogs.svelte-b1bcdd35.js",
+    "file": "pages/blogs.svelte-efb64237.js",
     "src": "src/routes/blogs.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_index-c45fab00.js",
-      "_Breadcrumbs-6b400910.js",
+      "_Breadcrumbs-06eb3598.js",
       "_singletons-68e3943a.js"
     ]
   },
   "src/routes/history.svelte": {
-    "file": "pages/history.svelte-bfd4221b.js",
+    "file": "pages/history.svelte-34598961.js",
     "src": "src/routes/history.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_index-c45fab00.js",
-      "_Breadcrumbs-6b400910.js",
+      "_Breadcrumbs-06eb3598.js",
       "_singletons-68e3943a.js"
     ]
   },
   "src/routes/index.svelte": {
-    "file": "pages/index.svelte-54a28031.js",
+    "file": "pages/index.svelte-38b12844.js",
     "src": "src/routes/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_index-c45fab00.js",
-      "_Breadcrumbs-6b400910.js",
+      "_Breadcrumbs-06eb3598.js",
       "_singletons-68e3943a.js"
     ]
   },
   "src/routes/projects.svelte": {
-    "file": "pages/projects.svelte-26975fff.js",
+    "file": "pages/projects.svelte-15da9d83.js",
     "src": "src/routes/projects.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_index-c45fab00.js",
-      "_Breadcrumbs-6b400910.js",
+      "_Breadcrumbs-06eb3598.js",
       "_singletons-68e3943a.js"
     ]
   },
   "src/routes/skills.svelte": {
-    "file": "pages/skills.svelte-744c4209.js",
+    "file": "pages/skills.svelte-e6fef22b.js",
     "src": "src/routes/skills.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_index-c45fab00.js",
-      "_Breadcrumbs-6b400910.js",
+      "_Breadcrumbs-06eb3598.js",
       "_singletons-68e3943a.js"
     ]
   },
@@ -99,8 +99,8 @@
       "_index-c45fab00.js"
     ]
   },
-  "_Breadcrumbs-6b400910.js": {
-    "file": "chunks/Breadcrumbs-6b400910.js",
+  "_Breadcrumbs-06eb3598.js": {
+    "file": "chunks/Breadcrumbs-06eb3598.js",
     "imports": [
       "_index-c45fab00.js",
       "_singletons-68e3943a.js"

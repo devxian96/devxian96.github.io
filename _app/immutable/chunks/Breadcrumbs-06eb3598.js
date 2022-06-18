@@ -55,11 +55,20 @@ import{L as Xn,S as _e,i as $e,s as ze,F as Te,e as m,c as g,a as w,d as u,b as 
 		text-align: center;
 		bottom: 5rem;
 		position: absolute;
+
+		@media (max-width: 900px) {
+			position: initial !important;
+		}
 	`,d=R`
 		width: 100%;
 		text-align: center;
 		bottom: 3rem;
 		position: absolute;
+
+		@media (max-width: 900px) {
+			position: initial !important;
+			padding-bottom: 3rem;
+		}
 	`,b=R`
 		display: none;
 		position: absolute;
@@ -81,7 +90,7 @@ import{L as Xn,S as _e,i as $e,s as ze,F as Te,e as m,c as g,a as w,d as u,b as 
 		@media (max-width: 900px) {
 			display: initial;
 		}
-	`,a=I=>i.url.pathname===I?"active":"",h=I=>{Mn(I),o&&Le.update(()=>!1)},E=()=>{Le.update(()=>!1)},x=()=>Mn("/"),v=()=>h("/"),z=()=>h("/skills"),_=()=>h("/projects"),S=()=>h("/history"),L=()=>h("/blogs");return e.$$.update=()=>{e.$$.dirty&512&&r(0,t=R`
+	`,a=I=>i.url.pathname===I?"active":"",h=I=>{Mn(I),o&&(window.document.body.style.overflow="auto",Le.update(()=>!1))},E=()=>{window.document.body.style.overflow="auto",Le.update(()=>!1)},x=()=>Mn("/"),v=()=>h("/"),z=()=>h("/skills"),_=()=>h("/projects"),S=()=>h("/history"),L=()=>h("/blogs");return e.$$.update=()=>{e.$$.dirty&512&&r(0,t=R`
 		min-width: 250px;
 		border-right: 3px solid rgba(34, 36, 42);
 		color: white;
@@ -90,12 +99,12 @@ import{L as Xn,S as _e,i as $e,s as ze,F as Te,e as m,c as g,a as w,d as u,b as 
 
 		@media (max-width: 900px) {
 			min-width: 100vw;
-			min-height: 900px;
 			overflow-y: auto;
 			overflow-x: hidden;
+			top: 0;
 			display: ${o?"block":"none"};
 			z-index: 100;
-			position: absolute;
+			position: fixed;
 			border: none;
 			height: 100%;
 		}
@@ -162,7 +171,7 @@ import{L as Xn,S as _e,i as $e,s as ze,F as Te,e as m,c as g,a as w,d as u,b as 
 		margin-top: 12px;
 		right: 0;
 		box-shadow: -10px 50px 100px -70px black;
-	`;return[t,i,o,f,l,()=>{r(0,t=!t)},()=>{Le.update(()=>!0)}]}class ft extends _e{constructor(n){super(),$e(this,n,it,ot,ze,{})}}function lt(e){let n,r,t,i,o,f,l,c;r=new rt({}),f=new ft({});const d=e[4].default,b=Te(d,e,e[3],null);return{c(){n=m("div"),hn(r.$$.fragment),t=A(),i=m("main"),o=m("div"),hn(f.$$.fragment),l=A(),b&&b.c(),this.h()},l(a){n=g(a,"DIV",{class:!0});var h=w(n);pn(r.$$.fragment,h),t=O(h),i=g(h,"MAIN",{class:!0});var E=w(i);o=g(E,"DIV",{class:!0});var x=w(o);pn(f.$$.fragment,x),l=O(x),b&&b.l(x),x.forEach(u),E.forEach(u),h.forEach(u),this.h()},h(){p(o,"class",e[2]),p(i,"class",e[1]),p(n,"class",e[0])},m(a,h){ee(a,n,h),mn(r,n,null),s(n,t),s(n,i),s(i,o),mn(f,o,null),s(o,l),b&&b.m(o,null),c=!0},p(a,[h]){b&&b.p&&(!c||h&8)&&De(b,d,a,a[3],c?Ve(d,a[3],h,null):Me(a[3]),null)},i(a){c||(U(r.$$.fragment,a),U(f.$$.fragment,a),U(b,a),c=!0)},o(a){J(r.$$.fragment,a),J(f.$$.fragment,a),J(b,a),c=!1},d(a){a&&u(n),gn(r),gn(f),b&&b.d(a)}}}function ct(e,n,r){let{$$slots:t={},$$scope:i}=n;const o=R`
+	`;return[t,i,o,f,l,()=>{r(0,t=!t)},()=>{window.document.body.style.overflow="hidden",Le.update(()=>!0)}]}class ft extends _e{constructor(n){super(),$e(this,n,it,ot,ze,{})}}function lt(e){let n,r,t,i,o,f,l,c;r=new rt({}),f=new ft({});const d=e[4].default,b=Te(d,e,e[3],null);return{c(){n=m("div"),hn(r.$$.fragment),t=A(),i=m("main"),o=m("div"),hn(f.$$.fragment),l=A(),b&&b.c(),this.h()},l(a){n=g(a,"DIV",{class:!0});var h=w(n);pn(r.$$.fragment,h),t=O(h),i=g(h,"MAIN",{class:!0});var E=w(i);o=g(E,"DIV",{class:!0});var x=w(o);pn(f.$$.fragment,x),l=O(x),b&&b.l(x),x.forEach(u),E.forEach(u),h.forEach(u),this.h()},h(){p(o,"class",e[2]),p(i,"class",e[1]),p(n,"class",e[0])},m(a,h){ee(a,n,h),mn(r,n,null),s(n,t),s(n,i),s(i,o),mn(f,o,null),s(o,l),b&&b.m(o,null),c=!0},p(a,[h]){b&&b.p&&(!c||h&8)&&De(b,d,a,a[3],c?Ve(d,a[3],h,null):Me(a[3]),null)},i(a){c||(U(r.$$.fragment,a),U(f.$$.fragment,a),U(b,a),c=!0)},o(a){J(r.$$.fragment,a),J(f.$$.fragment,a),J(b,a),c=!1},d(a){a&&u(n),gn(r),gn(f),b&&b.d(a)}}}function ct(e,n,r){let{$$slots:t={},$$scope:i}=n;const o=R`
 		display: flex;
 		height: 100vh;
 		background-color: rgb(30, 30, 35);
@@ -181,11 +190,13 @@ import{L as Xn,S as _e,i as $e,s as ze,F as Te,e as m,c as g,a as w,d as u,b as 
 			overflow-y: initial;
 			padding-left: 12px;
 			padding-right: 12px;
+			min-height: 100vh;
 		}
 	`,l=R`
 		max-width: 1400px;
 		width: 100%;
-		padding: 3rem;
+		padding-top: 3rem;
+		padding-bottom: 3rem;
 		margin: auto;
 
 		@media (max-width: 900px) {
