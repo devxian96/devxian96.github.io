@@ -78,26 +78,36 @@
 		}, 5);
 	};
 
-	const goto = (go: number) => {
+	const goto = (go: number): void => {
 		if (page !== go) {
 			page = go - 1;
 			nextSlide();
+			loopEvent();
 		}
 	};
 
-	$: active = (index: number) => {
+	$: active = (index: number): string | undefined => {
 		if (page === index) {
 			return 'active';
 		} else if (page === 0 && index === max) {
 			return 'active';
 		}
-		return;
+		return undefined;
+	};
+
+	let interval: ReturnType<typeof setInterval>;
+	const loopEvent = (): void => {
+		if (interval) {
+			clearInterval(interval);
+		}
+
+		interval = setInterval(() => {
+			requestAnimationFrame(nextSlide);
+		}, 12000);
 	};
 
 	onMount(() => {
-		const interval = setInterval(() => {
-			requestAnimationFrame(nextSlide);
-		}, 12000);
+		loopEvent();
 		return () => clearInterval(interval);
 	});
 </script>
