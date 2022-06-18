@@ -47,11 +47,11 @@
 		right: 0;
 
 		button {
-			width: 12px;
-			height: 12px;
+			width: 30px;
+			height: 10px;
 			background-color: rgba(255, 255, 255, 0.2);
 			border: none;
-			border-radius: 50%;
+			border-radius: 10px;
 			margin: 12px;
 			cursor: pointer;
 		}
