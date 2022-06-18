@@ -6,10 +6,6 @@
 
 	export let height = '400px';
 
-	let page = 1;
-	let max = 3;
-	let left = 0;
-
 	const rowStyle = css`
 		position: relative;
 		overflow: hidden;
@@ -60,55 +56,57 @@
 		}
 	`;
 
+	let page = 1;
+	let max = 3;
+	let left = 0;
+
 	$: style = `left: -${left}%`;
 
+	let nextSlideInterval: ReturnType<typeof setInterval>;
 	const nextSlide = async (): Promise<void> => {
-		const interval = setInterval(() => {
-			if (left < page * 100) {
+		nextSlideInterval = setInterval(() => {
+			if (left < (page - 1) * 100) {
 				left += 1;
-			} else if (left > page * 100) {
+			} else if (left > (page - 1) * 100) {
 				left -= 1;
-			} else if (page >= max - 1) {
-				page = 0;
-				clearInterval(interval);
 			} else {
-				page += 1;
-				clearInterval(interval);
+				clearInterval(nextSlideInterval);
 			}
 		}, 5);
 	};
 
 	const goto = (go: number): void => {
 		if (page !== go) {
-			page = go - 1;
-			nextSlide();
+			page = go;
+			clearInterval(loopInterval);
+			clearInterval(nextSlideInterval);
 			loopEvent();
+			nextSlide();
 		}
 	};
 
 	$: active = (index: number): string | undefined => {
 		if (page === index) {
 			return 'active';
-		} else if (page === 0 && index === max) {
-			return 'active';
 		}
 		return undefined;
 	};
 
-	let interval: ReturnType<typeof setInterval>;
+	let loopInterval: ReturnType<typeof setInterval>;
 	const loopEvent = (): void => {
-		if (interval) {
-			clearInterval(interval);
-		}
-
-		interval = setInterval(() => {
+		loopInterval = setInterval(() => {
+			if (page === max) {
+				page = 1;
+			} else {
+				page += 1;
+			}
 			requestAnimationFrame(nextSlide);
 		}, 12000);
 	};
 
 	onMount(() => {
 		loopEvent();
-		return () => clearInterval(interval);
+		return () => clearInterval(loopInterval);
 	});
 </script>
 
