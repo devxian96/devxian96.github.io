@@ -20,12 +20,12 @@
 
 		@media (max-width: 900px) {
 			min-width: 100vw;
-			min-height: 900px;
 			overflow-y: auto;
 			overflow-x: hidden;
+			top: 0;
 			display: ${isMenuOn ? 'block' : 'none'};
 			z-index: 100;
-			position: absolute;
+			position: fixed;
 			border: none;
 			height: 100%;
 		}
@@ -86,6 +86,10 @@
 		text-align: center;
 		bottom: 5rem;
 		position: absolute;
+
+		@media (max-width: 900px) {
+			position: initial !important;
+		}
 	`;
 
 	const sidebarLicenseStyle = css`
@@ -93,6 +97,11 @@
 		text-align: center;
 		bottom: 3rem;
 		position: absolute;
+
+		@media (max-width: 900px) {
+			position: initial !important;
+			padding-bottom: 3rem;
+		}
 	`;
 
 	const closeButtonStyle = css`
@@ -128,11 +137,13 @@
 	const navigatorGoto = (path: string): void => {
 		goto(path);
 		if (isMenuOn) {
+			window.document.body.style.overflow = 'auto';
 			menu.update(() => false);
 		}
 	};
 
 	const menuOff = (): void => {
+		window.document.body.style.overflow = 'auto';
 		menu.update(() => false);
 	};
 </script>

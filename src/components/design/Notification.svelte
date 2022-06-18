@@ -83,6 +83,7 @@
 	};
 
 	const menuOn = (): void => {
+		window.document.body.style.overflow = 'hidden';
 		menu.update(() => true);
 	};
 </script>
