@@ -169,7 +169,7 @@ import{L as Xn,S as _e,i as $e,s as ze,F as Te,e as m,c as g,a as w,d as u,b as 
 		font-family: 'Noto Sans KR', sans-serif;
 
 		@media (max-width: 900px) {
-			overflow-y: auto;
+			height: 100%;
 		}
 	`,f=R`
 		overflow-y: auto;
@@ -178,7 +178,7 @@ import{L as Xn,S as _e,i as $e,s as ze,F as Te,e as m,c as g,a as w,d as u,b as 
 		margin-bottom: 0;
 
 		@media (max-width: 900px) {
-			overflow: initial;
+			overflow-y: initial;
 			padding-left: 12px;
 			padding-right: 12px;
 		}
