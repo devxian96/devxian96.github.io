@@ -32,7 +32,8 @@
 	const contentsStyle = css`
 		max-width: 1400px;
 		width: 100%;
-		padding: 3rem;
+		padding-top: 3rem;
+		padding-bottom: 3rem;
 		margin: auto;
 
 		@media (max-width: 900px) {
