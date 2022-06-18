@@ -19,11 +19,12 @@
 		bottom: 0px;
 		border-radius: 0 0 10px 10px;
 		transform: translate(2%, 0);
-		width: 100%;
+		width: 96%;
 		height: 20px;
 		background-color: ${primary};
 
 		@media (max-width: 900px) {
+			width: 100%;
 			transform: translate(0, 0);
 		}
 	`;
