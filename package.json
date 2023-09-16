@@ -13,7 +13,8 @@
     "build": "next build",
     "start": "next start",
     "predeploy": "next build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "lint": "next lint"
   },
   "dependencies": {
     "@types/node": "20.6.1",
