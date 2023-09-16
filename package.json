@@ -19,6 +19,10 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.9",
+    "@mui/material": "^5.14.9",
     "@types/node": "20.6.1",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
@@ -27,6 +31,7 @@
     "next": "13.4.19",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "recoil": "^0.7.7",
     "typescript": "5.2.2"
   },
   "devDependencies": {
@@ -40,8 +45,10 @@
   },
   "lint-staged": {
     "*.{ts,tsx,js,md}": [
-      "prettier --write",
-      "next lint"
+      "prettier --write"
+    ],
+    "*.{ts,tsx,js}": [
+      "eslint --fix"
     ]
   }
 }
