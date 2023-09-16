@@ -14,7 +14,9 @@
     "start": "next start",
     "predeploy": "next build",
     "deploy": "gh-pages -d dist",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postinstall": "npx husky install",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@types/node": "20.6.1",
@@ -33,6 +35,13 @@
     "eslint-config-prettier": "^9.0.0",
     "gh-pages": "^6.0.0",
     "husky": "^8.0.3",
+    "lint-staged": ">=10",
     "prettier": "^3.0.3"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,md}": [
+      "prettier --write",
+      "next lint"
+    ]
   }
 }
