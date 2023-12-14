@@ -65,7 +65,7 @@
             "eslint",
             "bash -c 'yarn type-check'"
         ],
-        "*.{css}": [
+        "*.css": [
             "prettier --write",
             "stylelint"
         ],
