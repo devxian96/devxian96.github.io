@@ -50,11 +50,15 @@ jobs:
           fi
       - name: Setup Pages
         uses: actions/configure-pages@v3
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
       - name: Restore cache        
         uses: actions/cache@v3
+        id: yarn-cache
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock', '.yarnrc.yml') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
       - name: Setup Node
@@ -62,7 +66,7 @@ jobs:
         with:
           node-version: "lts/*"
           cache: yarn
-          cache-dependency-path: client/yarn.lock
+          cache-dependency-path: yarn.lock
           registry-url: "https://registry.yarnpkg.com"
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}

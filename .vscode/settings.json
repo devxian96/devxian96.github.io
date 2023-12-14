@@ -20,7 +20,8 @@
     "editor.suggestSelection": "first",
     "cSpell.words": [
         "elif",
-        "nojekyll"
+        "nojekyll",
+        "yarnrc"
     ],
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
