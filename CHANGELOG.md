@@ -2,16 +2,6 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [0.2.4](https://github.com/devxian96/devxian96.github.io/compare/v0.2.3...v0.2.4) (2023-12-14)
-
-### [0.2.3](https://github.com/devxian96/devxian96.github.io/compare/v0.2.2...v0.2.3) (2023-12-14)
-
-### [0.2.2](https://github.com/devxian96/devxian96.github.io/compare/v0.2.1...v0.2.2) (2023-12-14)
-
-### Others
-
--   test ([c2cfed2](https://github.com/devxian96/devxian96.github.io/commit/c2cfed23a7840d0ee923bbe805acda540ff05064))
-
 ### [0.2.1](https://github.com/devxian96/devxian96.github.io/compare/v0.2.0...v0.2.1) (2023-12-14)
 
 ### Others
