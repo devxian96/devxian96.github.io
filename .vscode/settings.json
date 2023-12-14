@@ -1,26 +1,30 @@
 {
-  "stylelint.validate": [
-    "css",
-    "scss",
-    "typescriptreact",
-    "typescript",
-  ],
-  "stylelint.configFile": ".stylelintrc",
-  "stylelint.packageManager": "yarn",
-  "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnPaste": true,
-  "editor.formatOnType": true,
-  "editor.tabSize": 4,
-  "editor.wordWrap": "on",
-  "editor.detectIndentation": false,
-  "editor.insertSpaces": true,
-  "editor.minimap.enabled": true,
-  "editor.rulers": [
-    120
-  ],
-  "editor.suggestSelection": "first",
-  "cSpell.words": [
-    "nojekyll"
-  ]
+    "prettier.configPath": ".prettierrc",
+    "stylelint.validate": [
+        "css",
+        "scss",
+        "typescriptreact",
+        "typescript",
+    ],
+    "stylelint.configFile": ".stylelintrc",
+    "stylelint.packageManager": "yarn",
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+    "editor.tabSize": 4,
+    "editor.wordWrap": "on",
+    "editor.detectIndentation": false,
+    "editor.insertSpaces": true,
+    "editor.minimap.enabled": true,
+    "editor.suggestSelection": "first",
+    "cSpell.words": [
+        "nojekyll"
+    ],
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }

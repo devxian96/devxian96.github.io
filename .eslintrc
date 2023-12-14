@@ -1,10 +1,6 @@
 {
     "parser": "@typescript-eslint/parser",
-    "plugins": [
-        "@typescript-eslint",
-        "prettier",
-        "@emotion"
-    ],
+    "plugins": ["@typescript-eslint", "prettier", "@emotion"],
     "extends": [
         "airbnb",
         "plugin:import/errors",
@@ -32,9 +28,7 @@
         "react/no-unknown-property": [
             "error",
             {
-                "ignore": [
-                    "css"
-                ]
+                "ignore": ["css"]
             }
         ],
         "react/function-component-definition": [
@@ -47,12 +41,7 @@
         "react/jsx-filename-extension": [
             2,
             {
-                "extensions": [
-                    ".js",
-                    ".jsx",
-                    ".ts",
-                    ".tsx"
-                ]
+                "extensions": [".js", ".jsx", ".ts", ".tsx"]
             }
         ],
         "jsx-a11y/no-noninteractive-element-interactions": 0
