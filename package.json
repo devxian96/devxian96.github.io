@@ -1,54 +1,76 @@
 {
-  "name": "devxian96.github.io",
-  "version": "0.1.0",
-  "private": true,
-  "license": "MIT",
-  "homepage": "https://devxian96.github.io",
-  "author": {
-    "name": "devxian96",
-    "email": "coolman555@me.com"
-  },
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "predeploy": "next build",
-    "deploy": "gh-pages -d dist",
-    "lint": "next lint",
-    "postinstall": "npx husky install",
-    "prepare": "husky install"
-  },
-  "dependencies": {
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
-    "@mui/icons-material": "^5.14.9",
-    "@mui/material": "^5.14.9",
-    "@types/node": "20.6.1",
-    "@types/react": "18.2.21",
-    "@types/react-dom": "18.2.7",
-    "eslint": "8.49.0",
-    "eslint-config-next": "13.4.19",
-    "next": "13.4.19",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "recoil": "^0.7.7",
-    "typescript": "5.2.2"
-  },
-  "devDependencies": {
-    "@commitlint/cli": "^17.7.1",
-    "@commitlint/config-conventional": "^17.7.0",
-    "eslint-config-prettier": "^9.0.0",
-    "gh-pages": "^6.0.0",
-    "husky": "^8.0.3",
-    "lint-staged": ">=10",
-    "prettier": "^3.0.3"
-  },
-  "lint-staged": {
-    "*.{ts,tsx,js,md}": [
-      "prettier --write"
-    ],
-    "*.{ts,tsx,js}": [
-      "eslint --fix"
-    ]
-  }
+	"name": "devxian96.github.io",
+	"version": "0.2.0",
+	"private": true,
+	"license": "MIT",
+	"homepage": "https://devxian96.github.io",
+	"author": "devxian96<coolman555@me.com>",
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"predeploy": "next build",
+		"deploy": "gh-pages -d dist",
+		"lint": "next lint",
+		"stylelint": "stylelint src/**/*.css",
+		"stylelint:fix": "stylelint src/**/*.css --fix",
+		"eslint": "eslint . --ext .js,.jsx,.ts,.tsx",
+		"eslint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
+		"prettier": "prettier --write .",
+		"type-check": "tsc --noEmit",
+		"type-check:watch": "tsc --noEmit --watch",
+		"postinstall": "husky install"
+	},
+	"dependencies": {
+		"@emotion/react": "^11.11.1",
+		"@emotion/styled": "^11.11.0",
+		"framer-motion": "^10.16.16",
+		"next": "14.0.4",
+		"react": "18.2.0",
+		"react-dom": "18.2.0",
+		"recoil": "^0.7.7"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^18.4.3",
+		"@commitlint/config-conventional": "^18.4.3",
+		"@emotion/eslint-plugin": "^11.11.0",
+		"@types/react": "^18.2.45",
+		"@types/react-dom": "^18.2.17",
+		"@typescript-eslint/eslint-plugin": "^6.14.0",
+		"@typescript-eslint/parser": "^6.14.0",
+		"eslint": "^8.55.0",
+		"eslint-config-airbnb": "^19.0.4",
+		"eslint-config-airbnb-typescript": "^17.1.0",
+		"eslint-config-next": "^14.0.4",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-plugin-import": "^2.29.0",
+		"eslint-plugin-jsx-a11y": "^6.8.0",
+		"eslint-plugin-prettier": "^5.0.1",
+		"eslint-plugin-react": "^7.33.2",
+		"eslint-plugin-react-hooks": "^4.6.0",
+		"gh-pages": "^6.1.0",
+		"husky": "^8.0.3",
+		"lint-staged": ">=15.2.0",
+		"postcss": "^8.4.32",
+		"postcss-styled-syntax": "^0.5.0",
+		"postcss-syntax": "^0.36.2",
+		"prettier": "^3.1.1",
+		"stylelint": "^16.0.2",
+		"stylelint-config-standard": "^35.0.0",
+		"typescript": "^5.3.3"
+	},
+	"lint-staged": {
+		"*.{js,jsx,ts,tsx}": [
+			"prettier --write",
+			"eslint",
+			"bash -c 'yarn type-check'"
+		],
+		"*.{css}": [
+			"prettier --write",
+			"stylelint"
+		],
+		"*.{json,md}": [
+			"prettier --write"
+		]
+	}
 }

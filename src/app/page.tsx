@@ -1,7 +1,21 @@
 import type { NextPage, Metadata } from 'next';
-import { Typography } from '@mui/material';
-import { ColorSection } from '@/components/atoms/ColorSection';
-import { BigImage } from '@/components/atoms/BigImage';
+import styled from '@emotion/styled';
+
+export const BigImage = styled.img`
+	position: absolute;
+	position: fixed;
+	width: 300;
+	width: 80vw;
+	z-index: 5;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	maxwidth: 80vw;
+	border-radius: 15px;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+	opacity: 0.9;
+	height: 80vh;
+`;
 
 export const metadata: Metadata = {
 	title: 'Devxian',
@@ -9,47 +23,7 @@ export const metadata: Metadata = {
 };
 
 const Index: NextPage = () => {
-	const style = {
-		frontendText: {
-			zIndex: 10,
-			position: 'absolute',
-			left: '30%',
-			top: '30%',
-			transform: 'translate(-50%, -50%)',
-			fontWeight: 'bolder',
-			fontSize: '10vw',
-			color: '#3af',
-		},
-		backendText: {
-			zIndex: 1,
-			position: 'absolute',
-			right: '30%',
-			top: '70%',
-			transform: 'translate(50%, -50%)',
-			fontWeight: 'bolder',
-			fontSize: '10vw',
-			color: '#eaf',
-		},
-	} as const;
-
-	return (
-		<>
-			<ColorSection color="#BD3455">
-				<Typography component="h1" variant="h1" sx={style.frontendText}>
-					FRONTEND
-				</Typography>
-				<BigImage src="/images/background2.png" alt="모니터" />
-				<Typography component="h1" variant="h1" sx={style.backendText}>
-					BACKEND
-				</Typography>
-			</ColorSection>
-			<ColorSection color="#5D5DA8">
-				<Typography component="h1" variant="h1">
-					FRONTEND
-				</Typography>
-			</ColorSection>
-		</>
-	);
+	return <div>hi</div>;
 };
 
 export default Index;

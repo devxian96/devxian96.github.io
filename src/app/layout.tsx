@@ -1,19 +1,15 @@
-import { Recoil } from '@/app/Recoil';
-import { Container, CssBaseline } from '@mui/material';
-import { DrawerAppBar } from '@/components/molecules/DrawerAppBar';
+import type { NextPage } from 'next';
+import type { PropsWithChildren } from 'react';
+import { Recoil } from '@/components/atoms';
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+const RootLayout: NextPage<PropsWithChildren> = ({ children }) => {
 	return (
 		<html lang="ko">
 			<body>
-				<CssBaseline />
-				<Recoil>
-					<DrawerAppBar />
-					<Container disableGutters maxWidth={false} component="main">
-						{children}
-					</Container>
-				</Recoil>
+				<Recoil>{children}</Recoil>
 			</body>
 		</html>
 	);
-}
+};
+
+export default RootLayout;
