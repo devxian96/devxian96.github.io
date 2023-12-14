@@ -19,6 +19,7 @@
     "editor.minimap.enabled": true,
     "editor.suggestSelection": "first",
     "cSpell.words": [
+        "elif",
         "nojekyll"
     ],
     "[json]": {
