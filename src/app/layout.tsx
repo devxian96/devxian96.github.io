@@ -1,3 +1,5 @@
+'use client';
+
 import type { NextPage } from 'next';
 import type { PropsWithChildren } from 'react';
 import { Recoil } from '@/components/atoms';
