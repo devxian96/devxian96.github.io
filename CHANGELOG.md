@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/devxian96/devxian96.github.io/compare/v0.2.0...v0.2.1) (2023-12-14)
+
+### Others
+
+-   **standard-version:** add standard-version, chnagelog ([a47def1](https://github.com/devxian96/devxian96.github.io/commit/a47def11329d6a43a4fdde1e2ff244aa4b76abf7))
+
 ## 0.2.0 (2023-12-14)
 
 ### Features
