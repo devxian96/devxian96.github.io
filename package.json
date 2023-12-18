@@ -6,7 +6,7 @@
     "homepage": "https://devxian96.github.io",
     "author": "devxian96<coolman555@me.com>",
     "scripts": {
-        "dev": "next dev",
+        "dev": "next dev --turbo",
         "build": "next build",
         "start": "next start",
         "predeploy": "next build",
