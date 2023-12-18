@@ -6,7 +6,7 @@
     "homepage": "https://devxian96.github.io",
     "author": "devxian96<coolman555@me.com>",
     "scripts": {
-        "dev": "next dev",
+        "dev": "next dev --turbo",
         "build": "next build",
         "start": "next start",
         "predeploy": "next build",
@@ -36,6 +36,7 @@
         "@commitlint/cli": "^18.4.3",
         "@commitlint/config-conventional": "^18.4.3",
         "@emotion/eslint-plugin": "^11.11.0",
+        "@types/node": "^20.10.5",
         "@types/react": "^18.2.45",
         "@types/react-dom": "^18.2.18",
         "@typescript-eslint/eslint-plugin": "^6.14.0",
