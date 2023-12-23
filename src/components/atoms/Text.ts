@@ -14,6 +14,5 @@ export const Text = styled.p<Props>`
     line-height: 1.5;
     margin: 0;
     font-family: 'Noto Sans KR', sans-serif;
-    color: #333;
     ${({ sx }) => sx}
 `;

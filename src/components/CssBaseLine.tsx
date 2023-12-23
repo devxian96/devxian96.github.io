@@ -16,6 +16,13 @@ export const CssBaseLine: FC = () => {
                     -webkit-font-smoothing: antialiased;
                     font-smoothing: antialiased;
                     font-family: 'Noto Sans KR', sans-serif;
+                    color: #fff;
+                    font-size: 14px;
+                    line-height: 1.5;
+                }
+
+                body {
+                    background-color: rgb(32, 32, 35);
                 }
 
                 a {
