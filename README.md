@@ -7,3 +7,5 @@
 크지만 정교한 폰트
 애니메이션 배너
 다크모드
+
+yarn dlx @yarnpkg/sdks vscode

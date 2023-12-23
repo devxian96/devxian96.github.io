@@ -1,15 +1,16 @@
 {
-    "recommendations": [
-        "aaron-bond.better-comments",
-        "streetsidesoftware.code-spell-checker",
-        "editorconfig.editorconfig",
-        "dsznajder.es7-react-js-snippets",
-        "dbaeumer.vscode-eslint",
-        "ms-vscode.vscode-typescript-next",
-        "esbenp.prettier-vscode",
-        "stylelint.vscode-stylelint",
-        "yoavbls.pretty-ts-errors",
-        "eamodio.gitlens",
-        "usernamehw.errorlens"
-    ]
+  "recommendations": [
+    "aaron-bond.better-comments",
+    "streetsidesoftware.code-spell-checker",
+    "editorconfig.editorconfig",
+    "dsznajder.es7-react-js-snippets",
+    "dbaeumer.vscode-eslint",
+    "ms-vscode.vscode-typescript-next",
+    "esbenp.prettier-vscode",
+    "stylelint.vscode-stylelint",
+    "yoavbls.pretty-ts-errors",
+    "eamodio.gitlens",
+    "usernamehw.errorlens",
+    "arcanis.vscode-zipfs"
+  ]
 }
