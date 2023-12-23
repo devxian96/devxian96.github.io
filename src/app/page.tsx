@@ -1,4 +1,7 @@
+'use client';
+
 import type { NextPage, Metadata } from 'next';
+import { Text } from '@/components/atoms';
 
 export const metadata: Metadata = {
     title: 'Devxian',
@@ -6,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 const Index: NextPage = () => {
-    return <div>hi</div>;
+    return <Text>hi</Text>;
 };
 
 export default Index;

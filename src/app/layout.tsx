@@ -1,14 +1,15 @@
-'use client';
-
 import type { NextPage } from 'next';
 import type { PropsWithChildren } from 'react';
-import { Recoil } from '@/components/atoms';
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
+import { Recoil } from './Recoil';
 
 const RootLayout: NextPage<PropsWithChildren> = ({ children }) => {
     return (
         <html lang="ko">
             <body>
-                <Recoil>{children}</Recoil>
+                <AppRouterCacheProvider>
+                    <Recoil>{children}</Recoil>
+                </AppRouterCacheProvider>
             </body>
         </html>
     );
