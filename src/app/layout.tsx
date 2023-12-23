@@ -3,19 +3,17 @@ import type { PropsWithChildren } from 'react';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import { Recoil } from '@/components/Recoil';
 import { CssBaseLine } from '@/components/CssBaseLine';
-import { Header, Footer, Main } from '@/components/organisms';
 
 const RootLayout: NextPage<PropsWithChildren> = ({ children }) => {
     return (
         <html lang="ko">
+            <head>
+                <link rel="icon" href="/favicon.ico" sizes="128x128" />
+            </head>
             <body>
                 <AppRouterCacheProvider>
                     <CssBaseLine />
-                    <Recoil>
-                        <Header />
-                        <Main>{children}</Main>
-                        <Footer />
-                    </Recoil>
+                    <Recoil>{children}</Recoil>
                 </AppRouterCacheProvider>
             </body>
         </html>

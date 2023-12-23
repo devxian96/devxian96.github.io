@@ -18,11 +18,15 @@
   "editor.minimap.enabled": true,
   "editor.suggestSelection": "first",
   "cSpell.words": [
+    "bento",
     "elif",
     "nojekyll",
+    "Noto",
+    "xlarge",
+    "xxlarge",
     "yarnpkg",
     "yarnrc"
-  ],
+],
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },

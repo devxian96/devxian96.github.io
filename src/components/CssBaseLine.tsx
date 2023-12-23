@@ -15,6 +15,12 @@ export const CssBaseLine: FC = () => {
                     -moz-osx-font-smoothing: grayscale;
                     -webkit-font-smoothing: antialiased;
                     font-smoothing: antialiased;
+                    font-family: 'Noto Sans KR', sans-serif;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: inherit;
                 }
             `}
         />
