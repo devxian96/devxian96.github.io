@@ -9,11 +9,9 @@
         "dev": "next dev --turbo",
         "build": "next build",
         "start": "next start",
-        "predeploy": "next build",
+        "predeploy": "next build && yarn release",
         "deploy": "gh-pages -d dist",
         "lint": "next lint",
-        "eslint": "eslint --cache",
-        "eslint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
         "prettier": "prettier --write .",
         "type-check": "tsc --noEmit",
         "type-check:watch": "tsc --noEmit --watch",
@@ -65,7 +63,7 @@
     "lint-staged": {
         "*.{js,jsx,ts,tsx}": [
             "prettier --write",
-            "eslint . --cache --fix",
+            "bash -c 'yarn lint'",
             "bash -c 'yarn type-check'"
         ],
         "*.css": [
