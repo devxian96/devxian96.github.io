@@ -7,7 +7,7 @@
         "plugin:import/warnings",
         "plugin:prettier/recommended",
         "plugin:@typescript-eslint/recommended",
-        "next/core-web-vitals"
+        "plugin:@next/next/recommended"
     ],
     "rules": {
         "@emotion/jsx-import": "error",
@@ -44,6 +44,8 @@
                 "extensions": [".js", ".jsx", ".ts", ".tsx"]
             }
         ],
-        "jsx-a11y/no-noninteractive-element-interactions": 0
+        "jsx-a11y/no-noninteractive-element-interactions": 0,
+        "react/jsx-uses-react": "off",
+        "react/react-in-jsx-scope": "off"
     }
 }

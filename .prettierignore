@@ -1,6 +1,5 @@
 node_modules
 .next
 .yarn
-.vscode
 .github
 dist

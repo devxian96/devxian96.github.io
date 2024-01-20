@@ -1,1 +1,2 @@
-export * from './Recoil';
+export * from './Text';
+export * from './Logo';
