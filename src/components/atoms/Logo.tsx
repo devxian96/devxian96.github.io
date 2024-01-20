@@ -16,6 +16,11 @@ const style = {
     },
 };
 
+/**
+ * 로고 컴포넌트
+ * @example
+ * <Logo />
+ */
 export const Logo: FC = () => {
     return (
         <Link href="/">

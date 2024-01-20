@@ -29,6 +29,10 @@ export const CssBaseLine: FC = () => {
                 a {
                     text-decoration: none;
                     color: ${COLOR.primary100};
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
                 }
             `}
         />
