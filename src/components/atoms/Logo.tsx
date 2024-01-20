@@ -2,10 +2,11 @@ import type { FC } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Text } from '@/components/atoms';
+import { COLOR } from '@/constants';
 
 const style = {
     logo: {
-        color: '#fff',
+        color: COLOR.white100,
         fontWeight: 'bold',
         lineHeight: '50px',
     },
@@ -13,12 +14,12 @@ const style = {
         verticalAlign: 'middle',
         marginRight: '5px',
     },
-} as const;
+};
 
 export const Logo: FC = () => {
     return (
         <Link href="/">
-            <Text sx={style.logo} size="large">
+            <Text sx={style.logo} size="Large">
                 <Image src="/icon.png" alt="로고" width={25} height={25} style={style.img} />
                 SeokHyun Jang
             </Text>
