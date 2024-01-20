@@ -14,7 +14,7 @@ const style = {
         zIndex: 2,
         mb: 3,
     },
-} as const;
+};
 
 export const Header: FC = () => {
     return (
