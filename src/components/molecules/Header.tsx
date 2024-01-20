@@ -1,12 +1,12 @@
 import type { FC } from 'react';
 import { Container } from '@mui/system';
 import { Logo } from '@/components/atoms';
-import { bentoStyle } from '@/constants';
+import { BENTO_STYLE, COLOR } from '@/constants';
 
 const style = {
     header: {
-        ...bentoStyle,
-        backgroundColor: '#20202380',
+        ...BENTO_STYLE,
+        backgroundColor: COLOR.secondary100,
         backdropFilter: 'blur(10px)',
         height: '50px',
         position: 'sticky',

@@ -1,18 +1,18 @@
 import styled from '@emotion/styled';
+import { FONT_FAMILY, FONT_SIZE, COLOR } from '@/constants';
 import type { Style } from '@/types';
 
 interface Props extends Style {
-    size?: 'small' | 'medium' | 'large' | 'xLarge' | 'xxLarge';
+    size?: keyof typeof FONT_SIZE;
+    lineHeight?: number | string;
+    color?: keyof typeof COLOR;
 }
 
 export const Text = styled.p<Props>`
-    ${({ size }) => size === 'small' && `font-size: 12px;`}
-    ${({ size }) => size === 'medium' || (!size && `font-size: 16px;`)}
-    ${({ size }) => size === 'large' && `font-size: 20px;`}
-    ${({ size }) => size === 'xLarge' && `font-size: 24px;`}
-    ${({ size }) => size === 'xxLarge' && `font-size: 32px;`}
-    line-height: 1.5;
+    color: ${({ color }) => COLOR[color || 'white100']};
+    ${({ size }) => FONT_SIZE[size || 'medium']};
+    line-height: ${({ lineHeight }) => lineHeight || 1.5};
     margin: 0;
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: ${FONT_FAMILY.notoSans};
     ${({ sx }) => sx}
 `;
