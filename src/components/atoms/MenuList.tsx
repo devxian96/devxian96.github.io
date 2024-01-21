@@ -16,7 +16,7 @@ export const MenuList: FC<Props> = ({ children, href }) => {
     return (
         <li>
             <Link href={href}>
-                <Text size="medium" backgroundColor={activeBackground} color={activeColor} gutter="5px" rounded>
+                <Text size="medium" backgroundColor={activeBackground} color={activeColor} gutter="8px" rounded>
                     {children}
                 </Text>
             </Link>
