@@ -2,9 +2,12 @@ import type { FC, PropsWithChildren } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import styled from '@emotion/styled';
-import { Text } from '@/components/atoms';
 import type { Style } from '@/types';
+import { Text } from './Text';
 
+const StyledMenuList = styled.li<Style>`
+    ${({ sx }) => sx}
+`;
 interface Props extends PropsWithChildren, Style {
     href: string;
 }
@@ -34,7 +37,3 @@ export const MenuList: FC<Props> = ({ children, href, sx }) => {
         </StyledMenuList>
     );
 };
-
-const StyledMenuList = styled.li<Style>`
-    ${({ sx }) => sx}
-`;

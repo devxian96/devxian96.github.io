@@ -1,5 +1,5 @@
-import type { NextPage } from 'next';
 import type { PropsWithChildren } from 'react';
+import type { NextPage } from 'next';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import { Recoil } from '@/components/Recoil';
 import { CssBaseLine } from '@/components/CssBaseLine';

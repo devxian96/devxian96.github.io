@@ -19,7 +19,7 @@ export const Box: FC<Props> = ({ children, sx, component, disabledBento, fullWid
             flex-direction: row;
             justify-content: center;
         `,
-        [component, sx, fullWidth, disabledBento],
+        [component, fullWidth, disabledBento],
     );
 
     return <Component sx={sx}>{children}</Component>;
