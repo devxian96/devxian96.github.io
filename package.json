@@ -1,12 +1,13 @@
 {
     "name": "devxian96.github.io",
+    "description": "Seokhyun jang's Portfolio website",
     "version": "0.2.1",
     "private": true,
     "license": "MIT",
     "homepage": "https://devxian96.github.io",
     "author": "devxian96<coolman555@me.com>",
     "scripts": {
-        "dev": "next dev",
+        "dev": "next dev --turbo",
         "build": "next build",
         "start": "next start",
         "predeploy": "next build && yarn release",
@@ -14,7 +15,7 @@
         "lint": "next lint",
         "prettier": "prettier --write .",
         "type-check": "tsc --noEmit",
-        "type-check:watch": "tsc --noEmit --watch",
+        "type-check:watch": "tsc --noEmit",
         "postinstall": "husky install",
         "release": "standard-version"
     },
