@@ -6,7 +6,7 @@
     "homepage": "https://devxian96.github.io",
     "author": "devxian96<coolman555@me.com>",
     "scripts": {
-        "dev": "next dev --turbo",
+        "dev": "next dev",
         "build": "next build",
         "start": "next start",
         "predeploy": "next build && yarn release",
@@ -19,6 +19,7 @@
         "release": "standard-version"
     },
     "dependencies": {
+        "@babel/runtime": "^7.23.9",
         "@emotion/cache": "^11.11.0",
         "@emotion/react": "^11.11.3",
         "@emotion/styled": "^11.11.0",
@@ -38,10 +39,10 @@
         "@next/eslint-plugin-next": "^14.1.0",
         "@tanstack/eslint-plugin-query": "^5.20.1",
         "@types/node": "^20.11.19",
-        "@types/react": "^18.2.56",
+        "@types/react": "^18.2.57",
         "@types/react-dom": "^18.2.19",
-        "@typescript-eslint/eslint-plugin": "^7.0.1",
-        "@typescript-eslint/parser": "^7.0.1",
+        "@typescript-eslint/eslint-plugin": "^7.0.2",
+        "@typescript-eslint/parser": "^7.0.2",
         "@yarnpkg/sdks": "^3.1.0",
         "eslint": "^8.56.0",
         "eslint-config-airbnb": "^19.0.4",
@@ -63,15 +64,15 @@
     },
     "lint-staged": {
         "*.{js,jsx,ts,tsx}": [
-            "prettier --write",
+            "bash -c 'yarn prettier'",
             "bash -c 'yarn lint'",
             "bash -c 'yarn type-check'"
         ],
         "*.css": [
-            "prettier --write"
+            "bash -c 'yarn prettier'"
         ],
         "*.{json,md}": [
-            "prettier --write"
+            "bash -c 'yarn prettier'"
         ]
     },
     "packageManager": "yarn@4.1.0"

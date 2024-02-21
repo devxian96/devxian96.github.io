@@ -1,7 +1,5 @@
 {
     "prettier.configPath": ".prettierrc",
-    "stylelint.validate": ["css", "scss", "typescriptreact", "typescript"],
-    "stylelint.configFile": ".stylelintrc",
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnPaste": true,
@@ -12,7 +10,21 @@
     "editor.insertSpaces": true,
     "editor.minimap.enabled": true,
     "editor.suggestSelection": "first",
-    "cSpell.words": ["bento", "elif", "nojekyll", "Noto", "tanstack", "xlarge", "xxlarge", "yarnpkg", "yarnrc"],
+    "cSpell.words": [
+        "bento",
+        "commitlint",
+        "elif",
+        "nextjs",
+        "nojekyll",
+        "Noto",
+        "Seokhyun",
+        "tanstack",
+        "unoptimized",
+        "xlarge",
+        "xxlarge",
+        "yarnpkg",
+        "yarnrc"
+    ],
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
