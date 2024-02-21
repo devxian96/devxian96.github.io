@@ -15,7 +15,7 @@
         "lint": "next lint",
         "prettier": "prettier --write .",
         "type-check": "tsc --noEmit",
-        "type-check:watch": "tsc --noEmit",
+        "type-check:watch": "tsc --noEmit --watch",
         "postinstall": "husky install",
         "release": "standard-version"
     },
