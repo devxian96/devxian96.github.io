@@ -13,6 +13,3 @@ export const Nav: FC = () => {
         </Box>
     );
 };
-
-// TODO: 다크모드, 라이트모드 구현
-// TODO: 언어 선택 구현

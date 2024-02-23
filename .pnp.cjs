@@ -64,6 +64,7 @@ const RAW_RUNTIME_STATE =
           ["react", "npm:18.2.0"],\
           ["react-dom", "virtual:83783640263a2b3d9204e99f1973fa69a2d6941b8d87671411bbf920b36ed74b6a5ffd6a48f7a1b1fa8e2cb60d3f8e003f13ac79f4ef4833f4de596ae745e3ed#npm:18.2.0"],\
           ["recoil", "virtual:83783640263a2b3d9204e99f1973fa69a2d6941b8d87671411bbf920b36ed74b6a5ffd6a48f7a1b1fa8e2cb60d3f8e003f13ac79f4ef4833f4de596ae745e3ed#npm:0.7.7"],\
+          ["recoil-persist", "virtual:83783640263a2b3d9204e99f1973fa69a2d6941b8d87671411bbf920b36ed74b6a5ffd6a48f7a1b1fa8e2cb60d3f8e003f13ac79f4ef4833f4de596ae745e3ed#npm:5.1.0"],\
           ["standard-version", "npm:9.5.0"],\
           ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"]\
         ],\
@@ -3095,6 +3096,7 @@ const RAW_RUNTIME_STATE =
           ["react", "npm:18.2.0"],\
           ["react-dom", "virtual:83783640263a2b3d9204e99f1973fa69a2d6941b8d87671411bbf920b36ed74b6a5ffd6a48f7a1b1fa8e2cb60d3f8e003f13ac79f4ef4833f4de596ae745e3ed#npm:18.2.0"],\
           ["recoil", "virtual:83783640263a2b3d9204e99f1973fa69a2d6941b8d87671411bbf920b36ed74b6a5ffd6a48f7a1b1fa8e2cb60d3f8e003f13ac79f4ef4833f4de596ae745e3ed#npm:0.7.7"],\
+          ["recoil-persist", "virtual:83783640263a2b3d9204e99f1973fa69a2d6941b8d87671411bbf920b36ed74b6a5ffd6a48f7a1b1fa8e2cb60d3f8e003f13ac79f4ef4833f4de596ae745e3ed#npm:5.1.0"],\
           ["standard-version", "npm:9.5.0"],\
           ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"]\
         ],\
@@ -6838,6 +6840,28 @@ const RAW_RUNTIME_STATE =
           "react-dom",\
           "react-native",\
           "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["recoil-persist", [\
+      ["npm:5.1.0", {\
+        "packageLocation": "./.yarn/cache/recoil-persist-npm-5.1.0-6c9c3d1452-979a199862.zip/node_modules/recoil-persist/",\
+        "packageDependencies": [\
+          ["recoil-persist", "npm:5.1.0"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:83783640263a2b3d9204e99f1973fa69a2d6941b8d87671411bbf920b36ed74b6a5ffd6a48f7a1b1fa8e2cb60d3f8e003f13ac79f4ef4833f4de596ae745e3ed#npm:5.1.0", {\
+        "packageLocation": "./.yarn/__virtual__/recoil-persist-virtual-2a3e9b22d5/0/cache/recoil-persist-npm-5.1.0-6c9c3d1452-979a199862.zip/node_modules/recoil-persist/",\
+        "packageDependencies": [\
+          ["recoil-persist", "virtual:83783640263a2b3d9204e99f1973fa69a2d6941b8d87671411bbf920b36ed74b6a5ffd6a48f7a1b1fa8e2cb60d3f8e003f13ac79f4ef4833f4de596ae745e3ed#npm:5.1.0"],\
+          ["@types/recoil", null],\
+          ["recoil", "virtual:83783640263a2b3d9204e99f1973fa69a2d6941b8d87671411bbf920b36ed74b6a5ffd6a48f7a1b1fa8e2cb60d3f8e003f13ac79f4ef4833f4de596ae745e3ed#npm:0.7.7"]\
+        ],\
+        "packagePeers": [\
+          "@types/recoil",\
+          "recoil"\
         ],\
         "linkType": "HARD"\
       }]\

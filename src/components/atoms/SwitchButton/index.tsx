@@ -1,15 +1,16 @@
-import { type FC, useState } from 'react';
+import type { FC } from 'react';
 import type { Style } from '@/types';
+import { useThemeState } from '@/stores';
 import { SwitchButtonWrapper, Switch, Cloud, Star } from './Style';
 
 const DURATION = { duration: 0.3 };
 const DURATION_LATE = { duration: 0.2 };
 
 export const SwitchButton: FC<Style> = ({ sx }) => {
-    const [darkmode, setDarkmode] = useState(true);
+    const [mode, setMode] = useThemeState();
 
     const handleClick = () => {
-        setDarkmode(!darkmode);
+        setMode(mode === 'light' ? 'dark' : 'light');
     };
 
     return (
@@ -17,39 +18,39 @@ export const SwitchButton: FC<Style> = ({ sx }) => {
             sx={sx}
             onClick={handleClick}
             animate={{
-                backgroundColor: darkmode ? '#2e4482' : '#87CEEB',
+                backgroundColor: mode === 'dark' ? '#2e4482' : '#87CEEB',
             }}
             transition={DURATION}
         >
             <Switch
                 animate={{
-                    left: darkmode ? 0 : 25,
-                    backgroundColor: darkmode ? '#F6F1D5' : '#FFE484',
+                    left: mode === 'dark' ? 0 : 25,
+                    backgroundColor: mode === 'dark' ? '#F6F1D5' : '#FFE484',
                 }}
                 transition={DURATION}
             >
                 <Cloud
                     animate={{
-                        opacity: darkmode ? 0 : 1,
-                        top: darkmode ? 0 : 10,
-                        left: darkmode ? 0 : -12,
+                        opacity: mode === 'dark' ? 0 : 1,
+                        top: mode === 'dark' ? 0 : 10,
+                        left: mode === 'dark' ? 0 : -12,
                     }}
                     transition={DURATION_LATE}
                 />
 
                 <Star
                     animate={{
-                        opacity: darkmode ? 1 : 0,
-                        top: darkmode ? 15 : 0,
-                        left: darkmode ? 33 : 0,
+                        opacity: mode === 'dark' ? 1 : 0,
+                        top: mode === 'dark' ? 15 : 0,
+                        left: mode === 'dark' ? 33 : 0,
                     }}
                     transition={DURATION_LATE}
                 />
                 <Star
                     animate={{
-                        opacity: darkmode ? 1 : 0,
-                        top: darkmode ? 5 : 0,
-                        left: darkmode ? 40 : 0,
+                        opacity: mode === 'dark' ? 1 : 0,
+                        top: mode === 'dark' ? 5 : 0,
+                        left: mode === 'dark' ? 40 : 0,
                     }}
                     transition={DURATION_LATE}
                 />

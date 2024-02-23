@@ -1,8 +1,10 @@
+'use client';
+
 import type { PropsWithChildren } from 'react';
 import type { NextPage } from 'next';
-import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import { Recoil } from '@/components/Recoil';
 import { CssBaseLine } from '@/components/CssBaseLine';
+import { ThemeProvider } from '@/components/ThemeProvider';
 
 const RootLayout: NextPage<PropsWithChildren> = ({ children }) => {
     return (
@@ -11,10 +13,10 @@ const RootLayout: NextPage<PropsWithChildren> = ({ children }) => {
                 <link rel="icon" href="/favicon.ico" sizes="128x128" />
             </head>
             <body>
-                <AppRouterCacheProvider>
+                <Recoil>
                     <CssBaseLine />
-                    <Recoil>{children}</Recoil>
-                </AppRouterCacheProvider>
+                    <ThemeProvider>{children}</ThemeProvider>
+                </Recoil>
             </body>
         </html>
     );

@@ -2431,6 +2431,7 @@ __metadata:
     react: "npm:18.2.0"
     react-dom: "npm:18.2.0"
     recoil: "npm:^0.7.7"
+    recoil-persist: "npm:^5.1.0"
     standard-version: "npm:^9.5.0"
     typescript: "npm:^5.3.3"
   languageName: unknown
@@ -5536,6 +5537,15 @@ __metadata:
     string_decoder: "npm:~1.1.1"
     util-deprecate: "npm:~1.0.1"
   checksum: 10/8500dd3a90e391d6c5d889256d50ec6026c059fadee98ae9aa9b86757d60ac46fff24fafb7a39fa41d54cb39d8be56cc77be202ebd4cd8ffcf4cb226cbaa40d4
+  languageName: node
+  linkType: hard
+
+"recoil-persist@npm:^5.1.0":
+  version: 5.1.0
+  resolution: "recoil-persist@npm:5.1.0"
+  peerDependencies:
+    recoil: ^0.7.2
+  checksum: 10/979a199862d6aad63f7917700a23528264801b048ae5c7c6805b468e8d1b485d205802caf9170fc0dcdc7aac084643fe0074340b9607aaacef6097e4283f100a
   languageName: node
   linkType: hard
 
