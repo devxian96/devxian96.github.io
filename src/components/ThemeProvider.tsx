@@ -1,7 +1,7 @@
 import type { FC, PropsWithChildren } from 'react';
 import { useMemo } from 'react';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
-import { createTheme, ThemeProvider as MUIThemeProvider } from '@mui/system';
+import { createTheme, ThemeProvider as MuiThemeProvider } from '@mui/system';
 import { getDesignTokens } from '@/utils';
 import { useThemeState } from '@/stores';
 
@@ -12,7 +12,7 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
 
     return (
         <AppRouterCacheProvider>
-            <MUIThemeProvider theme={theme}>{children}</MUIThemeProvider>
+            <MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>
         </AppRouterCacheProvider>
     );
 };

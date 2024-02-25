@@ -1,26 +1,32 @@
-import { useMemo, type FC, type PropsWithChildren } from 'react';
-import styled from '@emotion/styled';
+import type { FC, PropsWithChildren, ElementType } from 'react';
+import { useTheme, Container } from '@mui/system';
 import type { Style } from '@/types';
 import { BENTO_STYLE } from '@/constants';
 
 interface Props extends PropsWithChildren, Style {
-    component?: keyof HTMLElementTagNameMap;
+    component: ElementType;
     disabledBento?: boolean;
     fullWidth?: boolean;
 }
 
-export const Box: FC<Props> = ({ children, sx, component, disabledBento, fullWidth }) => {
-    const Component = useMemo(
-        () => styled(component ?? 'div')<Style>`
-            ${fullWidth && 'width: 100%;'}
-            ${!disabledBento && BENTO_STYLE}
-            ${({ sx }) => sx}
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-        `,
-        [component, fullWidth, disabledBento],
-    );
+export const Box: FC<Props> = ({ children, component, disabledBento, fullWidth, sx }) => {
+    const theme = useTheme();
 
-    return <Component sx={sx}>{children}</Component>;
+    const style = {
+        box: {
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'center',
+            marginRight: 0,
+            ...(fullWidth ? { width: '100%' } : { width: 'auto' }),
+            ...(disabledBento && BENTO_STYLE[theme.palette.mode]),
+            ...sx,
+        },
+    };
+
+    return (
+        <Container component={component} sx={style.box} disableGutters maxWidth={false}>
+            {children}
+        </Container>
+    );
 };

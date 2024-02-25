@@ -3,7 +3,7 @@ import { Menu, MenuList, SwitchButton, Box } from '@/components/atoms';
 
 export const Nav: FC = () => {
     return (
-        <Box component="nav" disabledBento>
+        <Box component="nav">
             <Menu>
                 <MenuList href="/">Home</MenuList>
                 <MenuList href="/about">About</MenuList>

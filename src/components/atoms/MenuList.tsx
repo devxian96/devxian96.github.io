@@ -24,8 +24,8 @@ interface Props extends PropsWithChildren, Style {
 export const MenuList: FC<Props> = ({ children, href, sx }) => {
     const pathname = usePathname();
     const isActive = pathname === href;
-    const activeBackground = !isActive ? undefined : 'primary100';
-    const activeColor = !isActive ? undefined : 'secondary100';
+    const activeBackground = !isActive ? undefined : 'primary';
+    const activeColor = !isActive ? undefined : 'secondary';
 
     return (
         <StyledMenuList sx={sx}>

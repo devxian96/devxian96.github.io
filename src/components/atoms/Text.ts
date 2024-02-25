@@ -1,12 +1,11 @@
 import styled from '@emotion/styled';
-import { FONT_FAMILY, FONT_SIZE, COLOR } from '@/constants';
-import type { Style } from '@/types';
+import type { Style, Theme } from '@/types';
 
 interface Props extends Style {
-    size?: keyof typeof FONT_SIZE;
+    size?: keyof Theme['typography']['fontSize'];
     lineHeight?: number | string;
-    color?: keyof typeof COLOR;
-    backgroundColor?: keyof typeof COLOR;
+    color?: keyof Theme['palette'];
+    backgroundColor?: keyof Theme['palette'];
     gutter?: string;
     rounded?: boolean;
 }
@@ -16,15 +15,19 @@ interface Props extends Style {
  * @example
  * <Text size="large" color="white100" lineHeight={1.5} sx={{ fontWeight: 700 }}>Hello World</Text>
  */
-export const Text = styled.p<Props>`
-    color: ${({ color }) => COLOR[color || 'white100']};
-    ${({ backgroundColor }) => backgroundColor && `background-color: ${COLOR[backgroundColor]};`}
-    ${({ size }) => FONT_SIZE[size || 'medium']};
-    line-height: ${({ lineHeight }) => lineHeight || 1.5};
-    margin: 0;
-    font-family: ${FONT_FAMILY.notoSans};
-    padding-left: ${({ gutter }) => gutter || 0};
-    padding-right: ${({ gutter }) => gutter || 0};
-    ${({ rounded }) => rounded && 'border-radius: 0.5rem;'}
-    ${({ sx }) => sx}
-`;
+export const Text = styled.p<Props>(({ theme, color, backgroundColor, size, lineHeight, gutter, rounded, sx }) => {
+    const typedTheme = theme as Theme;
+
+    return {
+        color: color ? typedTheme.palette[color] : 'palette.text',
+        backgroundColor: backgroundColor ? typedTheme.palette[backgroundColor] : 'transparent',
+        fontSize: size ? typedTheme.typography.fontSize[size] : typedTheme.typography.fontSize.medium,
+        lineHeight: lineHeight || 1.5,
+        margin: 0,
+        fontFamily: typedTheme.typography.fontFamily.notoSans,
+        paddingLeft: gutter || 0,
+        paddingRight: gutter || 0,
+        borderRadius: rounded ? '0.5rem' : undefined,
+        ...sx,
+    };
+});

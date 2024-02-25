@@ -1,7 +1,11 @@
-import type { SerializedStyles } from '@emotion/react';
+import type { Theme as MUITheme } from '@mui/system';
+import type { getDesignTokens } from '@/utils';
 
 export interface Style {
-    sx?: SerializedStyles | { [key: string]: string };
+    sx?: Record<string, string>;
 }
 
 export type PaletteMode = 'dark' | 'light';
+
+type DesignTokens = ReturnType<typeof getDesignTokens>;
+export type Theme = Omit<MUITheme, 'palette' | 'typography'> & DesignTokens;

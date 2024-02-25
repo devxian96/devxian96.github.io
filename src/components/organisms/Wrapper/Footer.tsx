@@ -1,28 +1,31 @@
 import type { FC } from 'react';
 import Link from 'next/link';
-import { Container, Stack } from '@mui/system';
+import { Container, Stack, useTheme } from '@mui/system';
 import { Text } from '@/components/atoms';
-import { BENTO_STYLE, COLOR } from '@/constants';
-
-const style = {
-    footer: {
-        ...BENTO_STYLE,
-        backgroundColor: COLOR.secondary100,
-        backdropFilter: 'blur(10px)',
-        top: 10,
-        zIndex: 2,
-        mt: 3,
-        mb: 10,
-    },
-    footerWrapper: {
-        lineHeight: '50px',
-        whiteSpace: 'wrap',
-    },
-};
+import { BENTO_STYLE } from '@/constants';
 
 export const Footer: FC = () => {
+    const theme = useTheme();
+
     const date = new Date();
     const year = date.getFullYear();
+
+    const style = {
+        footer: {
+            ...BENTO_STYLE[theme.palette.mode],
+            backgroundColor: theme.palette.secondary,
+            backdropFilter: 'blur(10px)',
+            color: theme.palette.text,
+            top: 10,
+            zIndex: 2,
+            mt: 3,
+            mb: 10,
+        },
+        footerWrapper: {
+            lineHeight: '50px',
+            whiteSpace: 'wrap',
+        },
+    };
 
     return (
         <Container component="footer" sx={style.footer}>

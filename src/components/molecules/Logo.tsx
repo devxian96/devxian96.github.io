@@ -2,19 +2,6 @@ import type { FC } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Text } from '@/components/atoms';
-import { COLOR } from '@/constants';
-
-const style = {
-    logo: {
-        color: COLOR.white100,
-        fontWeight: 'bold',
-        lineHeight: '50px',
-    },
-    img: {
-        verticalAlign: 'middle',
-        marginRight: '5px',
-    },
-};
 
 /**
  * 로고 컴포넌트
@@ -22,6 +9,18 @@ const style = {
  * <Logo />
  */
 export const Logo: FC = () => {
+    const style = {
+        logo: {
+            color: 'palette.text',
+            fontWeight: 'bold',
+            lineHeight: '50px',
+        },
+        img: {
+            verticalAlign: 'middle',
+            marginRight: '5px',
+        },
+    };
+
     return (
         <Link href="/">
             <Text sx={style.logo} size="Large">

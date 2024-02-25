@@ -5,6 +5,7 @@ import type { NextPage } from 'next';
 import { Recoil } from '@/components/Recoil';
 import { CssBaseLine } from '@/components/CssBaseLine';
 import { ThemeProvider } from '@/components/ThemeProvider';
+import { Wrapper } from '@/components/organisms';
 
 const RootLayout: NextPage<PropsWithChildren> = ({ children }) => {
     return (
@@ -14,8 +15,10 @@ const RootLayout: NextPage<PropsWithChildren> = ({ children }) => {
             </head>
             <body>
                 <Recoil>
-                    <CssBaseLine />
-                    <ThemeProvider>{children}</ThemeProvider>
+                    <ThemeProvider>
+                        <CssBaseLine />
+                        <Wrapper>{children}</Wrapper>
+                    </ThemeProvider>
                 </Recoil>
             </body>
         </html>
