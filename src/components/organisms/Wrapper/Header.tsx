@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { Container, Stack, useTheme } from '@mui/system';
+import { Container, Stack, useTheme } from '@mui/material';
 import { BENTO_STYLE } from '@/constants';
 import { Nav, Logo } from '@/components/molecules';
 
@@ -9,7 +9,7 @@ export const Header: FC = () => {
     const style = {
         header: {
             ...BENTO_STYLE[theme.palette.mode],
-            backgroundColor: theme.palette.secondary,
+            backgroundColor: theme.palette.secondary.main,
             backdropFilter: 'blur(10px)',
             height: '50px',
             position: 'sticky',

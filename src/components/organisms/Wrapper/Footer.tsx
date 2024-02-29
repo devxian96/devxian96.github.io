@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import Link from 'next/link';
-import { Container, Stack, useTheme } from '@mui/system';
+import { Container, Stack, useTheme } from '@mui/material';
 import { Text } from '@/components/atoms';
 import { BENTO_STYLE } from '@/constants';
 
@@ -13,7 +13,7 @@ export const Footer: FC = () => {
     const style = {
         footer: {
             ...BENTO_STYLE[theme.palette.mode],
-            backgroundColor: theme.palette.secondary,
+            backgroundColor: theme.palette.secondary.main,
             backdropFilter: 'blur(10px)',
             color: theme.palette.text,
             top: 10,

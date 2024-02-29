@@ -1,5 +1,5 @@
 import type { FC, PropsWithChildren, ElementType } from 'react';
-import { useTheme, Container } from '@mui/system';
+import { useTheme, Container } from '@mui/material';
 import type { Style } from '@/types';
 import { BENTO_STYLE } from '@/constants';
 

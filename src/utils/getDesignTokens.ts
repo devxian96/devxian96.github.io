@@ -6,27 +6,53 @@ export const getDesignTokens = (mode: PaletteMode) => ({
         ...(mode === 'light'
             ? {
                   // palette values for light mode
-                  primary: '#1976D2',
-                  secondary: '#efefef',
-                  background: '#ffffff',
-                  text: '#000000',
+                  primary: {
+                      main: '#1976D2',
+                  },
+                  secondary: {
+                      main: '#efefef',
+                  },
+                  background: {
+                      main: '#ffffff', // 배경색 지정
+                  },
+                  text: {
+                      main: '#000000', // 기본 텍스트 색상 지정
+                  },
               }
             : {
                   // palette values for dark mode
-                  primary: '#81E6D9',
-                  secondary: '#202023',
-                  background: '#121212',
-                  text: '#ffffff',
+                  primary: {
+                      main: '#81E6D9',
+                  },
+                  secondary: {
+                      main: '#202023',
+                  },
+                  background: {
+                      main: '#121212', // 배경색 지정
+                  },
+                  text: {
+                      main: '#ffffff', // 기본 텍스트 색상 지정
+                  },
               }),
     },
     typography: {
-        fontSize: {
-            xLarge: '28px',
-            xsLarge: '24px',
-            xxsLarge: '20px',
-            Large: '16px',
-            medium: '14px',
-            small: '12px',
+        xLarge: {
+            fontSize: 28,
+        },
+        xsLarge: {
+            fontSize: 24,
+        },
+        xxsLarge: {
+            fontSize: 20,
+        },
+        Large: {
+            fontSize: 16,
+        },
+        medium: {
+            fontSize: 14,
+        },
+        small: {
+            fontSize: 12,
         },
         fontFamily: {
             notoSans: "'Noto Sans KR', sans-serif",
