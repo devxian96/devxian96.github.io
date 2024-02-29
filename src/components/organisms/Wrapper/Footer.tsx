@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 import Link from 'next/link';
-import { Container, Stack, useTheme } from '@mui/material';
+import { Container, Stack } from '@mui/material';
+import { useTheme } from '@mui/styles';
 import { Text } from '@/components/atoms';
 import { BENTO_STYLE } from '@/constants';
 

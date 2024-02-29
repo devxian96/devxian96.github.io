@@ -14,9 +14,14 @@ export const getDesignTokens = (mode: PaletteMode) => ({
                   },
                   background: {
                       main: '#ffffff', // 배경색 지정
+                      default: '#ffffff', // 기본 배경색 지정
                   },
                   text: {
                       main: '#000000', // 기본 텍스트 색상 지정
+                      primary: '#000000', // 기본 텍스트 색상 지정
+                      secondary: '#6c6c6c', // 부가 텍스트 색상 지정
+                      disabled: '#9c9c9c', // 비활성 텍스트 색상 지정
+                      hint: '#9c9c9c', // 힌트 텍스트 색상 지정
                   },
               }
             : {
@@ -29,9 +34,14 @@ export const getDesignTokens = (mode: PaletteMode) => ({
                   },
                   background: {
                       main: '#121212', // 배경색 지정
+                      default: '#ffffff', // 기본 배경색 지정
                   },
                   text: {
                       main: '#ffffff', // 기본 텍스트 색상 지정
+                      primary: '#ffffff', // 기본 텍스트 색상 지정
+                      secondary: '#9c9c9c', // 부가 텍스트 색상 지정
+                      disabled: '#6c6c6c', // 비활성 텍스트 색상 지정
+                      hint: '#6c6c6c', // 힌트 텍스트 색상 지정
                   },
               }),
     },
@@ -54,8 +64,6 @@ export const getDesignTokens = (mode: PaletteMode) => ({
         small: {
             fontSize: 12,
         },
-        fontFamily: {
-            notoSans: "'Noto Sans KR', sans-serif",
-        },
+        fontFamily: "'Noto Sans KR', sans-serif",
     },
 });

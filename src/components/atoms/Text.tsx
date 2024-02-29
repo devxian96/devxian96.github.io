@@ -1,5 +1,6 @@
 import type { FC, PropsWithChildren } from 'react';
-import { Typography, useTheme } from '@mui/material';
+import { Typography } from '@mui/material';
+import { useTheme } from '@mui/styles';
 import type { Style, Theme } from '@/types';
 
 type Color = Exclude<keyof Theme['palette'], 'mode'>;
@@ -40,7 +41,7 @@ export const Text: FC<Props> = ({
                 fontSize: size ? theme.typography[size] : theme.typography.medium,
                 lineHeight: lineHeight || 1.5,
                 margin: 0,
-                fontFamily: theme.typography.fontFamily.notoSans,
+                fontFamily: theme.typography.fontFamily,
                 paddingLeft: gutter || 0,
                 paddingRight: gutter || 0,
                 fontWeight: 500,

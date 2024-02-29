@@ -26,6 +26,7 @@
         "@emotion/styled": "^11.11.0",
         "@mui/material": "^5.15.11",
         "@mui/material-nextjs": "^5.15.9",
+        "@mui/styles": "^5.15.11",
         "emotion-reset": "^3.0.1",
         "framer-motion": "^11.0.5",
         "next": "14.1.0",

@@ -1,5 +1,6 @@
 import type { FC } from 'react';
-import { Container, Stack, useTheme } from '@mui/material';
+import { Container, Stack } from '@mui/material';
+import { useTheme } from '@mui/styles';
 import { BENTO_STYLE } from '@/constants';
 import { Nav, Logo } from '@/components/molecules';
 

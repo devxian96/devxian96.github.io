@@ -3,7 +3,7 @@
 import type { FC } from 'react';
 import emotionReset from 'emotion-reset';
 import { Global, css } from '@emotion/react';
-import { useTheme } from '@mui/material';
+import { useTheme } from '@mui/styles';
 
 export const CssBaseLine: FC = () => {
     const theme = useTheme();
@@ -18,8 +18,8 @@ export const CssBaseLine: FC = () => {
                     -moz-osx-font-smoothing: grayscale;
                     -webkit-font-smoothing: antialiased;
                     font-smoothing: antialiased;
-                    font-family: ${theme.typography.fontFamily.notoSans};
-                    color: ${theme.palette.text.main};
+                    font-family: ${theme.typography.fontFamily};
+                    color: ${theme.palette.text.primary};
                     font-size: ${theme.typography.medium};
                     line-height: 1.5;
                 }
@@ -31,7 +31,7 @@ export const CssBaseLine: FC = () => {
                 a {
                     text-decoration: none;
                     color: ${theme.palette.primary.main};
-                    font-family: ${theme.typography.fontFamily.notoSans};
+                    font-family: ${theme.typography.fontFamily};
                     font-size: ${theme.typography.medium};
                 }
             `}
