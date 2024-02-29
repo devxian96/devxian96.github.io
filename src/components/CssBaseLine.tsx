@@ -3,9 +3,11 @@
 import type { FC } from 'react';
 import emotionReset from 'emotion-reset';
 import { Global, css } from '@emotion/react';
-import { COLOR, FONT_SIZE, FONT_FAMILY } from '@/constants';
+import { useTheme } from '@mui/styles';
 
 export const CssBaseLine: FC = () => {
+    const theme = useTheme();
+
     return (
         <Global
             styles={css`
@@ -16,19 +18,21 @@ export const CssBaseLine: FC = () => {
                     -moz-osx-font-smoothing: grayscale;
                     -webkit-font-smoothing: antialiased;
                     font-smoothing: antialiased;
-                    font-family: ${FONT_FAMILY.notoSans};
-                    color: ${COLOR.white100};
-                    font-size: ${FONT_SIZE.medium};
+                    font-family: ${theme.typography.fontFamily};
+                    color: ${theme.palette.text.primary};
+                    font-size: ${theme.typography.medium};
                     line-height: 1.5;
                 }
 
                 body {
-                    background-color: ${COLOR.secondary100};
+                    background-color: ${theme.palette.background.main};
                 }
 
                 a {
                     text-decoration: none;
-                    color: ${COLOR.primary100};
+                    color: ${theme.palette.primary.main};
+                    font-family: ${theme.typography.fontFamily};
+                    font-size: ${theme.typography.medium};
                 }
             `}
         />

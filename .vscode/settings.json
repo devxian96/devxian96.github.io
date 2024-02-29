@@ -1,44 +1,46 @@
 {
-  "prettier.configPath": ".prettierrc",
-  "stylelint.validate": [
-    "css",
-    "scss",
-    "typescriptreact",
-    "typescript"
-  ],
-  "stylelint.configFile": ".stylelintrc",
-  "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnPaste": true,
-  "editor.formatOnType": true,
-  "editor.tabSize": 4,
-  "editor.wordWrap": "on",
-  "editor.detectIndentation": false,
-  "editor.insertSpaces": true,
-  "editor.minimap.enabled": true,
-  "editor.suggestSelection": "first",
-  "cSpell.words": [
-    "bento",
-    "elif",
-    "nojekyll",
-    "Noto",
-    "xlarge",
-    "xxlarge",
-    "yarnpkg",
-    "yarnrc"
-],
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "search.exclude": {
-    "**/.yarn": true,
-    "**/.pnp.*": true
-  },
-  "eslint.nodePath": ".yarn/sdks",
-  "prettier.prettierPath": ".yarn/sdks/prettier/index.cjs",
-  "typescript.tsdk": ".yarn/sdks/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true
+    "prettier.configPath": ".prettierrc",
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+    "editor.tabSize": 4,
+    "editor.wordWrap": "on",
+    "editor.detectIndentation": false,
+    "editor.insertSpaces": true,
+    "editor.minimap.enabled": true,
+    "editor.suggestSelection": "first",
+    "cSpell.words": [
+        "bento",
+        "commitlint",
+        "devxain",
+        "elif",
+        "nextjs",
+        "nojekyll",
+        "Noto",
+        "Seokhyun",
+        "tanstack",
+        "unoptimized",
+        "xlarge",
+        "xxlarge",
+        "yarnpkg",
+        "yarnrc"
+    ],
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "search.exclude": {
+        "**/.yarn": true,
+        "**/.pnp.*": true
+    },
+    "eslint.nodePath": ".yarn/sdks",
+    "prettier.prettierPath": ".yarn/sdks/prettier/index.cjs",
+    "typescript.tsdk": ".yarn/sdks/typescript/lib",
+    "typescript.enablePromptUseWorkspaceTsdk": true,
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }
