@@ -1,6 +1,7 @@
 node_modules
 .next
 .yarn
-.vscode
 .github
 dist
+.pnp.cjs
+.pnp.loader.mjs

@@ -10,6 +10,7 @@
         "stylelint.vscode-stylelint",
         "yoavbls.pretty-ts-errors",
         "eamodio.gitlens",
-        "usernamehw.errorlens"
+        "usernamehw.errorlens",
+        "arcanis.vscode-zipfs"
     ]
 }

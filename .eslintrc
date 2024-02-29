@@ -1,12 +1,36 @@
 {
+    "root": true,
     "parser": "@typescript-eslint/parser",
-    "plugins": ["@typescript-eslint", "prettier", "@emotion"],
+    "parserOptions": {
+        "project": "./tsconfig.json",
+        "tsconfigRootDir": "./"
+    },
+    "env": {
+        "browser": true,
+        "node": true,
+        "es6": true
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    },
+    "plugins": [
+        "@typescript-eslint",
+        "prettier",
+        "import",
+        "@emotion"
+    ],
     "extends": [
         "airbnb",
+        "airbnb/hooks",
         "plugin:import/errors",
         "plugin:import/warnings",
         "plugin:prettier/recommended",
         "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:@next/next/recommended",
+        "plugin:@tanstack/eslint-plugin-query/recommended",
         "next/core-web-vitals"
     ],
     "rules": {
@@ -15,10 +39,9 @@
         "linebreak-style": 0,
         "import/prefer-default-export": 0,
         "prettier/prettier": 0,
-        "import/extensions": 0,
         "no-use-before-define": 0,
         "import/no-unresolved": 0,
-        "import/no-extraneous-dependencies": 0, // 테스트 또는 개발환경을 구성하는 파일에서는 devDependency 사용을 허용
+        "import/no-extraneous-dependencies": 0,
         "no-shadow": 0,
         "react/require-default-props": "off",
         "no-param-reassign": 0,
@@ -28,7 +51,9 @@
         "react/no-unknown-property": [
             "error",
             {
-                "ignore": ["css"]
+                "ignore": [
+                    "css"
+                ]
             }
         ],
         "react/function-component-definition": [
@@ -41,9 +66,83 @@
         "react/jsx-filename-extension": [
             2,
             {
-                "extensions": [".js", ".jsx", ".ts", ".tsx"]
+                "extensions": [
+                    ".js",
+                    ".jsx",
+                    ".ts",
+                    ".tsx"
+                ]
             }
         ],
-        "jsx-a11y/no-noninteractive-element-interactions": 0
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+                "js": "never",
+                "jsx": "never",
+                "ts": "never",
+                "tsx": "never"
+            }
+        ],
+        "no-restricted-imports": [
+            "error",
+            {
+                "patterns": [
+                    "../*"
+                ],
+                "paths": [
+                    {
+                        "name": "react",
+                        "importNames": [
+                            "default"
+                        ],
+                        "message": "import React from 'react' makes bundle size larger."
+                    }
+                ]
+            }
+        ],
+        "@typescript-eslint/consistent-type-imports": [
+            "error",
+            {
+                "prefer": "type-imports",
+                "disallowTypeAnnotations": true
+            }
+        ],
+        "import/order": [
+            "error",
+            {
+                "groups": [
+                    "type",
+                    "builtin",
+                    "external",
+                    "internal",
+                    "parent",
+                    "sibling",
+                    "index",
+                    "unknown"
+                ],
+                "pathGroups": [
+                    {
+                        "pattern": "react*",
+                        "group": "builtin",
+                        "position": "before"
+                    },
+                    {
+                        "pattern": "next*",
+                        "group": "builtin",
+                        "position": "before"
+                    },
+                    {
+                        "pattern": "@/**",
+                        "group": "internal",
+                        "position": "after"
+                    }
+                ],
+                "newlines-between": "never"
+            }
+        ],
+        "jsx-a11y/no-noninteractive-element-interactions": 0,
+        "react/jsx-uses-react": "off",
+        "react/react-in-jsx-scope": "off"
     }
 }
