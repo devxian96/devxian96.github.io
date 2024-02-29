@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.4](https://github.com/devxian96/devxian96.github.io/compare/v0.2.3...v0.2.4) (2024-02-29)
+
+### Bug Fixes
+
+-   배포 오류 수정 ([6242d29](https://github.com/devxian96/devxian96.github.io/commit/6242d2966a679dbd73a6c2c92d3ce5f2955260ec))
+
 ### [0.2.3](https://github.com/devxian96/devxian96.github.io/compare/v0.2.2...v0.2.3) (2024-02-29)
 
 ### 0.2.2 (2024-02-29)
