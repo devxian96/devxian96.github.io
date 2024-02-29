@@ -14,6 +14,8 @@ export const Logo: FC = () => {
             color: 'palette.text',
             fontWeight: 'bold',
             lineHeight: '50px',
+            paddingTop: 0,
+            paddingBottom: 0,
         },
         img: {
             verticalAlign: 'middle',

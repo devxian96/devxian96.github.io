@@ -46,7 +46,7 @@ export const Text: FC<Props> = ({
                 paddingRight: gutter || 0,
                 fontWeight: 500,
                 paddingTop: 0.4,
-                paddingBottom: 0.5,
+                paddingBottom: 0.4,
                 borderRadius: rounded ? '0.5rem' : undefined,
                 ...sx,
             }}

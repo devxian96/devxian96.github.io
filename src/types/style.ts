@@ -2,7 +2,7 @@ import type { Theme as MUITheme } from '@mui/material';
 import type { getDesignTokens } from '@/utils';
 
 export interface Style {
-    sx?: Record<string, string>;
+    sx?: Record<string, string | number>;
 }
 
 export type PaletteMode = 'dark' | 'light';
