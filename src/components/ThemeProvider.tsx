@@ -1,5 +1,5 @@
-import type { FC, PropsWithChildren } from 'react';
 import { useState, useEffect } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import { ThemeProvider as MuiThemeProvider } from '@mui/styles';
 import { createTheme } from '@mui/material/styles';

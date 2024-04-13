@@ -13,6 +13,9 @@
     "settings": {
         "react": {
             "version": "detect"
+        },
+        "import/resolver": {
+            "typescript": {}
         }
     },
     "plugins": [
@@ -30,8 +33,7 @@
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
         "plugin:@next/next/recommended",
-        "plugin:@tanstack/eslint-plugin-query/recommended",
-        "next/core-web-vitals"
+        "plugin:@tanstack/eslint-plugin-query/recommended"
     ],
     "rules": {
         "@emotion/jsx-import": "error",
