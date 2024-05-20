@@ -6,6 +6,7 @@
     "license": "MIT",
     "homepage": "https://devxian96.github.io",
     "author": "devxian96<coolman555@me.com>",
+    "type": "module",
     "scripts": {
         "dev": "next dev",
         "build": "next build",
@@ -16,7 +17,7 @@
         "prettier": "prettier --write .",
         "type-check": "tsc --noEmit",
         "type-check:watch": "tsc --noEmit --watch",
-        "postinstall": "husky install",
+        "postinstall": "husky",
         "release": "standard-version"
     },
     "dependencies": {
