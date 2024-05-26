@@ -5,6 +5,10 @@
     "private": true,
     "license": "MIT",
     "homepage": "https://devxian96.github.io",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/devxian96/devxian96.github.io.git"
+    },
     "author": "devxian96<coolman555@me.com>",
     "type": "module",
     "scripts": {
@@ -80,5 +84,12 @@
             "bash -c 'yarn prettier'"
         ]
     },
-    "packageManager": "yarn@4.1.0"
+    "engines": {
+        "node": "20.13.1"
+    },
+    "packageManager": "yarn@4.2.2",
+    "volta": {
+        "node": "20.13.1",
+        "yarn": "4.2.2"
+    }
 }
