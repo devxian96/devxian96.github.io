@@ -22,6 +22,7 @@
         "type-check": "tsc --noEmit",
         "type-check:watch": "tsc --noEmit --watch",
         "postinstall": "husky",
+        "preinstall": "npx only-allow yarn",
         "release": "standard-version"
     },
     "dependencies": {
@@ -63,7 +64,7 @@
         "eslint-plugin-react-hooks": "^4.6.2",
         "gh-pages": "^6.1.1",
         "husky": "^9.0.11",
-        "lint-staged": ">=15.2.2",
+        "lint-staged": ">=15.2.5",
         "prettier": "^3.2.5",
         "standard-version": "^9.5.0",
         "typescript": "^5.3.3"
