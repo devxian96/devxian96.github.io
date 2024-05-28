@@ -29,6 +29,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@commitlint/cli", "npm:19.3.0"],\
           ["@commitlint/config-conventional", "npm:19.2.2"],\
+          ["@emotion/cache", "npm:11.11.0"],\
           ["@emotion/eslint-plugin", "virtual:83783640263a2b3d9204e99f1973fa69a2d6941b8d87671411bbf920b36ed74b6a5ffd6a48f7a1b1fa8e2cb60d3f8e003f13ac79f4ef4833f4de596ae745e3ed#npm:11.11.0"],\
           ["@emotion/react", "virtual:83783640263a2b3d9204e99f1973fa69a2d6941b8d87671411bbf920b36ed74b6a5ffd6a48f7a1b1fa8e2cb60d3f8e003f13ac79f4ef4833f4de596ae745e3ed#npm:11.11.4"],\
           ["@emotion/styled", "virtual:83783640263a2b3d9204e99f1973fa69a2d6941b8d87671411bbf920b36ed74b6a5ffd6a48f7a1b1fa8e2cb60d3f8e003f13ac79f4ef4833f4de596ae745e3ed#npm:11.11.5"],\
@@ -873,7 +874,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@mui/material-nextjs", "virtual:83783640263a2b3d9204e99f1973fa69a2d6941b8d87671411bbf920b36ed74b6a5ffd6a48f7a1b1fa8e2cb60d3f8e003f13ac79f4ef4833f4de596ae745e3ed#npm:5.15.11"],\
           ["@babel/runtime", "npm:7.24.0"],\
-          ["@emotion/cache", null],\
+          ["@emotion/cache", "npm:11.11.0"],\
           ["@emotion/server", null],\
           ["@mui/material", "virtual:83783640263a2b3d9204e99f1973fa69a2d6941b8d87671411bbf920b36ed74b6a5ffd6a48f7a1b1fa8e2cb60d3f8e003f13ac79f4ef4833f4de596ae745e3ed#npm:5.15.18"],\
           ["@types/emotion__cache", null],\
@@ -3085,6 +3086,7 @@ const RAW_RUNTIME_STATE =
           ["devxian96.github.io", "workspace:."],\
           ["@commitlint/cli", "npm:19.3.0"],\
           ["@commitlint/config-conventional", "npm:19.2.2"],\
+          ["@emotion/cache", "npm:11.11.0"],\
           ["@emotion/eslint-plugin", "virtual:83783640263a2b3d9204e99f1973fa69a2d6941b8d87671411bbf920b36ed74b6a5ffd6a48f7a1b1fa8e2cb60d3f8e003f13ac79f4ef4833f4de596ae745e3ed#npm:11.11.0"],\
           ["@emotion/react", "virtual:83783640263a2b3d9204e99f1973fa69a2d6941b8d87671411bbf920b36ed74b6a5ffd6a48f7a1b1fa8e2cb60d3f8e003f13ac79f4ef4833f4de596ae745e3ed#npm:11.11.4"],\
           ["@emotion/styled", "virtual:83783640263a2b3d9204e99f1973fa69a2d6941b8d87671411bbf920b36ed74b6a5ffd6a48f7a1b1fa8e2cb60d3f8e003f13ac79f4ef4833f4de596ae745e3ed#npm:11.11.5"],\

@@ -2418,6 +2418,7 @@ __metadata:
   dependencies:
     "@commitlint/cli": "npm:^19.3.0"
     "@commitlint/config-conventional": "npm:^19.2.2"
+    "@emotion/cache": "npm:^11.11.0"
     "@emotion/eslint-plugin": "npm:^11.11.0"
     "@emotion/react": "npm:^11.11.4"
     "@emotion/styled": "npm:^11.11.5"
