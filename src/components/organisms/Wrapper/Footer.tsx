@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { Container, Stack } from '@mui/material';
 import { useTheme } from '@mui/styles';
 import { Text } from '@/components/atoms';
-import { BENTO_STYLE } from '@/constants';
 
 export const Footer: FC = () => {
     const theme = useTheme();
@@ -13,7 +12,6 @@ export const Footer: FC = () => {
 
     const style = {
         footer: {
-            ...BENTO_STYLE[theme.palette.mode],
             backgroundColor: theme.palette.secondary.main,
             backdropFilter: 'blur(10px)',
             color: theme.palette.text,

@@ -9,3 +9,9 @@
 다크모드
 
 yarn dlx @yarnpkg/sdks vscode
+
+배경이미지 출처
+https://pixabay.com/ko/photos/사슴-숲-자연-동물-7974406/
+
+웹 디자인 레퍼
+https://elementary.io
