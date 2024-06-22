@@ -2,8 +2,8 @@
 
 import type { PropsWithChildren } from 'react';
 import type { NextPage } from 'next';
+import { CssBaseline } from '@mui/material';
 import { Recoil } from '@/components/Recoil';
-import { CssBaseLine } from '@/components/CssBaseLine';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { Wrapper } from '@/components/organisms';
 
@@ -16,7 +16,7 @@ const RootLayout: NextPage<PropsWithChildren> = ({ children }) => {
             <body>
                 <Recoil>
                     <ThemeProvider>
-                        <CssBaseLine />
+                        <CssBaseline />
                         <Wrapper>{children}</Wrapper>
                     </ThemeProvider>
                 </Recoil>
