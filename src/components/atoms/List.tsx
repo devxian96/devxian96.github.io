@@ -5,24 +5,24 @@ import { usePathname } from 'next/navigation';
 import type { Style } from '@/types';
 import { Text } from './Text';
 
-interface Props extends FC<MenuProps> {
-    List: FC<ListProps>;
+interface Props extends FC<ListProps> {
+    Item: FC<ItemProps>;
 }
 
-interface MenuProps extends PropsWithChildren, Style {}
+interface ListProps extends PropsWithChildren, Style {}
 
 /**
- * Menu component
+ * List component
  * @example
- * <Menu>
- *  <MenuList>Menu item 1</MenuList>
- *  <MenuList>Menu item 2</MenuList>
- * </Menu>
+ * <List>
+ *  <List.Item>List item 1</List.Item>
+ *  <List.Item>List item 2</List.Item>
+ * </List>
  */
-export const Menu: Props = ({ sx, children }) => {
+export const List: Props = ({ sx, children }) => {
     return (
         <MuiList
-            component="menu"
+            component="li"
             disablePadding
             dense
             sx={{
@@ -40,11 +40,11 @@ export const Menu: Props = ({ sx, children }) => {
     );
 };
 
-interface ListProps extends PropsWithChildren {
+interface ItemProps extends PropsWithChildren {
     href: string;
 }
 
-const List: FC<ListProps> = ({ children, href }) => {
+const Item: FC<ItemProps> = ({ children, href }) => {
     const pathname = usePathname();
     const isActive = pathname === href;
     const activeBackground = !isActive ? undefined : 'primary';
@@ -60,4 +60,4 @@ const List: FC<ListProps> = ({ children, href }) => {
         </ListItem>
     );
 };
-Menu.List = List;
+List.Item = Item;

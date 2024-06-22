@@ -1,14 +1,14 @@
 import type { FC } from 'react';
-import { Menu, SwitchButton, Box } from '@/components/atoms';
+import { List, SwitchButton, Box } from '@/components/atoms';
 
 export const Nav: FC = () => {
     return (
         <Box component="nav">
-            <Menu>
-                <Menu.List href="/">Home</Menu.List>
-                <Menu.List href="/about">About</Menu.List>
-                <Menu.List href="/posts">Posts</Menu.List>
-            </Menu>
+            <List>
+                <List.Item href="/">Home</List.Item>
+                <List.Item href="/about">About</List.Item>
+                <List.Item href="/posts">Posts</List.Item>
+            </List>
             <SwitchButton />
         </Box>
     );
