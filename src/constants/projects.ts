@@ -102,7 +102,7 @@ export const PROJECTS: Project[] = [
 			'Cisco SkillSpector 프롬프트 스캐너 추가',
 			'meta agent rule of two 규칙 스캐너 개발',
 		],
-		stack: 'Next.js · React · TypeScript · ts-pattern · Zustand · Tailwind · shadcn(base ui) · Framer · TanStack Query',
+		stack: 'Next.js · React · TypeScript · ts-pattern · Zustand · Tailwind · shadcn(base ui) · Framer · Prisma · TanStack Query',
 	},
 	{
 		name: 'EC 물류진단 대시보드',

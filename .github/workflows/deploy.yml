@@ -51,8 +51,11 @@ jobs:
             - name: Type check
               run: pnpm type-check
 
-            - name: Setup Pages
-              uses: actions/configure-pages@v5
+            # actions/configure-pages는 쓰지 않는다.
+            # 이 워크플로는 그 액션의 출력(base_path, origin)을 하나도 참조하지 않고,
+            # Pages는 저장소에서 이미 활성화되어 있어 초기화 호출도 필요 없다.
+            # 잡이 내려받는 액션이 하나 줄면 GitHub 쪽 장애·스로틀링(429/503)에
+            # 배포가 걸릴 확률도 그만큼 줄어든다.
 
             - name: Build
               run: pnpm build
