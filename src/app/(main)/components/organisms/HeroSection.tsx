@@ -53,7 +53,10 @@ export const HeroSection = () => {
 
 				<dl className="mt-16 grid gap-px overflow-hidden rounded-card border bg-border sm:grid-cols-3">
 					{STATS.map((stat) => (
-						<div key={stat.label} className="flex flex-col gap-1 bg-background p-6">
+						<div
+							key={stat.label}
+							className="flex flex-col items-center gap-1 bg-background p-6 text-center"
+						>
 							<dt className="text-xs text-muted-foreground">{stat.label}</dt>
 							<dd className="font-display text-2xl tracking-[-0.02em]">{stat.value}</dd>
 						</div>
