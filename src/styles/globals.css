@@ -3,6 +3,41 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Cafe24 상업용 무료 폰트 (fonts.cafe24.com). 공식 woff2를 내려받아 self-host 한다 —
+   외부 CDN에 의존하지 않고, 실제로 쓰는 4개만 담아 824KB로 끝난다.
+   본문은 Cafe24 PRO Slim(300/400/700), 제목과 강조는 Cafe24 Ssurround. */
+@font-face {
+	font-family: 'Cafe24PROSlim';
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+	src: url('/fonts/Cafe24PROSlim-Light.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Cafe24PROSlim';
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+	src: url('/fonts/Cafe24PROSlim-Regular.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Cafe24PROSlim';
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+	src: url('/fonts/Cafe24PROSlim-Bold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Cafe24Ssurround';
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+	src: url('/fonts/Cafe24Ssurround-v2.0.woff2') format('woff2');
+}
+
 /* `static` 없이 두면 Tailwind v4가 "유틸리티에서 참조되지 않은" 변수를 지운다.
    라이트 토큰은 .dark에서 덮어쓰는 기본값이라 유틸리티가 직접 참조하지 않는데,
    그대로 잘려나가면 다크 클래스를 떼도 화면이 어두운 채로 남는다. */
@@ -48,8 +83,11 @@
 	--color-ring: #00aaff;
 
 	--font-sans:
-		'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Segoe UI',
-		system-ui, sans-serif;
+		'Cafe24PROSlim', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Segoe UI', system-ui, sans-serif;
+	/* 제목·강조 모두 Ssurround. PRO UP도 받아봤지만 한글이 눌려 긴 제목에서 읽기 어려웠다.
+	   위계는 서체가 아니라 크기와 색으로 준다. */
+	--font-display: 'Cafe24Ssurround', 'Cafe24PROSlim', -apple-system, 'Apple SD Gothic Neo', sans-serif;
+	--font-accent: 'Cafe24Ssurround', 'Cafe24PROSlim', -apple-system, 'Apple SD Gothic Neo', sans-serif;
 	--font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
 
 	--radius-card: 1.25rem;

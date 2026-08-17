@@ -24,7 +24,7 @@ export const PostArticle = ({ title, date, tags, html }: Props) => {
 				<time dateTime={date} className="font-mono text-sm tracking-wider text-primary">
 					{formatPostDate(date)}
 				</time>
-				<h1 className="text-3xl font-bold tracking-tight sm:text-4xl">{title}</h1>
+				<h1 className="font-display text-3xl tracking-tight sm:text-4xl">{title}</h1>
 				<div className="flex flex-wrap gap-2">
 					{tags.map((tag) => (
 						<span

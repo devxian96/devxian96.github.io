@@ -18,7 +18,7 @@ export const PostCard = ({ slug, title, description, date, tags }: Props) => {
 			<time dateTime={date} className="font-mono text-xs tracking-wider text-muted-foreground">
 				{formatPostDate(date)}
 			</time>
-			<h3 className="text-xl font-bold tracking-tight transition-colors group-hover:text-primary">{title}</h3>
+			<h3 className="font-display text-xl tracking-tight transition-colors group-hover:text-primary">{title}</h3>
 			<p className="text-sm/relaxed text-muted-foreground">{description}</p>
 			<div className="mt-auto flex flex-wrap gap-2 pt-2">
 				{tags.map((tag) => (

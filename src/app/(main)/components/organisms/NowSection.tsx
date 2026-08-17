@@ -15,7 +15,7 @@ export const NowSection = () => {
 				<div className="flex items-start justify-between gap-4">
 					<div className="flex flex-col gap-1">
 						<span className="font-mono text-xs tracking-wider text-primary">Cafe24</span>
-						<h3 className="text-2xl font-bold tracking-tight">AI 홈페이지 빌더</h3>
+						<h3 className="font-display text-2xl tracking-tight">AI 홈페이지 빌더</h3>
 					</div>
 					<ArrowUpRight className="size-6 text-muted-foreground transition-colors group-hover:text-primary" />
 				</div>

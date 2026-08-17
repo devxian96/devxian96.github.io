@@ -14,7 +14,7 @@
 		"isolatedModules": true,
 		"jsx": "react-jsx",
 		"incremental": true,
-		"baseUrl": ".",
+		// TypeScript 7에서 baseUrl이 제거됐다. paths는 이제 tsconfig 위치를 기준으로 해석된다.
 		"paths": {
 			"@/*": ["./src/*"]
 		},

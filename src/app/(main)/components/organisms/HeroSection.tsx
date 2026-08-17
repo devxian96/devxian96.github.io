@@ -34,7 +34,7 @@ export const HeroSection = () => {
 					<span className="h-0.5 w-24 bg-linear-to-r from-primary to-transparent" aria-hidden />
 
 					<div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:gap-6">
-						<p className="text-2xl font-bold text-primary sm:text-3xl">{PROFILE.tagline}</p>
+						<p className="font-accent text-3xl text-primary sm:text-4xl">{PROFILE.tagline}</p>
 						<p className="text-sm text-muted-foreground">{PROFILE.taglineEn}</p>
 					</div>
 

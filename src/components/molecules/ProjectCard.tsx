@@ -26,7 +26,7 @@ export const ProjectCard = ({ project }: Props) => {
 					<span className="font-mono text-xs tracking-wider text-primary">
 						{project.org} · {project.period}
 					</span>
-					<h3 className="text-2xl font-bold tracking-tight">{project.name}</h3>
+					<h3 className="font-display text-2xl tracking-tight">{project.name}</h3>
 				</div>
 
 				<p className="text-sm/relaxed text-muted-foreground">{project.summary}</p>

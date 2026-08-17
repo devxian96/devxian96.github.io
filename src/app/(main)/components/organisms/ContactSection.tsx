@@ -1,5 +1,7 @@
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { Button } from '@/components/atoms/button';
+import { GithubIcon } from '@/components/atoms/github-icon';
+import { LinkedinIcon } from '@/components/atoms/linkedin-icon';
 import { SectionHeading } from '@/components/molecules/SectionHeading';
 import { PROFILE } from '@/constants/profile';
 
@@ -17,13 +19,13 @@ export const ContactSection = () => {
 				</Button>
 				<Button asChild size="lg" variant="outline">
 					<a href={PROFILE.github} target="_blank" rel="noreferrer">
-						<Github />
+						<GithubIcon className="size-4" />
 						{PROFILE.handle}
 					</a>
 				</Button>
 				<Button asChild size="lg" variant="outline">
 					<a href={PROFILE.linkedin} target="_blank" rel="noreferrer">
-						<Linkedin />
+						<LinkedinIcon className="size-4" />
 						LinkedIn
 					</a>
 				</Button>
