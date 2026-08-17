@@ -46,6 +46,25 @@ const RootLayout = ({ children }: PropsWithChildren) => {
 		<html lang="ko" suppressHydrationWarning>
 			<head>
 				<link rel="icon" href="/favicon.ico" sizes="128x128" />
+
+				{/* 첫 화면에 반드시 쓰이는 두 개만 미리 받는다.
+				    CSS를 파싱한 뒤에야 폰트를 요청하면 요청 사슬이 한 단계 길어지고,
+				    그만큼 LCP 요소가 늦게 그려진다. 나머지 서체는 필요한 순간에 받게 둔다. */}
+				<link
+					rel="preload"
+					href="/fonts/Pretendard-Regular.subset.woff2"
+					as="font"
+					type="font/woff2"
+					crossOrigin="anonymous"
+				/>
+				<link
+					rel="preload"
+					href="/fonts/Cafe24Ssurround-v2.0.woff2"
+					as="font"
+					type="font/woff2"
+					crossOrigin="anonymous"
+				/>
+
 				<script dangerouslySetInnerHTML={{ __html: THEME_BOOTSTRAP }} />
 			</head>
 			{/* 세로 flex + main의 flex-1 조합이라야 내용이 짧은 페이지에서도 푸터가 화면 아래에 붙는다.

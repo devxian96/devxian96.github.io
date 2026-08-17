@@ -6,7 +6,7 @@
 /* 서체는 두 계열을 역할로 나눠 쓴다. 전부 self-host — 외부 CDN 의존 없음.
  *
  * - 본문 한글: Pretendard (SIL OFL). KS X 1001 서브셋 400/700만 담는다.
- * - 본문 영문: Cafe24 PRO Slim. unicode-range로 라틴 영역만 잡게 해두면
+ * - 본문 영문: Cafe24 PRO Slim(400/700). unicode-range로 라틴 영역만 잡게 해두면
  *   한글은 자연히 Pretendard로 떨어진다.
  * - 제목·강조: Cafe24 Ssurround (한글 포함 전 영역).
  *
@@ -14,17 +14,6 @@
  * 그래서 한글 본문만 Pretendard로 넘기고, 브랜드 인상은 영문과 제목이 맡는다. */
 
 /* 라틴 영역 — Google Fonts의 latin 서브셋 범위와 동일 */
-@font-face {
-	font-family: 'Cafe24PROSlim';
-	font-weight: 300;
-	font-style: normal;
-	font-display: swap;
-	src: url('/fonts/Cafe24PROSlim-Light.woff2') format('woff2');
-	unicode-range:
-		U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122,
-		U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
 @font-face {
 	font-family: 'Cafe24PROSlim';
 	font-weight: 400;
