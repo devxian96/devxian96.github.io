@@ -7,7 +7,8 @@
  *
  * - 본문 한글: Pretendard (SIL OFL). KS X 1001 서브셋 400/700만 담는다.
  * - 본문 영문: Cafe24 PRO Slim(400/700). unicode-range로 라틴 영역만 잡게 해두면
- *   한글은 자연히 Pretendard로 떨어진다.
+ *   한글은 자연히 Pretendard로 떨어진다. 파일도 같은 범위로 서브셋해 두었다 —
+ *   원본은 한글 글리프까지 들고 있어 라틴만 쓰면서 140KB를 받게 된다(서브셋 후 8KB).
  * - 제목·강조: Cafe24 Ssurround (한글 포함 전 영역).
  *
  * Cafe24 PRO Slim은 한글 본문에서 자소가 눌려 장문 가독성이 떨어진다.
@@ -19,7 +20,7 @@
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
-	src: url('/fonts/Cafe24PROSlim-Regular.woff2') format('woff2');
+	src: url('/fonts/Cafe24PROSlim-Regular.latin.woff2') format('woff2');
 	unicode-range:
 		U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122,
 		U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
@@ -30,7 +31,7 @@
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
-	src: url('/fonts/Cafe24PROSlim-Bold.woff2') format('woff2');
+	src: url('/fonts/Cafe24PROSlim-Bold.latin.woff2') format('woff2');
 	unicode-range:
 		U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122,
 		U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;

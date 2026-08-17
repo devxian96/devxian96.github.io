@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { Mail } from 'lucide-react';
 import { GithubIcon } from '@/components/atoms/github-icon';
 import { LinkedinIcon } from '@/components/atoms/linkedin-icon';
-import { Marker } from '@/components/molecules/Marker';
+import { Marker } from '@/components/organisms/Marker';
 import { PROFILE } from '@/constants/profile';
 import { STATS } from '@/constants/stats';
 
@@ -59,8 +59,8 @@ export const HeroSection = () => {
 					<Image
 						src={PROFILE.avatar}
 						alt="장석현. 해질녘 능선 위에서 바다를 등지고 선 옆모습."
-						width={260}
-						height={260}
+						width={420}
+						height={420}
 						priority
 						className="size-32 shrink-0 rounded-full border object-cover sm:size-44 lg:size-52"
 					/>

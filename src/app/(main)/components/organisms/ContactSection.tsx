@@ -1,7 +1,7 @@
 import { Mail } from 'lucide-react';
 import { GithubIcon } from '@/components/atoms/github-icon';
 import { LinkedinIcon } from '@/components/atoms/linkedin-icon';
-import { Marker } from '@/components/molecules/Marker';
+import { Marker } from '@/components/organisms/Marker';
 import { PROFILE } from '@/constants/profile';
 
 export const ContactSection = () => {
