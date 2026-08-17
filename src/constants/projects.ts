@@ -149,7 +149,10 @@ export const PROJECTS: Project[] = [
 			'2024년 커서 에디터 사용기 발표 후 전사 도입 결정',
 		],
 		stack: 'Next.js · React · TypeScript · TanStack Query · shadcn · Tailwind · Zustand · Axios',
-		href: 'https://support.cafe24.com/hc/ko/articles/30077290850713',
+		href: 'https://support.cafe24.com/hc/ko/articles/48207046448409-%EC%B9%B4%ED%8E%9824-%EC%95%A0%EB%84%90%EB%A6%AC%ED%8B%B1%EC%8A%A4-%EC%95%8C%EC%95%84%EB%B3%B4%EA%B8%B0',
+		image: '/images/works/analytics.jpg',
+		imageAlt:
+			'카페24 애널리틱스 안내 문서 화면. 통합 분석과 방문자 집계 방식, 인사이트 기능이 항목별로 정리되어 있다.',
 	},
 	{
 		name: '유튜브 샵스 어필리에이트',
@@ -258,6 +261,8 @@ export const PROJECTS: Project[] = [
 		highlights: ['MUI 오버라이드', 'NPM 패키지 배포', 'Next.js SSR을 지원하도록 컴포넌트 래핑'],
 		stack: 'React · motion · d3 · TanStack Table · MUI · emotion',
 		href: 'https://www.npmjs.com/package/@buzzle/bds',
+		image: '/images/works/bds.jpg',
+		imageAlt: 'npm에 배포된 @buzzle/bds 패키지 페이지. README와 설치 명령, 주간 다운로드 그래프가 함께 보인다.',
 	},
 	{
 		name: 'IT 커뮤니티 코파운드',
@@ -342,6 +347,8 @@ export const PROJECTS: Project[] = [
 		],
 		stack: 'Spring MVC · Vue.js · Oracle',
 		href: 'https://www.koreascience.or.kr/article/CFKO201924664108144.page',
+		image: '/images/works/survey.jpg',
+		imageAlt: '대학 통합 설문조사 시스템 설계 및 구축 논문 페이지. 저자 목록에 장석현이 포함되어 있다.',
 	},
 	{
 		name: '바이럴 마케팅 통합 도구',
