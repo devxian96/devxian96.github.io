@@ -3,6 +3,7 @@ export interface Work {
 	reason: string;
 	stack: string;
 	href: string;
+	logo?: string;
 }
 
 /** 없어서 직접 만든 것들. 순서는 "왜 만들었는지"가 선명한 순. */
@@ -12,6 +13,14 @@ export const WORKS: Work[] = [
 		reason: 'PHP엔 Express 같은 가벼운 REST 프레임워크가 없어서',
 		stack: 'PHP',
 		href: 'https://github.com/devxian96/phpExpress',
+		logo: '/images/works/phpexpress.webp',
+	},
+	{
+		name: 'neomo',
+		reason: '뉴모피즘을 매번 손으로 그리기 싫어서',
+		stack: 'CSS',
+		href: 'https://github.com/neomorphism/neomo',
+		logo: '/images/works/neomo.webp',
 	},
 	{
 		name: 'react-global-components',
@@ -32,15 +41,9 @@ export const WORKS: Work[] = [
 		href: 'https://github.com/devxian96/no-lib-club',
 	},
 	{
-		name: 'linux-monitor',
-		reason: '서버 상태를 브라우저에서 보고 싶어서',
-		stack: 'JavaScript',
-		href: 'https://github.com/devxian96/linux-mornitor',
-	},
-	{
-		name: 'ZooDiary',
-		reason: '반려동물의 하루를 기록하고 나누고 싶어서',
-		stack: 'TypeScript',
-		href: 'https://github.com/devxian96/ZooDiary-Back',
+		name: '@buzzle/bds',
+		reason: '사이드 프로젝트에 새 사람이 와도 바로 붙을 수 있게',
+		stack: 'React · MUI',
+		href: 'https://www.npmjs.com/package/@buzzle/bds',
 	},
 ];

@@ -34,10 +34,19 @@ Pre-commit hooks run automatically via Husky + lint-staged (Prettier → ESLint 
 
 ### Route Groups
 
-| Group    | Paths    | Notes                                           |
-| -------- | -------- | ----------------------------------------------- |
-| `(main)` | `/`      | Hero → Now → Works → Timeline → Stack → Contact |
-| `(sub)`  | `/about` | 자기소개 본문                                   |
+| Group    | Paths                   | Notes                                                           |
+| -------- | ----------------------- | --------------------------------------------------------------- |
+| `(main)` | `/`                     | Hero → Now → Works → Projects → Career → Stack → Blog → Contact |
+| `(sub)`  | `/about`                | 자기소개, 학력                                                  |
+| `(blog)` | `/blog`, `/blog/[slug]` | 마크다운 기반 블로그                                            |
+
+### 블로그
+
+`content/posts/*.md` 한 파일이 글 하나이고 파일명이 slug다. `src/utils/posts.ts`가 `gray-matter`로 frontmatter를, `marked`로 본문을 빌드 시점에 처리하고 `generateStaticParams`가 페이지를 뽑는다.
+
+frontmatter의 `date`는 따옴표가 없으면 YAML이 Date 객체로 바꾸므로, `toDateString`이 읽는 지점에서 문자열로 정규화한다. 정렬·포맷이 전부 문자열을 전제하기 때문에 이 한 곳에서 막는다.
+
+본문 스타일은 `@tailwindcss/typography`의 `prose`다. 플러그인 기본값은 인라인 코드 앞뒤에 백틱을 문자로 붙이는데, 이를 지우는 규칙은 `globals.css`에서 **레이어 밖**에 둬야 한다. `@layer base`에 적으면 특이도와 무관하게 플러그인 쪽이 이긴다.
 
 ### Component Organization (Route Co-location + Atomic Design)
 

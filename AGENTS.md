@@ -29,17 +29,38 @@ devxian96.github.io/
 ├── src/
 │   ├── app/                      # Next.js App Router 라우트
 │   │   ├── (main)/               # / — 포트폴리오 본문
-│   │   └── (sub)/about/          # /about
+│   │   ├── (sub)/about/          # /about
+│   │   └── (blog)/blog/          # /blog, /blog/[slug]
 │   ├── components/               # 공유 컴포넌트 (atoms, molecules, organisms)
-│   ├── constants/                # 정적 데이터 (works, timeline, stack, profile)
+│   ├── constants/                # 정적 데이터 (profile, works, projects, timeline, stack)
 │   ├── hooks/                    # 공유 hooks
 │   ├── stores/                   # Zustand 클라이언트 상태
 │   ├── styles/                   # 글로벌 CSS 및 디자인 토큰
-│   └── utils/                    # 유틸리티 함수
+│   └── utils/                    # 유틸리티 함수 (cn, posts)
+├── content/posts/                # 블로그 글 (마크다운)
 ├── lib/eslint-rules/             # 커스텀 ESLint 플러그인 (25개 규칙)
-├── public/                       # 정적 자산
+├── public/images/                # 아바타, 프로젝트 스크린샷
 └── out/                          # 정적 export 결과 (git 제외)
 ```
+
+## 블로그
+
+`content/posts/*.md` 하나가 글 하나이고, 파일명이 곧 URL slug다. `src/utils/posts.ts`가 빌드 시점에 읽어 `generateStaticParams`로 페이지를 뽑는다. 백엔드도 CMS도 없다.
+
+frontmatter는 `title` · `description` · `date` · `tags` 네 개다.
+
+```markdown
+---
+title: 글 제목
+description: 목록 카드에 쓰이는 한 줄
+date: 2026-08-17
+tags: [Next.js, 회고]
+---
+```
+
+`date`에 따옴표를 붙이지 않으면 YAML 파서가 Date 객체로 바꾼다. `posts.ts`의 `toDateString`이 읽는 지점에서 한 번 정규화하므로 글 쓰는 쪽은 신경 쓸 필요 없다.
+
+본문은 `marked`로 HTML을 만들어 `dangerouslySetInnerHTML`로 넣는다. 저장소 안의 파일만 소스이고 외부 입력이 섞이는 경로가 없어서 sanitize를 두지 않았다 — **외부에서 받은 마크다운을 렌더할 일이 생기면 이 전제가 깨지므로 sanitize를 먼저 붙일 것.**
 
 ## AI 에이전트 규칙
 

@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@plugin '@tailwindcss/typography';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -118,4 +119,29 @@
 		color-mix(in srgb, var(--color-primary) 22%, transparent) 0%,
 		transparent 100%
 	);
+}
+
+/* 블로그 본문 보정.
+   레이어 밖에 두는 게 핵심이다 — @tailwindcss/typography의 규칙도 레이어 안에 들어가므로,
+   @layer base에 적으면 특이도와 무관하게 플러그인 쪽이 이긴다. 레이어 없는 규칙은 모든 레이어를 이긴다. */
+.prose :where(code):not(:where([class~='not-prose'] *))::before,
+.prose :where(code):not(:where([class~='not-prose'] *))::after {
+	/* 플러그인 기본값이 인라인 코드 앞뒤에 백틱을 문자로 붙인다. 마크다운 원문이 그대로 새어 보인다. */
+	content: none;
+}
+
+.prose :where(code):not(:where([class~='not-prose'] *)) {
+	border-radius: 0.25rem;
+	background-color: var(--color-secondary);
+	padding: 0.125rem 0.375rem;
+	font-weight: 500;
+}
+
+.prose :where(a):not(:where([class~='not-prose'] *)) {
+	color: var(--color-primary);
+	text-decoration-color: color-mix(in srgb, var(--color-primary) 40%, transparent);
+}
+
+.prose :where(h2, h3):not(:where([class~='not-prose'] *)) {
+	scroll-margin-top: 5rem;
 }

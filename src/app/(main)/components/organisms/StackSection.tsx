@@ -4,9 +4,9 @@ import { STACK } from '@/constants/stack';
 
 export const StackSection = () => {
 	return (
-		<section id="stack" className="border-y bg-card/40">
+		<section id="stack">
 			<div className="mx-auto max-w-5xl px-6 py-20">
-				<SectionHeading index="04 / STACK" title="쓰는 것들" />
+				<SectionHeading index="05 / STACK" title="쓰는 것들" />
 
 				<div className="flex flex-col">
 					{STACK.map((group) => (
