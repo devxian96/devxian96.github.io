@@ -164,6 +164,8 @@ export const PROJECTS: Project[] = [
 		],
 		stack: 'React · TypeScript · React Query · Cafe24 Design System · Recoil · react-hook-form',
 		href: 'https://www.cafe24.com/youtubeshopping/affiliate.html',
+		image: '/images/works/affiliate.jpg',
+		imageAlt: '유튜브 쇼핑 제휴 제품 검색 화면. 상단 배너 아래로 카테고리 아이콘과 제휴 상품 목록이 놓여 있다.',
 	},
 	{
 		name: '에디봇 렌더',
@@ -244,6 +246,8 @@ export const PROJECTS: Project[] = [
 		highlights: ['검색 필터 추가 작업', '버그 수정 및 PC·모바일 화면 유지보수'],
 		stack: 'jQuery · PHP',
 		href: 'https://easypick.co.kr/sign/front/in',
+		image: '/images/works/easypick.jpg',
+		imageAlt: '이지픽 랜딩 화면. "쇼핑몰 사장님들의 목소리로 만든 가장 쉬운 사입" 문구와 가입 버튼이 놓여 있다.',
 	},
 	{
 		name: 'Buzzle BDS',

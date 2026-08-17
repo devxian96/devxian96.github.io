@@ -1,3 +1,4 @@
+import { ArrowUpRight } from 'lucide-react';
 import type { Project } from '@/constants/projects';
 
 interface Props {
@@ -31,6 +32,18 @@ export const ProjectRow = ({ project }: Props) => {
 					))}
 				</ul>
 				<p className="font-mono text-xs/relaxed text-muted-foreground">{project.stack}</p>
+
+				{project.href ? (
+					<a
+						href={project.href}
+						target="_blank"
+						rel="noreferrer"
+						className="inline-flex w-fit items-center gap-1.5 border-b border-foreground pb-0.5 text-sm font-bold transition-colors hover:border-primary hover:text-primary"
+					>
+						바로가기
+						<ArrowUpRight className="size-4" />
+					</a>
+				) : null}
 			</div>
 		</article>
 	);

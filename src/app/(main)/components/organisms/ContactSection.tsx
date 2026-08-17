@@ -15,7 +15,7 @@ export const ContactSection = () => {
 				</h2>
 
 				<p className="measure text-lg/relaxed text-muted-foreground">
-					없는 걸 만들어야 하는 자리라면 잘 맞습니다. 편하게 연락 주세요.
+					어려운 프로젝트일수록 좋습니다. 아직 아무도 만들지 않은 것이면 더 좋고요. 편하게 연락 주세요.
 				</p>
 
 				<div className="flex flex-wrap items-center justify-center gap-3">

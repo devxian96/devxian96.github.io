@@ -48,9 +48,11 @@ const RootLayout = ({ children }: PropsWithChildren) => {
 				<link rel="icon" href="/favicon.ico" sizes="128x128" />
 				<script dangerouslySetInnerHTML={{ __html: THEME_BOOTSTRAP }} />
 			</head>
-			<body className="min-h-dvh antialiased">
+			{/* 세로 flex + main의 flex-1 조합이라야 내용이 짧은 페이지에서도 푸터가 화면 아래에 붙는다.
+			    min-h-dvh만 주면 body 높이만 늘고 푸터는 콘텐츠 바로 뒤에 떠 있게 된다. */}
+			<body className="flex min-h-dvh flex-col antialiased">
 				<Header />
-				{children}
+				<div className="flex flex-1 flex-col">{children}</div>
 				<Footer />
 			</body>
 		</html>

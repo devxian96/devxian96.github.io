@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
+import { PostActions } from '@/app/(blog)/blog/[slug]/components/organisms/PostActions';
 import { formatPostDate } from '@/utils/posts';
 
 interface Props {
@@ -32,10 +33,16 @@ export const PostArticle = ({ title, date, tags, html }: Props) => {
 						</span>
 					))}
 				</div>
+
+				<div className="mt-2">
+					<PostActions title={title} />
+				</div>
 			</header>
 
-			{/* 마크다운은 저장소 안의 파일이고 빌드 시점에만 변환된다. 외부 입력이 섞이는 경로가 없다. */}
+			{/* 마크다운은 저장소 안의 파일이고 빌드 시점에만 변환된다. 외부 입력이 섞이는 경로가 없다.
+			    data-post-body는 복사 버튼이 본문 텍스트를 읽어가는 지점이다. */}
 			<div
+				data-post-body
 				className="prose max-w-none prose-neutral dark:prose-invert"
 				dangerouslySetInnerHTML={{ __html: html }}
 			/>
