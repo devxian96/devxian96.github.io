@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { HeaderSocial } from '@/components/organisms/Header/HeaderSocial';
 import { NavMenu } from '@/components/organisms/Header/NavMenu';
 import { ThemeToggle } from '@/components/organisms/Header/ThemeToggle';
 import { PROFILE } from '@/constants/profile';
@@ -12,6 +13,8 @@ export const Header = () => {
 				</Link>
 				<div className="flex items-center gap-1 sm:gap-2">
 					<NavMenu />
+					<span className="mx-1 hidden h-4 w-px bg-border sm:block" aria-hidden />
+					<HeaderSocial />
 					<ThemeToggle />
 				</div>
 			</div>

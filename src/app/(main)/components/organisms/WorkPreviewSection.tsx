@@ -4,8 +4,12 @@ import { ProjectBand } from '@/components/molecules/ProjectBand';
 import { SectionTitle } from '@/components/molecules/SectionTitle';
 import { PROJECTS } from '@/constants/projects';
 
-/** 홈에는 대표작 두 건만. 전체 목록은 /work가 맡는다. */
-const featured = PROJECTS.filter((project) => Boolean(project.image)).slice(0, 2);
+/**
+ * 화면이 남아 있는 프로젝트는 홈에서 전부 보여준다.
+ * 개수를 줄이면 "만든 게 이것뿐"으로 읽힌다 — 홈이 요약이라도 결과물은 깎지 않는다.
+ * 화면이 없는 프로젝트까지 포함한 전체 목록은 /work가 맡는다.
+ */
+const featured = PROJECTS.filter((project) => Boolean(project.image));
 
 export const WorkPreviewSection = () => {
 	return (
