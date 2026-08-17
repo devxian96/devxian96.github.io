@@ -1,6 +1,5 @@
 import Image from 'next/image';
-import Link from 'next/link';
-import { ArrowDown } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { Marker } from '@/components/molecules/Marker';
 import { PROFILE } from '@/constants/profile';
 import { STATS } from '@/constants/stats';
@@ -24,21 +23,14 @@ export const HeroSection = () => {
 							사람도 자기 웹사이트를 가질 수 있는 도구를 만듭니다.
 						</p>
 
-						<div className="flex flex-wrap items-center gap-x-4 gap-y-3">
-							<Link
-								href="#work"
-								className="inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-bold text-background transition-opacity hover:opacity-85"
-							>
-								만든 것 보기
-								<ArrowDown className="size-4" />
-							</Link>
-							<a
-								href={`mailto:${PROFILE.email}`}
-								className="inline-flex items-center gap-2 px-2 py-3 text-sm font-bold underline-offset-4 hover:underline"
-							>
-								{PROFILE.email}
-							</a>
-						</div>
+						{/* CTA는 하나만 둔다. 같은 화면 안을 스크롤하는 버튼은 이동이 아니라 소음이다. */}
+						<a
+							href={`mailto:${PROFILE.email}`}
+							className="inline-flex w-fit items-center gap-2 rounded-full bg-foreground px-7 py-3.5 text-sm font-bold text-background transition-opacity hover:opacity-85"
+						>
+							<Mail className="size-4" />
+							{PROFILE.email}
+						</a>
 					</div>
 
 					<Image

@@ -4,7 +4,7 @@ import { EDUCATION, PROFILE } from '@/constants/profile';
 export const EducationSection = () => {
 	return (
 		<section className="border-t bg-card">
-			<div className="mx-auto flex max-w-3xl flex-col px-6 section-y">
+			<div className="mx-auto flex max-w-6xl flex-col px-6 section-y">
 				<SectionTitle title="학력" />
 
 				<div className="flex flex-col">
@@ -27,7 +27,7 @@ export const EducationSection = () => {
 					href="https://www.koreascience.or.kr/article/CFKO201924664108144.page"
 					target="_blank"
 					rel="noreferrer"
-					className="mt-8 w-fit font-mono text-sm text-primary hover:underline"
+					className="mt-8 w-fit text-sm font-bold underline-offset-4 hover:underline"
 				>
 					대학 통합 설문조사 시스템 설계 및 구축 (2019) ↗
 				</a>
@@ -36,7 +36,7 @@ export const EducationSection = () => {
 					href={PROFILE.linkedin}
 					target="_blank"
 					rel="noreferrer"
-					className="mt-2 w-fit font-mono text-sm text-primary hover:underline"
+					className="mt-2 w-fit text-sm font-bold underline-offset-4 hover:underline"
 				>
 					LinkedIn ↗
 				</a>

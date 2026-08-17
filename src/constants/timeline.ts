@@ -15,7 +15,7 @@ export const TIMELINE: TimelineEntry[] = [
 			'AI 홈페이지 빌더, 사내 AI 플랫폼, 애널리틱스, EC 어드민, 에디봇. 프론트엔드에서 시작해 렌더 서버와 AI 자동화 연구까지 넓혔습니다.',
 	},
 	{
-		period: '2022.02 — 재직중',
+		period: '2022.02 — 진행중',
 		org: 'BUZZLE',
 		role: 'coFound · 프리랜서',
 		description: '노코드 웹빌더와 디자인 시스템 BDS. 3인팀을 이끌고 주말 프로젝트로 짓고 있습니다.',

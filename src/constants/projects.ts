@@ -34,7 +34,7 @@ export const PROJECTS: Project[] = [
 	{
 		name: 'BUZZLE',
 		org: 'coFound · 프리랜서',
-		period: '2022.02 — 재직중',
+		period: '2022.02 — 진행중',
 		summary:
 			'드래그 앤 드롭으로 홈페이지를 만드는 노코드 서비스. Wix·아임웹과 달리 결과물이 실제 React 웹페이지로 나오도록 만들었습니다. 3인팀을 이끌고 주말마다 짓고 있습니다.',
 		highlights: [

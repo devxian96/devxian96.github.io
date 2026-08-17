@@ -4,7 +4,7 @@ import { WORKS } from '@/constants/works';
 
 export const BuiltSection = () => {
 	return (
-		<section id="built" className="border-y bg-card">
+		<section className="border-t bg-card">
 			<div className="mx-auto max-w-6xl px-6 section-y">
 				<SectionTitle
 					title="없어서 만들었습니다"
