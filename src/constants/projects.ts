@@ -199,7 +199,9 @@ export const PROJECTS: Project[] = [
 			'Figma to Code 토스터로 React 컴포넌트 자동 생성',
 		],
 		stack: 'React · TypeScript · React Query · CDS · TanStack Router · Recoil · vite · i18n',
-		href: 'https://eclogin.cafe24.com/Shop/',
+		href: 'https://www.cafe24.com',
+		image: '/images/works/ecadmin.jpg',
+		imageAlt: '카페24 서비스 메인 화면. "PRO와 함께라면" 문구와 쇼핑몰 시작 버튼이 놓여 있다.',
 	},
 	{
 		name: 'AI 헬프센터',
@@ -214,7 +216,10 @@ export const PROJECTS: Project[] = [
 			'스켈레톤 UI 구현',
 		],
 		stack: 'Next.js · React · TypeScript · React Query · MUI 기반 CDS · Framer Motion · Zustand',
-		href: 'https://help-center.cafe24.com/helpdesk',
+		href: 'https://support.cafe24.com/hc/ko-kr',
+		image: '/images/works/helpcenter.jpg',
+		imageAlt:
+			'카페24 헬프센터 메인 화면. "무엇을 도와드릴까요?" 검색창과 추천 키워드, 쇼핑몰 가이드 카드가 놓여 있다.',
 	},
 	{
 		name: 'ChatGPT 프롬프트 최적화 툴',
