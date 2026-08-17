@@ -1,11 +1,11 @@
 import Image from 'next/image';
-import { SectionHeading } from '@/components/molecules/SectionHeading';
+import { SectionTitle } from '@/components/molecules/SectionTitle';
 import { CREDO, PROFILE } from '@/constants/profile';
 
 export const ProfileSection = () => {
 	return (
-		<section className="mx-auto max-w-3xl px-6 py-20">
-			<SectionHeading index="ABOUT" title={`${PROFILE.name} · ${PROFILE.nameEn}`} />
+		<section className="mx-auto max-w-3xl px-6 section-y">
+			<SectionTitle title={`${PROFILE.name} · ${PROFILE.nameEn}`} />
 
 			<figure className="mb-12 flex flex-col gap-4 sm:flex-row sm:items-center">
 				<Image

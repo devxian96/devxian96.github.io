@@ -13,23 +13,20 @@ export const PostCard = ({ slug, title, description, date, tags }: Props) => {
 	return (
 		<Link
 			href={`/blog/${slug}`}
-			className="group flex flex-col gap-3 rounded-card border bg-card p-6 transition-colors hover:border-primary/60"
+			className="group grid items-baseline gap-2 border-t py-7 transition-colors hover:bg-card md:grid-cols-[8rem_1fr] md:gap-8 md:px-4"
 		>
-			<time dateTime={date} className="font-mono text-xs tracking-wider text-muted-foreground">
+			<time dateTime={date} className="font-mono text-sm text-muted-foreground">
 				{formatPostDate(date)}
 			</time>
-			<h3 className="font-display text-xl tracking-tight transition-colors group-hover:text-primary">{title}</h3>
-			<p className="text-sm/relaxed text-muted-foreground">{description}</p>
-			<div className="mt-auto flex flex-wrap gap-2 pt-2">
-				{tags.map((tag) => (
-					<span
-						key={tag}
-						className="rounded-full border border-primary/30 px-2.5 py-0.5 font-mono text-xs text-primary"
-					>
-						{tag}
-					</span>
-				))}
-			</div>
+			<span className="flex flex-col gap-2">
+				<span className="text-lg font-bold transition-colors group-hover:text-primary">{title}</span>
+				<span className="measure text-sm/relaxed text-muted-foreground">{description}</span>
+				<span className="mt-1 flex flex-wrap gap-x-3 text-xs text-muted-foreground">
+					{tags.map((tag) => (
+						<span key={tag}>#{tag}</span>
+					))}
+				</span>
+			</span>
 		</Link>
 	);
 };

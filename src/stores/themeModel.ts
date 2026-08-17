@@ -18,7 +18,9 @@ interface ThemeModel {
 export const useThemeModel = create<ThemeModel>()(
 	persist(
 		(set, get) => ({
-			mode: 'dark',
+			// 라이트가 기본값이다 — 밝은 사무실에서 이력서와 나란히 읽히는 화면이라
+			// 다크로 시작하면 "읽는 문서"가 아니라 "구경하는 데모"로 읽힌다.
+			mode: 'light',
 			setMode: (mode) => set({ mode }),
 			toggleMode: () => set({ mode: get().mode === 'dark' ? 'light' : 'dark' }),
 		}),

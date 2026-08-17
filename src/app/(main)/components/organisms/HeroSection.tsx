@@ -1,58 +1,67 @@
-'use client';
-
 import Image from 'next/image';
-import { motion } from 'motion/react';
-import { CREDO, PROFILE } from '@/constants/profile';
+import Link from 'next/link';
+import { ArrowDown } from 'lucide-react';
+import { Marker } from '@/components/molecules/Marker';
+import { PROFILE } from '@/constants/profile';
+import { STATS } from '@/constants/stats';
 
 export const HeroSection = () => {
 	return (
 		<section className="relative overflow-hidden border-b">
-			<div className="pointer-events-none absolute inset-0 bg-dot-grid" aria-hidden />
-			<div className="pointer-events-none absolute inset-0 bg-brand-glow" aria-hidden />
-			<div className="absolute inset-y-0 left-0 w-[3px] bg-linear-to-b from-primary to-primary/20" aria-hidden />
+			<div className="pointer-events-none absolute inset-0 bg-blueprint" aria-hidden />
 
-			<motion.div
-				initial={{ opacity: 0, y: 16 }}
-				animate={{ opacity: 1, y: 0 }}
-				transition={{ duration: 0.5, ease: 'easeOut' }}
-				className="relative mx-auto flex max-w-5xl flex-col gap-8 px-6 py-24 sm:py-32 md:flex-row md:items-center md:gap-14"
-			>
-				<div className="flex flex-col gap-5">
-					<span className="font-mono text-sm text-primary">$ whoami</span>
-
-					<h1 className="font-mono text-5xl font-bold tracking-tighter sm:text-7xl">{PROFILE.handle}</h1>
-
-					<div className="flex flex-col gap-1">
-						<p className="text-lg">
-							{PROFILE.name} · {PROFILE.nameEn}
-						</p>
+			<div className="relative mx-auto max-w-6xl px-6 pt-20 pb-16 sm:pt-28 sm:pb-20">
+				<div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between lg:gap-16">
+					<div className="flex flex-col gap-8">
 						<p className="text-sm text-muted-foreground">
-							{PROFILE.role} @ {PROFILE.company} · {PROFILE.career}
+							{PROFILE.name} · {PROFILE.nameEn} — {PROFILE.role} @ {PROFILE.company}
 						</p>
+
+						<h1 className="font-display text-[clamp(2.75rem,7vw,5.5rem)] leading-[1.08] tracking-[-0.035em]">
+							<Marker>없으면 만든다.</Marker>
+						</h1>
+
+						<p className="measure text-lg/relaxed text-muted-foreground sm:text-xl/relaxed">
+							프레임워크가 없어서 만들었고, 라이브러리가 아쉬워서 만들었습니다. 지금은 코드를 못 쓰는
+							사람도 자기 웹사이트를 가질 수 있는 도구를 만듭니다.
+						</p>
+
+						<div className="flex flex-wrap items-center gap-x-4 gap-y-3">
+							<Link
+								href="#work"
+								className="inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-bold text-background transition-opacity hover:opacity-85"
+							>
+								만든 것 보기
+								<ArrowDown className="size-4" />
+							</Link>
+							<a
+								href={`mailto:${PROFILE.email}`}
+								className="inline-flex items-center gap-2 px-2 py-3 text-sm font-bold underline-offset-4 hover:underline"
+							>
+								{PROFILE.email}
+							</a>
+						</div>
 					</div>
 
-					<span className="h-0.5 w-24 bg-linear-to-r from-primary to-transparent" aria-hidden />
-
-					<div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:gap-6">
-						<p className="font-accent text-3xl text-primary sm:text-4xl">{PROFILE.tagline}</p>
-						<p className="text-sm text-muted-foreground">{PROFILE.taglineEn}</p>
-					</div>
-
-					<p className="max-w-xl text-sm/relaxed text-muted-foreground">{CREDO.join(' ')}</p>
-				</div>
-
-				<div className="relative shrink-0">
-					<div className="absolute -inset-3 rounded-full bg-primary/20 blur-2xl" aria-hidden />
 					<Image
 						src={PROFILE.avatar}
-						alt={`${PROFILE.name} 프로필 사진`}
-						width={220}
-						height={220}
+						alt="장석현. 해질녘 능선 위에서 바다를 등지고 선 옆모습."
+						width={260}
+						height={260}
 						priority
-						className="relative size-40 rounded-full border-2 border-primary/40 object-cover sm:size-52"
+						className="size-32 shrink-0 rounded-full border object-cover sm:size-44 lg:size-52"
 					/>
 				</div>
-			</motion.div>
+
+				<dl className="mt-16 grid gap-px overflow-hidden rounded-card border bg-border sm:grid-cols-3">
+					{STATS.map((stat) => (
+						<div key={stat.label} className="flex flex-col gap-1 bg-background p-6">
+							<dt className="text-xs text-muted-foreground">{stat.label}</dt>
+							<dd className="font-display text-2xl tracking-[-0.02em]">{stat.value}</dd>
+						</div>
+					))}
+				</dl>
+			</div>
 		</section>
 	);
 };

@@ -11,7 +11,7 @@ interface Props {
 
 export const PostArticle = ({ title, date, tags, html }: Props) => {
 	return (
-		<article className="mx-auto max-w-3xl px-6 py-20">
+		<article className="mx-auto max-w-3xl px-6 py-24">
 			<Link
 				href="/blog"
 				className="mb-10 inline-flex items-center gap-2 font-mono text-sm text-muted-foreground transition-colors hover:text-primary"
@@ -21,17 +21,14 @@ export const PostArticle = ({ title, date, tags, html }: Props) => {
 			</Link>
 
 			<header className="mb-12 flex flex-col gap-4 border-b pb-8">
-				<time dateTime={date} className="font-mono text-sm tracking-wider text-primary">
+				<time dateTime={date} className="font-mono text-sm text-muted-foreground">
 					{formatPostDate(date)}
 				</time>
 				<h1 className="font-display text-3xl tracking-tight sm:text-4xl">{title}</h1>
 				<div className="flex flex-wrap gap-2">
 					{tags.map((tag) => (
-						<span
-							key={tag}
-							className="rounded-full border border-primary/30 px-2.5 py-0.5 font-mono text-xs text-primary"
-						>
-							{tag}
+						<span key={tag} className="text-xs text-muted-foreground">
+							#{tag}
 						</span>
 					))}
 				</div>

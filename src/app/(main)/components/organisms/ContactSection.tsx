@@ -1,34 +1,50 @@
 import { Mail } from 'lucide-react';
-import { Button } from '@/components/atoms/button';
 import { GithubIcon } from '@/components/atoms/github-icon';
 import { LinkedinIcon } from '@/components/atoms/linkedin-icon';
-import { SectionHeading } from '@/components/molecules/SectionHeading';
+import { Marker } from '@/components/molecules/Marker';
 import { PROFILE } from '@/constants/profile';
 
 export const ContactSection = () => {
 	return (
-		<section id="contact" className="mx-auto max-w-5xl px-6 py-20">
-			<SectionHeading index="07 / CONTACT" title="연락" description="만들 게 있으면 알려주세요." />
+		<section id="contact" className="mx-auto max-w-6xl px-6 section-y">
+			<div className="flex flex-col items-center gap-10 text-center">
+				<h2 className="font-display text-[clamp(2.25rem,5.5vw,4.25rem)] leading-[1.12] tracking-[-0.035em]">
+					<Marker>그래서, 다음은</Marker>
+					<br />
+					무엇을 만들까요.
+				</h2>
 
-			<div className="flex flex-wrap gap-3">
-				<Button asChild size="lg">
-					<a href={`mailto:${PROFILE.email}`}>
-						<Mail />
+				<p className="measure text-lg/relaxed text-muted-foreground">
+					없는 걸 만들어야 하는 자리라면 잘 맞습니다. 편하게 연락 주세요.
+				</p>
+
+				<div className="flex flex-wrap items-center justify-center gap-3">
+					<a
+						href={`mailto:${PROFILE.email}`}
+						className="inline-flex items-center gap-2 rounded-full bg-foreground px-7 py-3.5 text-sm font-bold text-background transition-opacity hover:opacity-85"
+					>
+						<Mail className="size-4" />
 						{PROFILE.email}
 					</a>
-				</Button>
-				<Button asChild size="lg" variant="outline">
-					<a href={PROFILE.github} target="_blank" rel="noreferrer">
+					<a
+						href={PROFILE.github}
+						target="_blank"
+						rel="noreferrer"
+						className="inline-flex items-center gap-2 rounded-full border px-7 py-3.5 text-sm font-bold transition-colors hover:border-foreground"
+					>
 						<GithubIcon className="size-4" />
-						{PROFILE.handle}
+						GitHub
 					</a>
-				</Button>
-				<Button asChild size="lg" variant="outline">
-					<a href={PROFILE.linkedin} target="_blank" rel="noreferrer">
+					<a
+						href={PROFILE.linkedin}
+						target="_blank"
+						rel="noreferrer"
+						className="inline-flex items-center gap-2 rounded-full border px-7 py-3.5 text-sm font-bold transition-colors hover:border-foreground"
+					>
 						<LinkedinIcon className="size-4" />
 						LinkedIn
 					</a>
-				</Button>
+				</div>
 			</div>
 		</section>
 	);

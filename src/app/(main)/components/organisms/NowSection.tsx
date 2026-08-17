@@ -1,31 +1,33 @@
 import { ArrowUpRight } from 'lucide-react';
-import { SectionHeading } from '@/components/molecules/SectionHeading';
 
 export const NowSection = () => {
 	return (
-		<section id="now" className="mx-auto max-w-5xl px-6 py-20">
-			<SectionHeading index="01 / NOW" title="지금 만드는 것" />
+		<section id="now" className="border-b bg-card">
+			<div className="mx-auto max-w-6xl px-6 section-y">
+				<div className="flex flex-col gap-6">
+					<p className="text-sm font-bold text-primary">지금 만들고 있는 것</p>
 
-			<a
-				href="https://homebuilder.cafe24.com/"
-				target="_blank"
-				rel="noreferrer"
-				className="group flex flex-col gap-4 rounded-card border bg-card p-8 transition-colors hover:border-primary/60"
-			>
-				<div className="flex items-start justify-between gap-4">
-					<div className="flex flex-col gap-1">
-						<span className="font-mono text-xs tracking-wider text-primary">Cafe24</span>
-						<h3 className="font-display text-2xl tracking-tight">AI 홈페이지 빌더</h3>
-					</div>
-					<ArrowUpRight className="size-6 text-muted-foreground transition-colors group-hover:text-primary" />
+					<h2 className="font-display text-[clamp(2rem,4.5vw,3.25rem)] leading-[1.15] tracking-[-0.03em]">
+						업종만 고르면, AI가 홈페이지 한 채를 짓습니다.
+					</h2>
+
+					<p className="measure text-lg/relaxed text-muted-foreground">
+						카페24 AI 홈페이지 빌더. 기획·디자인·프론트엔드·백엔드가 다 함께 AI를 쓰는 협업 프로세스를
+						세우고 3개월 만에 냈습니다. 전체의 91%를 바이브코딩으로 만들면서도 코드가 무너지지 않도록,
+						커스텀 ESLint 룰과 Claude Skills를 먼저 깔았습니다.
+					</p>
+
+					<a
+						href="https://homebuilder.cafe24.com/"
+						target="_blank"
+						rel="noreferrer"
+						className="inline-flex w-fit items-center gap-1.5 border-b border-foreground pb-0.5 text-sm font-bold transition-colors hover:border-primary hover:text-primary"
+					>
+						homebuilder.cafe24.com
+						<ArrowUpRight className="size-4" />
+					</a>
 				</div>
-
-				<p className="max-w-3xl leading-relaxed text-muted-foreground">
-					업종만 고르면 AI가 홈페이지 한 채를 통째로 지어주고, 대화로 문구·이미지·색·분위기를 고쳐 나갑니다.
-					코드를 못 쓰는 사람도 자기 웹사이트를 가질 수 있게 하는 일 — 결국 &ldquo;없으면 만든다&rdquo;를 남의
-					몫으로 넘겨주는 도구를 만드는 셈입니다.
-				</p>
-			</a>
+			</div>
 		</section>
 	);
 };

@@ -6,7 +6,9 @@ export interface Project {
 	highlights: string[];
 	stack: string;
 	href?: string;
+	/** 실제 서비스 화면. 있는 것만 full-bleed 밴드로 크게 보여준다. */
 	image?: string;
+	imageAlt?: string;
 }
 
 /** 이력서에서 뽑은 대표 프로젝트. 최신 순. */
@@ -26,6 +28,8 @@ export const PROJECTS: Project[] = [
 		stack: 'Next.js · React · TypeScript · TanStack Query · shadcn · Tailwind · Zustand · Orval',
 		href: 'https://homebuilder.cafe24.com/',
 		image: '/images/works/homebuilder.jpg',
+		imageAlt:
+			'카페24 AI 홈페이지 빌더 랜딩 화면. 업종을 고르면 AI가 만든 홈페이지 예시가 노트북 목업 안에 떠 있다.',
 	},
 	{
 		name: 'BUZZLE',
@@ -43,6 +47,7 @@ export const PROJECTS: Project[] = [
 		stack: 'React · Zustand · Vite · Hono · Prisma · MongoDB · tauri 2.0',
 		href: 'https://buzzle.tools',
 		image: '/images/works/buzzle.jpg',
+		imageAlt: '버즐 랜딩 화면. 격자 배경 위에 "코드는 버즐이, 상상은 내가" 문구가 놓여 있다.',
 	},
 	{
 		name: '에디봇',
@@ -58,7 +63,9 @@ export const PROJECTS: Project[] = [
 			'Google Translate API 캐싱으로 비용 약 20% 절감',
 		],
 		stack: 'VanillaJS · Canvas · SVG · PHP → FastAPI · Playwright · Redis · Docker',
-		href: 'https://editbot.cafe24.com',
+		href: 'https://edibot.cafe24.com',
+		image: '/images/works/edibot.jpg',
+		imageAlt: '카페24 에디봇 화면. 상단 배너 아래로 상품 상세페이지 디자인 템플릿이 격자로 늘어서 있다.',
 	},
 	{
 		name: 'EC 물류진단 대시보드',
@@ -83,6 +90,7 @@ export const PROJECTS: Project[] = [
 		],
 		stack: 'Nuxt.js · Express · Sequelize · AWS EC2 · RDS · Route53',
 		image: '/images/works/heybirdie.webp',
+		imageAlt: '헤이버디 웹사이트 화면. 골프 장비 분석 리포트와 선수 비교 카드가 놓여 있다.',
 	},
 	{
 		name: '라이센스 관리 시스템',

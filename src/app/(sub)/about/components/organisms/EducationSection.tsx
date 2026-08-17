@@ -1,11 +1,11 @@
-import { SectionHeading } from '@/components/molecules/SectionHeading';
+import { SectionTitle } from '@/components/molecules/SectionTitle';
 import { EDUCATION, PROFILE } from '@/constants/profile';
 
 export const EducationSection = () => {
 	return (
-		<section className="border-t bg-card/40">
-			<div className="mx-auto flex max-w-3xl flex-col px-6 py-20">
-				<SectionHeading index="EDUCATION" title="학력" />
+		<section className="border-t bg-card">
+			<div className="mx-auto flex max-w-3xl flex-col px-6 section-y">
+				<SectionTitle title="학력" />
 
 				<div className="flex flex-col">
 					{EDUCATION.map((entry) => (
@@ -13,7 +13,9 @@ export const EducationSection = () => {
 							key={entry.school}
 							className="flex flex-col gap-1 border-b py-4 last:border-b-0 sm:flex-row sm:gap-8"
 						>
-							<span className="w-44 shrink-0 font-mono text-sm text-primary">{entry.period}</span>
+							<span className="w-44 shrink-0 font-mono text-sm text-muted-foreground">
+								{entry.period}
+							</span>
 							<span className="text-sm">
 								{entry.school} <span className="text-muted-foreground">{entry.major}</span>
 							</span>

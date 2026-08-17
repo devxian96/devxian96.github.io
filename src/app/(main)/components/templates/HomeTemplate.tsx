@@ -1,22 +1,25 @@
+import { BuiltSection } from '@/app/(main)/components/organisms/BuiltSection';
 import { CareerSection } from '@/app/(main)/components/organisms/CareerSection';
 import { ContactSection } from '@/app/(main)/components/organisms/ContactSection';
 import { HeroSection } from '@/app/(main)/components/organisms/HeroSection';
 import { NowSection } from '@/app/(main)/components/organisms/NowSection';
-import { ProjectsSection } from '@/app/(main)/components/organisms/ProjectsSection';
-import { RecentPostsSection } from '@/app/(main)/components/organisms/RecentPostsSection';
-import { StackSection } from '@/app/(main)/components/organisms/StackSection';
-import { WorksSection } from '@/app/(main)/components/organisms/WorksSection';
+import { WorkSection } from '@/app/(main)/components/organisms/WorkSection';
+import { WritingSection } from '@/app/(main)/components/organisms/WritingSection';
 
+/**
+ * 하나의 문장을 여섯 번 증명하는 순서다 — "없으면 만든다".
+ * 주장(Hero) → 지금도 그렇다(Now) → 6년치 증거(Work) → 부품까지 만든다(Built)
+ * → 규모와 범위(Career) → 기록(Writing) → 클로징(Contact).
+ */
 export const HomeTemplate = () => {
 	return (
 		<main>
 			<HeroSection />
 			<NowSection />
-			<WorksSection />
-			<ProjectsSection />
+			<WorkSection />
+			<BuiltSection />
 			<CareerSection />
-			<StackSection />
-			<RecentPostsSection />
+			<WritingSection />
 			<ContactSection />
 		</main>
 	);
