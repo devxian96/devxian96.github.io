@@ -3,6 +3,7 @@ import { CareerSection } from '@/app/(main)/components/organisms/CareerSection';
 import { ContactSection } from '@/app/(main)/components/organisms/ContactSection';
 import { HeroSection } from '@/app/(main)/components/organisms/HeroSection';
 import { NowSection } from '@/app/(main)/components/organisms/NowSection';
+import { ThesisSection } from '@/app/(main)/components/organisms/ThesisSection';
 import { WorkSection } from '@/app/(main)/components/organisms/WorkSection';
 import { WritingSection } from '@/app/(main)/components/organisms/WritingSection';
 
@@ -15,6 +16,7 @@ export const HomeTemplate = () => {
 	return (
 		<main>
 			<HeroSection />
+			<ThesisSection />
 			<NowSection />
 			<WorkSection />
 			<BuiltSection />

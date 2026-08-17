@@ -11,6 +11,7 @@ export const ThemeToggle = () => {
 		<Button
 			variant="ghost"
 			size="icon"
+			className="text-white group-data-[solid=true]/header:text-foreground"
 			onClick={toggleMode}
 			aria-label={mode === 'dark' ? '라이트 모드로 전환' : '다크 모드로 전환'}
 		>

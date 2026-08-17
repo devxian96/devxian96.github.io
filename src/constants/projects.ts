@@ -16,7 +16,7 @@ export const PROJECTS: Project[] = [
 	{
 		name: 'AI 홈페이지 빌더',
 		org: 'Cafe24',
-		period: '2026.03 — 2026.07',
+		period: '2026.03 — 진행중',
 		summary:
 			'AI 채팅만으로 홈페이지를 만드는 완전 관리형 빌더. 기획·디자인·프론트·백엔드가 다 함께 AI를 쓰는 협업 프로세스를 세우고 3개월 만에 냈습니다.',
 		highlights: [

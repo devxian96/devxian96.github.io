@@ -168,6 +168,13 @@
 		font-family: var(--font-sans);
 	}
 
+	/* 한국어는 어절 안에 공백이 없어서 기본값이면 "없으면"이 "없으 / 면"으로 끊긴다.
+	   keep-all이 한글 웹 타이포의 기본이다. 긴 URL 같은 예외는 overflow-wrap이 받는다. */
+	body {
+		word-break: keep-all;
+		overflow-wrap: anywhere;
+	}
+
 	/* 제목은 줄 길이를 고르게, 본문은 고아 단어를 줄인다. */
 	h1,
 	h2,
@@ -214,7 +221,10 @@
 	content: none;
 }
 
-.prose :where(code):not(:where([class~='not-prose'] *)) {
+/* 인라인 코드에만 칩 스타일을 준다.
+   `pre *`를 빼지 않으면 코드 블록 안의 모든 code에도 밝은 배경이 깔려
+   어두운 블록 위에 흰 막대가 줄줄이 생긴다. */
+.prose :where(code):not(:where([class~='not-prose'] *, pre *)) {
 	border-radius: 0.25rem;
 	background-color: var(--color-secondary);
 	padding: 0.125rem 0.375rem;
