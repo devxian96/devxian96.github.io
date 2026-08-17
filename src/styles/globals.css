@@ -205,14 +205,6 @@
 	max-width: min(68ch, 100%);
 }
 
-/* 히어로 배경의 옅은 격자. 라이트 배경에서는 점이 아니라 선이 덜 튄다. */
-@utility bg-blueprint {
-	background-image:
-		linear-gradient(to right, color-mix(in srgb, var(--color-foreground) 3.5%, transparent) 1px, transparent 1px),
-		linear-gradient(to bottom, color-mix(in srgb, var(--color-foreground) 3.5%, transparent) 1px, transparent 1px);
-	background-size: 72px 72px;
-}
-
 /* 블로그 본문 보정.
    레이어 밖에 두는 게 핵심이다 — @tailwindcss/typography의 규칙도 레이어 안에 들어가므로,
    @layer base에 적으면 특이도와 무관하게 플러그인 쪽이 이긴다. 레이어 없는 규칙은 모든 레이어를 이긴다. */

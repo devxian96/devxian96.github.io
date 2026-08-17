@@ -7,10 +7,8 @@ import { STATS } from '@/constants/stats';
 
 export const HeroSection = () => {
 	return (
-		<section className="relative overflow-hidden border-b">
-			<div className="pointer-events-none absolute inset-0 bg-blueprint" aria-hidden />
-
-			<div className="relative mx-auto max-w-6xl px-6 pt-20 pb-16 sm:pt-28 sm:pb-20">
+		<section className="border-b">
+			<div className="mx-auto max-w-6xl px-6 pt-20 pb-16 sm:pt-28 sm:pb-20">
 				<div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between lg:gap-16">
 					<div className="flex flex-col gap-8">
 						<p className="text-sm text-muted-foreground">
