@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import { Mail } from 'lucide-react';
+import { GithubIcon } from '@/components/atoms/github-icon';
+import { LinkedinIcon } from '@/components/atoms/linkedin-icon';
 import { Marker } from '@/components/molecules/Marker';
 import { PROFILE } from '@/constants/profile';
 import { STATS } from '@/constants/stats';
@@ -23,14 +25,35 @@ export const HeroSection = () => {
 							사람도 자기 웹사이트를 가질 수 있는 도구를 만듭니다.
 						</p>
 
-						{/* CTA는 하나만 둔다. 같은 화면 안을 스크롤하는 버튼은 이동이 아니라 소음이다. */}
-						<a
-							href={`mailto:${PROFILE.email}`}
-							className="inline-flex w-fit items-center gap-2 rounded-full bg-foreground px-7 py-3.5 text-sm font-bold text-background transition-opacity hover:opacity-85"
-						>
-							<Mail className="size-4" />
-							{PROFILE.email}
-						</a>
+						{/* 연락 수단은 나란히 두되 위계는 하나만 준다 —
+						    메일만 채운 버튼이고 나머지는 테두리라, 어디를 눌러야 할지 헷갈리지 않는다. */}
+						<div className="flex flex-wrap items-center gap-3">
+							<a
+								href={`mailto:${PROFILE.email}`}
+								className="inline-flex items-center gap-2 rounded-full bg-foreground px-7 py-3.5 text-sm font-bold text-background transition-opacity hover:opacity-85"
+							>
+								<Mail className="size-4" />
+								{PROFILE.email}
+							</a>
+							<a
+								href={PROFILE.github}
+								target="_blank"
+								rel="noreferrer"
+								className="inline-flex items-center gap-2 rounded-full border px-6 py-3.5 text-sm font-bold transition-colors hover:border-foreground"
+							>
+								<GithubIcon className="size-4" />
+								GitHub
+							</a>
+							<a
+								href={PROFILE.linkedin}
+								target="_blank"
+								rel="noreferrer"
+								className="inline-flex items-center gap-2 rounded-full border px-6 py-3.5 text-sm font-bold transition-colors hover:border-foreground"
+							>
+								<LinkedinIcon className="size-4" />
+								LinkedIn
+							</a>
+						</div>
 					</div>
 
 					<Image
