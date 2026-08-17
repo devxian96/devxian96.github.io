@@ -33,14 +33,20 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v4
 
-            - name: Setup pnpm
-              uses: pnpm/action-setup@v4
-
             - name: Setup Node
               uses: actions/setup-node@v4
               with:
                   node-version-file: .nvmrc
-                  cache: pnpm
+
+            # pnpm/action-setup 대신 Node에 내장된 corepack을 쓴다.
+            # package.json의 packageManager 필드가 버전을 고정하므로 결과는 동일하고,
+            # 잡이 내려받는 액션이 하나 줄어 GitHub 장애·스로틀링(429)에 걸릴 확률이 낮아진다.
+            #
+            # setup-node의 `cache: pnpm`은 쓰지 않는다 — 캐시 탐색이 pnpm을 먼저 요구해서
+            # corepack보다 앞서 실행되어야 하는데, 그러면 Node 교체 시 shim이 어긋난다.
+            # 설치가 20초쯤 길어지지만 배포가 액션 다운로드에 걸려 멈추는 편이 더 비싸다.
+            - name: Setup pnpm
+              run: corepack enable
 
             - name: Install dependencies
               run: pnpm install --frozen-lockfile
