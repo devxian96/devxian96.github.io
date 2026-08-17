@@ -1,0 +1,121 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:is(.dark *));
+
+/* `static` 없이 두면 Tailwind v4가 "유틸리티에서 참조되지 않은" 변수를 지운다.
+   라이트 토큰은 .dark에서 덮어쓰는 기본값이라 유틸리티가 직접 참조하지 않는데,
+   그대로 잘려나가면 다크 클래스를 떼도 화면이 어두운 채로 남는다. */
+@theme static {
+	/* devxian96 signature palette — 기준색 #00aaff */
+	--color-brand-50: #e5f6ff;
+	--color-brand-100: #b8e6ff;
+	--color-brand-200: #7ad2ff;
+	--color-brand-300: #33bcff;
+	--color-brand-400: #00aaff;
+	--color-brand-500: #0091db;
+	--color-brand-600: #0074b0;
+	--color-brand-700: #005884;
+	--color-brand-800: #003d5c;
+	--color-brand-900: #00253a;
+
+	/* Surface — 배너(assets/banner-00aaff.svg)와 같은 계열 */
+	--color-ink-950: #05080d;
+	--color-ink-900: #080c14;
+	--color-ink-800: #0e1622;
+	--color-ink-700: #16202f;
+	--color-ink-600: #1e2b3d;
+
+	/* shadcn theme tokens (light 기본값) */
+	--color-background: #ffffff;
+	--color-foreground: #0e1622;
+	--color-card: #f6f9fc;
+	--color-card-foreground: #0e1622;
+	--color-popover: #ffffff;
+	--color-popover-foreground: #0e1622;
+	--color-primary: #00aaff;
+	--color-primary-foreground: #05080d;
+	--color-secondary: #eef4f9;
+	--color-secondary-foreground: #0e1622;
+	--color-muted: #eef4f9;
+	--color-muted-foreground: #5b6b7f;
+	--color-accent: #e5f6ff;
+	--color-accent-foreground: #0e1622;
+	--color-destructive: #db543c;
+	--color-destructive-foreground: #ffffff;
+	--color-border: #dde5ee;
+	--color-input: #dde5ee;
+	--color-ring: #00aaff;
+
+	--font-sans:
+		'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Segoe UI',
+		system-ui, sans-serif;
+	--font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+
+	--radius-card: 1.25rem;
+}
+
+/* 다크 테마 — html.dark 에서 토큰만 교체한다. 컴포넌트는 토큰 이름만 쓰므로
+   여기 값만 바꾸면 전체 화면이 함께 따라온다. */
+.dark {
+	--color-background: #080c14;
+	--color-foreground: #e9f1f8;
+	--color-card: #0e1622;
+	--color-card-foreground: #e9f1f8;
+	--color-popover: #0e1622;
+	--color-popover-foreground: #e9f1f8;
+	--color-primary: #00aaff;
+	--color-primary-foreground: #05080d;
+	--color-secondary: #16202f;
+	--color-secondary-foreground: #e9f1f8;
+	--color-muted: #16202f;
+	--color-muted-foreground: #8a99ac;
+	--color-accent: #16202f;
+	--color-accent-foreground: #e9f1f8;
+	--color-border: #1e2b3d;
+	--color-input: #1e2b3d;
+	--color-ring: #00aaff;
+}
+
+@layer base {
+	* {
+		border-color: var(--color-border);
+	}
+
+	html {
+		scroll-behavior: smooth;
+		-webkit-font-smoothing: antialiased;
+	}
+
+	body {
+		background-color: var(--color-background);
+		color: var(--color-foreground);
+		font-family: var(--font-sans);
+	}
+
+	::selection {
+		background-color: var(--color-brand-400);
+		color: var(--color-ink-950);
+	}
+}
+
+/* 히어로 배경의 도트 그리드. 배너 SVG의 패턴과 같은 24px 간격이다.
+   `@layer utilities` 대신 `@utility`를 쓰는 이유 — Tailwind v4는 이 디렉티브로
+   등록된 것만 실제 유틸리티로 인식한다. @layer로 두면 eslint-plugin-better-tailwindcss가
+   "Unknown class"로 잡는다. */
+@utility bg-dot-grid {
+	background-image: radial-gradient(
+		circle at 1.5px 1.5px,
+		color-mix(in srgb, var(--color-primary) 16%, transparent) 1.2px,
+		transparent 0
+	);
+	background-size: 24px 24px;
+}
+
+/* 우상단에서 번지는 시그니처 글로우. */
+@utility bg-brand-glow {
+	background-image: radial-gradient(
+		70% 70% at 84% 12%,
+		color-mix(in srgb, var(--color-primary) 22%, transparent) 0%,
+		transparent 100%
+	);
+}
