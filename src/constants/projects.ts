@@ -175,7 +175,7 @@ export const PROJECTS: Project[] = [
 		org: 'Cafe24',
 		period: '2024.01 — 2024.06',
 		summary:
-			'회원가입만으로 상품 상세페이지가 자동 생성되도록, API 요청만으로 Playwright가 에디봇 편집을 대신 수행하는 백엔드 서버를 만들었습니다.',
+			'회원가입만으로 상품 상세페이지가 자동 생성되도록 API 요청만으로 Playwright가 에디봇 편집을 대신 수행하는 백엔드 서버를 만들었습니다.',
 		highlights: [
 			'환경별 동작 차이를 흡수하는 체이닝 패턴 environment 함수 개발',
 			'로깅과 3회 재시도 retry 함수로 저사양 환경의 제어 실패 방지',
@@ -208,7 +208,7 @@ export const PROJECTS: Project[] = [
 		org: 'Cafe24',
 		period: '2023.11 — 2023.12',
 		summary:
-			'단순 사용성 문의는 AI 챗봇이 해결하고, 복잡한 문의는 AI가 필요한 정보를 먼저 모아 CS 처리를 가속하는 서비스.',
+			'단순 사용성 문의는 AI 챗봇이 해결하고 복잡한 문의는 AI가 필요한 정보를 먼저 모아 CS 처리를 가속하는 서비스.',
 		highlights: [
 			'아토믹 디자인 패턴 컴포넌트 적용',
 			'병렬 네트워크 호출 및 AI 응답 로딩 화면 전환 애니메이션',
@@ -237,7 +237,7 @@ export const PROJECTS: Project[] = [
 		name: 'CS AI 자동화',
 		org: 'Cafe24',
 		period: '2024.06',
-		summary: 'CS팀과 운영팀을 거치며 지연되던 기술문의 처리를, AI와 TF-IDF 알고리즘으로 분류·검색해 단축했습니다.',
+		summary: 'CS팀과 운영팀을 거치며 지연되던 기술문의 처리를 AI와 TF-IDF 알고리즘으로 분류·검색해 단축했습니다.',
 		highlights: [
 			'React에서 TF-IDF 검색 알고리즘으로 문답 검색 구현',
 			'n8n에서 TF-IDF로 Confluence 링크 생성',
@@ -262,7 +262,7 @@ export const PROJECTS: Project[] = [
 		org: 'coFound · 프리랜서',
 		period: '2022.02 — 진행중',
 		summary:
-			'MUI 기반으로 만든 버즐 디자인 시스템. 일관된 사용자 경험과 개발 생산성을 위해 도입했고, 새 인원이 합류해도 적응 허들이 낮도록 설계했습니다.',
+			'MUI 기반으로 만든 버즐 디자인 시스템. 일관된 사용자 경험과 개발 생산성을 위해 도입했고 새 인원이 합류해도 적응 허들이 낮도록 설계했습니다.',
 		highlights: ['MUI 오버라이드', 'NPM 패키지 배포', 'Next.js SSR을 지원하도록 컴포넌트 래핑'],
 		stack: 'React · motion · d3 · TanStack Table · MUI · emotion',
 		href: 'https://www.npmjs.com/package/@buzzle/bds',

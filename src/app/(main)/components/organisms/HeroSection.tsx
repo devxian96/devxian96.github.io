@@ -21,7 +21,7 @@ export const HeroSection = () => {
 						</h1>
 
 						<p className="measure text-lg/relaxed text-muted-foreground sm:text-xl/relaxed">
-							프레임워크가 없어서 만들었고, 라이브러리가 아쉬워서 만들었습니다. 지금은 코드를 못 쓰는
+							프레임워크가 없어서 만들었고 라이브러리가 아쉬워서 만들었습니다. 지금은 코드를 못 쓰는
 							사람도 자기 웹사이트를 가질 수 있는 도구를 만듭니다.
 						</p>
 
