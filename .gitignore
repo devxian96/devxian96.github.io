@@ -47,3 +47,4 @@ next-env.d.ts
 scrollcraft/builds/*/out/
 scrollcraft/builds/*/lab/
 .claude/skills/*/node_modules/
+CLAUDE.local.md
