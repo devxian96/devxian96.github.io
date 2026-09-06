@@ -1,7 +1,5 @@
 import type { Metadata, Viewport } from 'next';
 import type { PropsWithChildren } from 'react';
-import { Footer } from '@/components/molecules/Footer';
-import { Header } from '@/components/organisms/Header/Header';
 import '@/styles/globals.css';
 
 export const metadata: Metadata = {
@@ -68,12 +66,9 @@ const RootLayout = ({ children }: PropsWithChildren) => {
 				<script dangerouslySetInnerHTML={{ __html: THEME_BOOTSTRAP }} />
 			</head>
 			{/* 세로 flex + main의 flex-1 조합이라야 내용이 짧은 페이지에서도 푸터가 화면 아래에 붙는다.
-			    min-h-dvh만 주면 body 높이만 늘고 푸터는 콘텐츠 바로 뒤에 떠 있게 된다. */}
-			<body className="flex min-h-dvh flex-col antialiased">
-				<Header />
-				<div className="flex flex-1 flex-col">{children}</div>
-				<Footer />
-			</body>
+			    min-h-dvh만 주면 body 높이만 늘고 푸터는 콘텐츠 바로 뒤에 떠 있게 된다.
+			    헤더·푸터는 (sub)·(blog) 레이아웃이 감싼다. 홈은 분할 무대라 자기 chrome을 쓴다. */}
+			<body className="flex min-h-dvh flex-col antialiased">{children}</body>
 		</html>
 	);
 };

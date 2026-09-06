@@ -134,6 +134,9 @@ const eslintConfig = defineConfig([
 						String.raw`slide-.*`,
 						String.raw`zoom-.*`,
 						String.raw`data-\[.*\]:.*`,
+						// 홈 분할 무대 — scrollcraft 엔진 클래스와 홈 전용 CSS(home.css)
+						String.raw`sc-.*`,
+						String.raw`home(-.*)?`,
 					],
 				},
 			],
@@ -161,6 +164,8 @@ const eslintConfig = defineConfig([
 		'.vscode/**',
 		'.github/**',
 		'.husky/**',
+		'.claude/**',
+		'public/**',
 		'lib/eslint-rules/**',
 		'src/components/atoms/**',
 	]),

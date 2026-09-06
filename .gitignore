@@ -27,6 +27,7 @@ yarn-error.log*
 pnpm-debug.log*
 
 # local env files
+.env
 .env*.local
 
 # vercel
@@ -41,3 +42,8 @@ next-env.d.ts
 
 # agent runtime state
 .omc/
+
+# scroll-craft 빌드 산출물 — 브리프와 지문 등록부만 커밋한다
+scrollcraft/builds/*/out/
+scrollcraft/builds/*/lab/
+.claude/skills/*/node_modules/

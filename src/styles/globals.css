@@ -1,4 +1,7 @@
 @import 'tailwindcss';
+/* scrollcraft 엔진 CSS. 홈의 스크롤 무대(.sc-stage, [data-sc-*])가 쓴다.
+   레이어 밖 규칙이라 아래 body 재선언이 없으면 모든 페이지가 잉크색 바탕이 된다. */
+@import './scrollcraft.css';
 @plugin '@tailwindcss/typography';
 
 @custom-variant dark (&:is(.dark *));
@@ -118,6 +121,30 @@
 	--font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
 
 	--radius-card: 1.25rem;
+}
+
+/* scrollcraft.css가 레이어 밖에서 body·선택·포커스를 자기 토큰으로 잡는다.
+   토큰은 사이트 팔레트로 맞추고, body는 Tailwind preflight 값으로 되돌린다.
+   홈의 무대는 자기 지면색을 직접 칠하므로 여기 body 값에 기대지 않는다. */
+:root {
+	--sc-canvas: var(--color-background);
+	--sc-surface: var(--color-card);
+	--sc-ink: var(--color-foreground);
+	--sc-ink-soft: var(--color-muted-foreground);
+	--sc-accent: #00aaff;
+	--sc-accent-ink: #05080d;
+	--sc-font-display: var(--font-display);
+	--sc-font-text: var(--font-sans);
+	--sc-font-mono: var(--font-mono);
+}
+
+body {
+	background-color: var(--color-background);
+	color: var(--color-foreground);
+	font-family: var(--font-sans);
+	font-size: 1rem;
+	line-height: 1.5;
+	letter-spacing: normal;
 }
 
 /* 다크 테마 — html.dark 에서 토큰만 교체한다. 컴포넌트는 토큰 이름만 쓰므로

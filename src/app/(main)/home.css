@@ -1,0 +1,993 @@
+/* ============================================================================
+   홈 · "없으면 | 만든다" 분할 무대
+   ----------------------------------------------------------------------------
+   엔진(scrollcraft.css)은 .sc-stage와 [data-sc-*]만 맡는다. 여기는 이 페이지의 모양이다.
+   두 지면: 종이(paper, 흰 바탕 잉크 글자)와 밤(night, 잉크 바탕 뼈색 글자).
+   액센트는 #00aaff 한 색을 지면마다 다른 밝기로 쓴다. 대비 때문이지 색을 둘 쓰는 게 아니다.
+   ========================================================================== */
+
+.home {
+	--paper: #ffffff;
+	--paper-ink: #0e1622;
+	--paper-soft: #48586c;
+	--paper-accent: #0074b0;
+	--night: #080c14;
+	--night-ink: #e9f1f8;
+	--night-soft: #8a99ac;
+	--night-accent: #33bcff;
+	--night-line: rgba(233, 241, 248, 0.14);
+
+	--home-gutter: clamp(1.25rem, 4.5vw, 4.5rem);
+	--home-pad: clamp(3.5rem, 9vh, 6rem);
+	--home-ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+	/* 결말 붕괴 정도 0..1. useSplitChrome이 쓴다. 선(chrome)과 결말 막의 clip이 같은 값을 본다. */
+	--collapse-page: 0;
+
+	position: relative;
+	font-family: var(--font-sans);
+	color: var(--paper-ink);
+	background: var(--paper);
+	word-break: keep-all;
+}
+
+/* 엔진이 마운트되기 전(.sc-ready 없음)에는 히어로 cue를 켜 둔다.
+   greet cue는 p=0에서 어차피 1이라 엔진이 넘겨받아도 튀지 않는다. */
+html:not(.sc-ready) .home-hero [data-sc-cue] {
+	opacity: 1;
+}
+
+/* ------------------------------------------------------------- 무대 -- */
+.home-act {
+	position: relative;
+}
+
+.home-stage {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	background: var(--paper);
+}
+
+.home-half {
+	position: relative;
+	overflow: clip;
+	padding: var(--home-pad) var(--home-gutter);
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+
+.home-half--paper {
+	background: var(--paper);
+	color: var(--paper-ink);
+	align-items: flex-end;
+	text-align: right;
+}
+
+.home-half--night {
+	background: var(--night);
+	color: var(--night-ink);
+	align-items: flex-start;
+}
+
+/* ------------------------------------------------------------- 활자 -- */
+.home-word {
+	margin: 0;
+	font-family: var(--font-display);
+	font-weight: 700;
+	font-size: clamp(3.2rem, 8.4vw, 8rem);
+	line-height: 0.98;
+	letter-spacing: -0.035em;
+	text-wrap: balance;
+}
+
+.home-mono {
+	margin: 0;
+	font-family: var(--font-mono);
+	font-size: 0.8rem;
+	letter-spacing: 0.01em;
+	font-variant-numeric: tabular-nums;
+	color: var(--paper-soft);
+}
+
+.home-half--night .home-mono {
+	color: var(--night-soft);
+}
+
+.home-link {
+	color: inherit;
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.24em;
+	text-decoration-color: color-mix(in oklab, currentColor 40%, transparent);
+	transition: text-decoration-color 160ms var(--home-ease);
+}
+
+.home-link:hover {
+	text-decoration-color: currentColor;
+}
+
+.home-half--paper .home-link:hover {
+	color: var(--paper-accent);
+}
+
+.home-half--night .home-link:hover {
+	color: var(--night-accent);
+}
+
+/* 왼쪽 지면의 한 줄. "없어서". */
+.home-void {
+	margin: 0;
+	font-size: clamp(1.25rem, 2.1vw, 1.85rem);
+	line-height: 1.38;
+	letter-spacing: -0.01em;
+	max-width: 22ch;
+	text-wrap: pretty;
+}
+
+/* 오른쪽 지면의 한 건. "만들었다". */
+.home-made {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	max-width: 30rem;
+}
+
+.home-made__name {
+	margin: 0;
+	font-family: var(--font-display);
+	font-weight: 700;
+	font-size: clamp(1.9rem, 3.3vw, 3rem);
+	line-height: 1.06;
+	letter-spacing: -0.03em;
+	text-wrap: balance;
+}
+
+.home-made__stack {
+	margin: 0;
+	font-size: 0.95rem;
+	line-height: 1.5;
+	color: var(--night-soft);
+	text-wrap: pretty;
+}
+
+.home-now {
+	margin: 0 0 0.25rem;
+	font-size: 0.85rem;
+	font-weight: 700;
+	color: var(--night-accent);
+}
+
+/* 같은 자리에 겹쳐 놓고 cue로 갈아 끼우는 슬롯. */
+.home-slot {
+	position: relative;
+	width: 100%;
+	min-height: 11rem;
+}
+
+.home-slot > * {
+	position: absolute;
+	bottom: 0;
+}
+
+.home-slot--paper > * {
+	right: 0;
+}
+
+.home-slot--night > * {
+	left: 0;
+}
+
+/* ------------------------------------------------------------ 1막 · 갈림 -- */
+.home-hero .home-stage {
+	position: sticky;
+}
+
+/* 선 위에 걸친 사진. 무대 좌표라 두 지면 위에 함께 올라간다. 두 단어 바로 위, 시선이 먼저 닿는 자리. */
+.home-hero__avatar {
+	position: absolute;
+	z-index: 7;
+	left: 50%;
+	top: 34%;
+	translate: -50% 0;
+	width: clamp(7rem, 12vw, 11rem);
+	height: auto;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	object-fit: cover;
+	box-shadow:
+		0 0 0 5px var(--paper),
+		0 24px 48px -16px rgba(2, 6, 12, 0.55);
+}
+
+.home-hero__copy {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 1.5rem;
+}
+
+.home-hero__intro {
+	margin: 0;
+	max-width: 30ch;
+	font-size: clamp(1rem, 1.35vw, 1.2rem);
+	line-height: 1.6;
+	color: var(--paper-soft);
+	text-wrap: pretty;
+}
+
+.home-hero__room {
+	--px: 0;
+	--py: 0;
+	justify-content: flex-end;
+}
+
+.home-hero__word {
+	position: relative;
+	z-index: 2;
+	color: var(--night-ink);
+}
+
+/* 층. 엔진이 [data-sc-parallax]에 transform을 쓰므로 포인터 반응은 안쪽 래퍼가 맡는다. */
+.home-plane {
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+}
+
+.home-plane__inner {
+	position: absolute;
+	inset: 0;
+	translate: calc(var(--px) * var(--depth, 0) * 1px) calc(var(--py) * var(--depth, 0) * 1px);
+	transition: translate 700ms var(--home-ease);
+}
+
+.home-plane--far {
+	z-index: 1;
+	--depth: 5;
+	inset: -6%;
+}
+
+.home-plane__photo {
+	width: 100%;
+	height: 100%;
+	max-width: none;
+	object-fit: cover;
+	object-position: 50% 62%;
+}
+
+.home-plane--mid {
+	z-index: 3;
+	--depth: -9;
+}
+
+.home-plane--near {
+	z-index: 4;
+	--depth: -15;
+}
+
+.home-plane--haze {
+	z-index: 5;
+	--depth: 3;
+}
+
+.home-plane--haze .home-plane__inner {
+	background: radial-gradient(60% 45% at 18% 12%, rgba(0, 170, 255, 0.18), transparent 70%);
+}
+
+/* 바닥 쪽을 잉크로 가라앉혀 제목이 사진 위에 앉게 한다. 제목 아래 층이라 제목은 눌리지 않는다. */
+.home-plane--far .home-plane__inner::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(to top, rgba(8, 12, 20, 0.9), rgba(8, 12, 20, 0.35) 40%, transparent 60%);
+}
+
+/* 실제 서비스 화면. 창틀은 얇은 선과 그림자만, 가짜 브라우저 크롬은 그리지 않는다. */
+.home-shot {
+	margin: 0;
+	inset: auto;
+	position: absolute;
+	overflow: hidden;
+	border-radius: 10px;
+	border: 1px solid var(--night-line);
+	box-shadow:
+		0 4px 8px rgba(2, 6, 12, 0.35),
+		0 24px 48px -12px rgba(2, 6, 12, 0.6);
+	background: var(--night);
+}
+
+.home-shot__img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: top;
+}
+
+.home-plane--mid .home-shot {
+	right: 6%;
+	top: 13%;
+	width: 54%;
+	aspect-ratio: 16 / 10;
+}
+
+.home-plane--near .home-shot {
+	left: 13%;
+	top: 40%;
+	width: 46%;
+	aspect-ratio: 16 / 10;
+}
+
+.home-hero__nav {
+	position: absolute;
+	z-index: 6;
+	top: var(--home-pad);
+	left: var(--home-gutter);
+	right: var(--home-gutter);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	gap: 0.35rem 1.1rem;
+	align-items: baseline;
+	font-size: 0.9rem;
+	color: var(--night-ink);
+}
+
+.home-hero__mark {
+	margin-right: 0.5rem;
+	font-family: var(--font-display);
+	font-weight: 700;
+	font-size: 1rem;
+	color: var(--night-ink);
+}
+
+/* ------------------------------------------------------------ 2막 · 장부 -- */
+.home-ledger .home-half,
+.home-timings .home-half,
+.home-screens .home-half--paper {
+	justify-content: center;
+}
+
+.home-ledger .home-void {
+	font-size: clamp(1.5rem, 2.6vw, 2.4rem);
+	line-height: 1.32;
+	max-width: 20ch;
+}
+
+.home-ledger__index {
+	margin: 0 0 2rem;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 0.55rem;
+}
+
+.home-ledger__row {
+	position: relative;
+	font-family: var(--font-display);
+	font-weight: 700;
+	font-size: clamp(1.4rem, 2.4vw, 2.2rem);
+	line-height: 1.1;
+	letter-spacing: -0.03em;
+}
+
+.home-ledger__dim {
+	color: var(--night-soft);
+	opacity: 0.38;
+}
+
+.home-ledger__lit {
+	position: absolute;
+	inset: 0;
+	color: var(--night-ink);
+}
+
+.home-ledger__detail {
+	min-height: 3.5rem;
+}
+
+.home-ledger__detail .home-made {
+	bottom: auto;
+	top: 0;
+}
+
+/* ------------------------------------------------------------ 3막 · 화면 -- */
+.home-screens__frame {
+	position: absolute;
+	top: calc(var(--home-pad) * 0.8);
+	left: var(--home-gutter);
+	right: var(--home-gutter);
+	bottom: 14rem;
+	border-radius: 10px;
+	border: 1px solid var(--night-line);
+	overflow: hidden;
+	background: var(--night);
+	box-shadow:
+		0 4px 8px rgba(2, 6, 12, 0.35),
+		0 24px 48px -12px rgba(2, 6, 12, 0.6);
+}
+
+.home-screen {
+	position: absolute;
+	inset: 0;
+}
+
+.home-screen__img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: top;
+}
+
+/* ------------------------------------------------------------ 4막 · 시간 -- */
+.home-timings__list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	width: 100%;
+	display: grid;
+	grid-auto-rows: clamp(4.25rem, 11vh, 6.5rem);
+	align-items: center;
+}
+
+.home-timings__what {
+	font-size: clamp(1rem, 1.5vw, 1.3rem);
+	line-height: 1.4;
+	max-width: 30ch;
+	justify-self: end;
+	text-wrap: pretty;
+}
+
+.home-timings__value {
+	font-family: var(--font-display);
+	font-weight: 700;
+	font-size: clamp(2.8rem, 6vw, 5.2rem);
+	line-height: 1;
+	letter-spacing: -0.03em;
+	font-variant-numeric: tabular-nums;
+}
+
+.home-timings__unit {
+	margin-left: 0.15em;
+	font-size: 0.42em;
+	color: var(--night-soft);
+}
+
+/* 줄마다 자기 창이 있다. --t는 그 창 안의 진행(0..1). cue의 rise는 li에 걸리므로 안쪽에 건다. */
+.home-timings__list > :nth-child(1) {
+	--from: 0;
+}
+
+.home-timings__list > :nth-child(2) {
+	--from: 0.18;
+}
+
+.home-timings__list > :nth-child(3) {
+	--from: 0.36;
+}
+
+.home-timings__list > :nth-child(4) {
+	--from: 0.54;
+}
+
+.home-timings__list > li {
+	--t: clamp(0, calc((var(--sc-p, 0) - var(--from)) / 0.14), 1);
+}
+
+/* 숫자는 크게 들어와 자리를 잡는다. 밑줄은 숫자가 차오르는 만큼 채워진다. */
+.home-timings__num {
+	display: inline-block;
+	transform-origin: left center;
+	scale: calc(1.4 - 0.4 * var(--t));
+}
+
+.home-timings__value {
+	position: relative;
+	padding-bottom: 0.45rem;
+}
+
+.home-timings__bar {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: min(100%, 14rem);
+	height: 2px;
+	background: var(--night-accent);
+	transform-origin: left center;
+	scale: var(--t) 1;
+}
+
+.home-timings__text {
+	display: inline-block;
+	translate: calc((1 - var(--t)) * -1.25rem) 0;
+}
+
+/* ------------------------------------------------------------ 5막 · 결말 -- */
+/* 붕괴 정도. 엔진이 막에 쓰는 --sc-p에서 바로 계산한다. useSplitChrome의 상수와 같은 식. */
+.home-close {
+	--collapse: clamp(0, calc((var(--sc-p, 0) - 0.12) / 0.28), 1);
+	--split-close: calc(50% * (1 - var(--collapse)));
+}
+
+.home-close__stage {
+	display: block;
+}
+
+.home-close__paper,
+.home-close__night {
+	position: absolute;
+	inset: 0;
+}
+
+.home-close__paper {
+	right: 50%;
+	justify-content: center;
+}
+
+.home-close__cue {
+	font-size: clamp(1.6rem, 2.8vw, 2.6rem);
+	max-width: none;
+	transform-origin: right center;
+	translate: calc(var(--collapse) * -10rem) 0;
+	scale: calc(1 - 0.3 * var(--collapse));
+}
+
+.home-close__night {
+	clip-path: inset(0 0 0 var(--split-close));
+}
+
+/* 붕괴의 앞날. 선이 왼쪽으로 쓸고 갈 때만 빛난다(중간에서 최대, 양 끝에서 0). */
+.home-close__night::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: var(--split-close);
+	width: 16rem;
+	pointer-events: none;
+	background: linear-gradient(to right, rgba(0, 170, 255, 0.6), rgba(0, 170, 255, 0.14) 30%, transparent);
+	opacity: calc(4 * var(--collapse) * (1 - var(--collapse)));
+}
+
+/* 다 삼킨 뒤 히어로의 시안 안개가 돌아온다. 수미상관. */
+.home-close__night::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	background: radial-gradient(55% 60% at 22% 45%, rgba(0, 170, 255, 0.18), transparent 70%);
+	opacity: var(--collapse);
+}
+
+/* 마지막 컷의 상단 메뉴. 히어로와 같은 줄, 선(왼쪽 끝)의 tally를 비켜 왼쪽 정렬. */
+.home-close__nav {
+	left: calc(var(--home-gutter) + 11rem);
+	justify-content: flex-start;
+}
+
+/* 붕괴 전엔 오른쪽 반 칸의 왼쪽 가장자리, 붕괴 후엔 전폭의 왼쪽 가장자리. 11rem은 chrome(총합 글자)의 폭.
+   선이 왼쪽으로 가는 만큼 카피도 같이 간다. transform이라 레이아웃은 건드리지 않는다. */
+.home-close__body {
+	position: absolute;
+	top: 50%;
+	left: calc(50% + var(--home-gutter));
+	width: min(46rem, calc(50% - var(--home-gutter) * 2));
+	translate: calc(var(--collapse) * (11rem - 50vw)) -50%;
+	display: flex;
+	flex-direction: column;
+	gap: 1.75rem;
+}
+
+.home-close__title {
+	transform-origin: left top;
+	scale: calc(0.86 + 0.14 * var(--collapse));
+	margin: 0;
+	font-family: var(--font-display);
+	font-weight: 700;
+	font-size: clamp(2.6rem, 6.4vw, 6rem);
+	line-height: 1.02;
+	letter-spacing: -0.035em;
+	text-wrap: balance;
+}
+
+.home-close__lede {
+	margin: 0;
+	max-width: 40ch;
+	font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+	line-height: 1.6;
+	color: var(--night-soft);
+	text-wrap: pretty;
+}
+
+.home-cta {
+	align-self: flex-start;
+	padding: 0.95rem 1.6rem;
+	border-radius: 999px;
+	background: var(--night-ink);
+	color: var(--night);
+	font-weight: 700;
+	font-size: 0.95rem;
+	text-decoration: none;
+	transition:
+		background-color 160ms var(--home-ease),
+		transform 120ms var(--home-ease);
+}
+
+.home-cta:hover {
+	background: var(--night-accent);
+}
+
+.home-cta:active {
+	transform: translateY(1px);
+}
+
+.home-close__foot {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+	margin-top: 2rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid var(--night-line);
+}
+
+.home-close__links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem 1.1rem;
+	font-size: 0.9rem;
+	color: var(--night-soft);
+}
+
+/* ------------------------------------------------------------- chrome -- */
+/* 가운데 선. 고정 바 대신 이것이 chrome이다. 위치는 --collapse-page 하나로 결정된다. */
+.home-divider {
+	--c: var(--collapse-page, 0);
+	--x: calc(50vw * (1 - var(--c)));
+	position: fixed;
+	inset: 0;
+	z-index: 60;
+	pointer-events: none;
+	font-family: var(--font-display);
+	font-size: 0.85rem;
+	font-weight: 700;
+	letter-spacing: 0.02em;
+}
+
+.home-divider__line {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: var(--x);
+	width: 1px;
+	background: rgba(138, 153, 172, 0.55);
+	/* 히어로 사진이 걸친 구간은 비운다. 값은 useSplitChrome이 사진의 실제 상자에서 매 프레임 쓴다. */
+	mask: linear-gradient(
+		to bottom,
+		#000 var(--gap-top, 0px),
+		transparent var(--gap-top, 0px),
+		transparent var(--gap-bottom, 0px),
+		#000 var(--gap-bottom, 0px)
+	);
+}
+
+.home-divider__fill {
+	position: absolute;
+	inset: 0;
+	background: #00aaff;
+	transform-origin: 50% 0;
+	transform: scaleY(var(--prog, 0));
+}
+
+.home-divider__label {
+	position: absolute;
+	top: 1.4rem;
+	white-space: nowrap;
+}
+
+.home-divider__label--paper {
+	right: calc(100vw - var(--x) + 0.75rem);
+	color: var(--paper-ink);
+	opacity: calc(1 - var(--c));
+}
+
+.home-divider__side {
+	position: absolute;
+	top: 1.4rem;
+	left: calc(var(--x) + 0.75rem);
+	display: flex;
+	flex-direction: column;
+	gap: 0.9rem;
+	color: var(--night-ink);
+}
+
+.home-divider__side .home-divider__label {
+	position: static;
+}
+
+.home-divider__tally {
+	display: flex;
+	flex-direction: column;
+	gap: 0.35rem;
+}
+
+.home-tally path {
+	fill: none;
+	stroke: rgba(233, 241, 248, 0.82);
+	stroke-width: 2;
+	stroke-linecap: square;
+	stroke-dasharray: 18;
+	stroke-dashoffset: 18;
+	transition:
+		stroke-dashoffset 320ms var(--home-ease),
+		stroke 400ms var(--home-ease);
+}
+
+.home-tally path.is-drawn {
+	stroke-dashoffset: 0;
+}
+
+/* 총합의 순간. 획과 총합이 액센트로 켜진다. */
+.home-divider.is-done .home-tally path {
+	stroke: #00aaff;
+}
+
+.home-divider.is-done .home-divider__total {
+	color: #33bcff;
+}
+
+.home-divider__total {
+	transition: color 400ms var(--home-ease);
+	font-family: var(--font-mono);
+	font-weight: 400;
+	font-size: 0.75rem;
+	letter-spacing: 0.01em;
+	color: var(--night-soft);
+	opacity: var(--c);
+	white-space: nowrap;
+}
+
+/* ------------------------------------------------------------- 모바일 -- */
+@media (max-width: 860px) {
+	.home {
+		--home-pad: 3.25rem;
+	}
+
+	.home-stage {
+		grid-template-columns: none;
+		grid-template-rows: 1fr 1fr;
+	}
+
+	.home-half--paper {
+		align-items: flex-start;
+		text-align: left;
+	}
+
+	.home-half--night {
+		padding-top: 3.5rem;
+	}
+
+	.home-word {
+		font-size: clamp(2.6rem, 12vw, 3.6rem);
+	}
+
+	.home-hero__copy {
+		align-items: flex-start;
+	}
+
+	/* 폰에서는 선이 가로다. 오른쪽 끝에서 선 위에 걸친다. 왼쪽은 두 단어가 쓴다. */
+	.home-hero__avatar {
+		left: auto;
+		right: var(--home-gutter);
+		top: 50%;
+		translate: 0 -50%;
+		width: 6.5rem;
+		box-shadow:
+			0 0 0 4px var(--paper),
+			0 16px 32px -12px rgba(2, 6, 12, 0.55);
+	}
+
+	.home-ledger__index {
+		margin-bottom: 1rem;
+		gap: 0.3rem;
+	}
+
+	.home-ledger__row {
+		font-size: 1.15rem;
+	}
+
+	.home-ledger .home-void {
+		font-size: 1.3rem;
+	}
+
+	.home-hero__room {
+		justify-content: flex-start;
+	}
+
+	.home-hero__nav {
+		top: auto;
+		bottom: 1.25rem;
+		justify-content: flex-start;
+		font-size: 0.85rem;
+	}
+
+	/* 폰에서는 제목이 위, 화면 둘이 가운데, nav가 바닥. 서로 겹치지 않게 층을 세로로 나눈다. */
+	.home-plane--mid .home-shot {
+		right: 4%;
+		top: 30%;
+		width: 60%;
+	}
+
+	.home-plane--near .home-shot {
+		left: 4%;
+		top: 46%;
+		width: 46%;
+	}
+
+	.home-slot {
+		min-height: 9rem;
+	}
+
+	.home-slot--paper > * {
+		right: auto;
+		left: 0;
+	}
+
+	.home-void {
+		max-width: none;
+	}
+
+	.home-half {
+		padding-bottom: 2.5rem;
+	}
+
+	.home-screens__frame {
+		top: 3.25rem;
+		bottom: 12.5rem;
+	}
+
+	/* 폰의 아래 반 칸에 화면과 설명이 같이 들어가야 한다. 스택 줄은 /work가 맡는다. */
+	.home-screens .home-made__stack {
+		display: none;
+	}
+
+	.home-screens .home-slot {
+		min-height: 8rem;
+	}
+
+	.home-timings__list {
+		grid-auto-rows: clamp(2.6rem, 10svh, 4rem);
+	}
+
+	.home-timings__what {
+		justify-self: start;
+		font-size: 0.95rem;
+	}
+
+	.home-timings__value {
+		font-size: clamp(2.2rem, 9vw, 3rem);
+	}
+
+	.home-close__paper {
+		right: 0;
+		bottom: 50%;
+	}
+
+	.home-close__night {
+		clip-path: inset(var(--split-close) 0 0 0);
+	}
+
+	.home-close__night::before {
+		top: var(--split-close);
+		bottom: auto;
+		left: 0;
+		right: 0;
+		width: auto;
+		height: 10rem;
+		background: linear-gradient(to bottom, rgba(0, 170, 255, 0.6), rgba(0, 170, 255, 0.14) 30%, transparent);
+	}
+
+	.home-close__cue {
+		transform-origin: left center;
+		translate: 0 calc(var(--collapse) * -6rem);
+	}
+
+	/* 폰은 선이 위로 간다. 카피는 아래 반 칸 상단에서 시작해 선을 따라 위로 올라간다. */
+	.home-close__body {
+		top: calc(50% + 3.5rem);
+		left: var(--home-gutter);
+		width: calc(100% - var(--home-gutter) * 2);
+		translate: 0 calc(var(--collapse) * (6.5rem - 50svh));
+		gap: 1.1rem;
+	}
+
+	.home-close__title {
+		font-size: 2.2rem;
+	}
+
+	.home-close__lede {
+		font-size: 1rem;
+	}
+
+	.home-close__foot {
+		margin-top: 1rem;
+	}
+
+	.home-close__nav {
+		top: 3rem;
+		bottom: auto;
+		left: var(--home-gutter);
+	}
+
+	.home-divider {
+		--x: calc(50svh * (1 - var(--c)));
+	}
+
+	.home-divider__line {
+		top: var(--x);
+		bottom: auto;
+		left: 0;
+		right: 0;
+		width: auto;
+		height: 1px;
+		mask: linear-gradient(
+			to right,
+			#000 var(--gap-left, 0px),
+			transparent var(--gap-left, 0px),
+			transparent var(--gap-right, 0px),
+			#000 var(--gap-right, 0px)
+		);
+	}
+
+	.home-divider__fill {
+		transform-origin: 0 50%;
+		transform: scaleX(var(--prog, 0));
+	}
+
+	.home-divider__label--paper {
+		top: auto;
+		right: auto;
+		left: var(--home-gutter);
+		bottom: calc(100svh - var(--x) + 0.6rem);
+	}
+
+	.home-divider__side {
+		top: calc(var(--x) + 0.6rem);
+		left: auto;
+		right: var(--home-gutter);
+		flex-direction: row;
+		align-items: center;
+		gap: 0.75rem;
+	}
+
+	.home-divider__tally {
+		flex-direction: row;
+	}
+}
+
+/* ------------------------------------------------------- reduced motion -- */
+@media (prefers-reduced-motion: reduce) {
+	.home-plane__inner,
+	.home-tally path,
+	.home-link,
+	.home-cta {
+		transition: none;
+	}
+
+	/* 위치 변화는 뺀다. 붕괴 자체(clip)와 카피의 자리 이동은 의미라 남긴다. */
+	.home-timings__num,
+	.home-timings__text,
+	.home-close__cue,
+	.home-close__title {
+		scale: none;
+		translate: none;
+	}
+
+	.home-timings__bar {
+		scale: 1 1;
+	}
+
+	.home-close__night::before {
+		display: none;
+	}
+}

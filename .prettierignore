@@ -4,3 +4,6 @@ out
 .vscode
 pnpm-lock.yaml
 CHANGELOG.md
+.claude/skills
+public/scrollcraft
+src/styles/scrollcraft.css
